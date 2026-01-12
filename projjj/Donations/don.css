@@ -1,0 +1,535 @@
+/* common style start*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+
+:root{
+    --themeRed:#e43a47;
+    --gray:#efefef;
+    --maroon: #800000;
+}
+html{
+    scroll-behavior: smooth;
+    
+ }
+
+
+button,
+body,
+textarea {
+    font-family: "poppins", sans-serif;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 2;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container .logo{
+    padding: 15px 0;
+    height: 75px;
+}
+header .container .logo img{
+    height: 100%;
+}
+header nav ul{
+    list-style-type: none;
+}
+header nav ul li{ 
+    display: inline-block;
+}
+header nav ul li a{
+    display: inline-block;
+    height: 75px;
+    line-height: 75px;
+    padding: 0 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.3s;
+}
+header nav ul li a:hover{ 
+    background-color: var(--themeRed);
+}
+
+section{
+    background-color:#fff;
+    margin-bottom: 20px;
+}
+
+
+/* =============================
+   DONATE SECTION STYLING
+   ============================= */
+   .donate {
+    position: relative;
+    width: 100%;
+    margin: 70px 0 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.donate .donate-content {
+    padding: 45px 30px 15px;
+    text-align: center;
+}
+
+.donate .section-header {
+    margin-bottom: 30px;
+}
+.donate .section-header p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.donate .section-header h2 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.donate .donate-text p {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* DONATION FORM */
+.donate .donate-form {
+    padding: 60px 30px;
+    background: rgba(22, 22, 21, 0.527);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.donate-form .control-group {
+    margin-bottom: 15px;
+}
+
+.donate-form .form-control {
+    height: 60px;
+    color: #ffffff;
+    padding: 0 15px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.donate-form .form-control::placeholder {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+/* =============================
+   PAGE HEADER STYLING
+   ============================= */
+.page-header {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 40px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/page-header.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header h2 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.page-header h2::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #fff;
+}
+
+/* PAGE HEADER LINKS */
+.page-header a {
+    font-size: 22px;
+    color: #ffffff;
+    margin: 0 6px;
+    transition: color 0.3s ease-in-out;
+}
+
+.page-header a:hover {
+    color: #FDBE33;
+}
+
+.page-header a:not(:last-child)::after {
+    content: "/";
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+/* =============================
+   DONATE IMAGE SECTION
+   ============================= */
+.donate-form {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(134, 37, 37, 0.1);
+    max-width: 500px;
+    margin: 20px 10px;
+}
+
+.donate-form img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.donate-form img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* FULLSCREEN IMAGE VIEW */
+.fullscreen-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.fullscreen-img img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.fullscreen-img .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #181818;
+    color: #7f7f7f;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-section {
+    width: 25%;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =============================
+   RESPONSIVENESS
+   ============================= */
+@media (max-width: 768px) {
+    .page-header h2 {
+        font-size: 40px;
+    }
+
+    .donate .donate-content {
+        padding: 30px;
+    }
+
+    .donate-form {
+        max-width: 90%;
+    }
+}
+
+/* =============================
+
+   GENERAL RESPONSIVENESS FOR ALL ELEMENTS
+
+   ============================= */
+
+   @media (max-width: 1200px) {
+
+    header .container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    header nav ul {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    header nav ul li a {
+
+        padding: 10px 0;
+
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .donate .donate-content {
+
+        padding: 30px;
+
+    }
+
+    .donate .section-header h2 {
+
+        font-size: 32px;
+
+    }
+
+    .donate .donate-text p {
+
+        font-size: 16px;
+
+    }
+
+    .page-header h2 {
+
+        font-size: 48px;
+
+    }
+
+    .donate-form {
+
+        padding: 50px 20px;
+
+    }
+
+    .donate-form .control-group {
+
+        margin-bottom: 10px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .page-header h2 {
+
+        font-size: 40px;
+
+    }
+
+    .donate .donate-content {
+
+        padding: 30px;
+
+    }
+
+    .donate-form {
+
+        max-width: 90%;
+
+    }
+
+    .donate-form .form-control {
+
+        width: 100%;
+
+    }
+
+    .donate-form .btn-group {
+
+        flex-direction: column;
+
+    }
+
+    .donate-form .btn-custom {
+
+        width: 100%;
+
+        margin-bottom: 10px;
+
+    }
+
+    header .container .logo {
+
+        height: 50px;
+
+    }
+
+    header nav ul li a {
+
+        font-size: 14px;
+
+        padding: 0 10px;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    header .container .logo {
+
+        padding: 10px 0;
+
+        height: 50px;
+
+    }
+
+    header nav ul li a {
+
+        font-size: 12px;
+
+    }
+
+    .donate .section-header h2 {
+
+        font-size: 28px;
+
+    }
+
+    .donate .donate-text p {
+
+        font-size: 14px;
+
+    }
+
+    .page-header h2 {
+
+        font-size: 30px;
+
+    }
+
+    .donate-form {
+
+        padding: 40px 15px;
+
+        width: 90%;
+
+    }
+
+    .donate-form img {
+
+        max-width: 100%;
+
+    }
+
+    .donate-form .form-control {
+
+        font-size: 14px;
+
+        padding: 10px;
+
+    }
+
+    .donate-form .btn-custom {
+
+        height: 50px;
+
+    }
+
+    .donate-form .control-group {
+
+        margin-bottom: 10px;
+
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .page-header h2 {
+
+        font-size: 26px;
+
+    }
+
+    .donate-form {
+
+        padding: 35px 10px;
+
+    }
+
+    .donate-form .form-control {
+
+        font-size: 14px;
+
+    }
+
+    .donate-form .btn-custom {
+
+        height: 50px;
+
+    }
+
+    header .container .logo {
+
+        height: 40px;
+
+    }
+
+    header nav ul li a {
+
+        font-size: 12px;
+
+    }
+
+}
