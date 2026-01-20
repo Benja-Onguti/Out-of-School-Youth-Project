@@ -17,11 +17,9 @@ inputs.forEach((input) => {
   input.addEventListener("blur", blurFunc);
 });
 
-
-document.getElementById("clickableLogo").addEventListener("click", function() {
-  window.location.href = "index.html"; // Change to your homepage URL
+document.getElementById("clickableLogo").addEventListener("click", function () {
+  window.location.href = "index.html";
 });
-
 
 // Select all images inside the gallery
 const galleryImages = document.querySelectorAll(".galleryContainer .item img");
@@ -41,7 +39,7 @@ const modalImage = modal.querySelector(".modalImage");
 const closeModal = modal.querySelector(".close");
 
 // Open modal on image click
-galleryImages.forEach(img => {
+galleryImages.forEach((img) => {
   img.addEventListener("click", () => {
     modal.style.display = "flex";
     modalImage.src = img.src;
