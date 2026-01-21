@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,12 +17,30 @@
     <link rel="stylesheet" href="css/don.css" />
   </head>
   <body>
-    <!-- Simple Header -->
-    <header class="simple-header">
-      <div class="container">
-        <a href="../index.html" class="back-link">
-          <i class="fas fa-arrow-left"></i> Back to Home
+    <!-- Main Header (Consistent with home page) -->
+    <header class="main-header">
+      <div class="header-container">
+        <a href="../index.html" class="logo">
+          <img
+            src="images/logo hch.jpeg"
+            alt="Youth Project Logo"
+            class="logo-img"
+          />
+          <span class="logo-text">OSYP</span>
         </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#aboutSection">About</a>
+          <a href="../index.html#programsSection">Programs</a>
+          <a href="../index.html#gallery">Gallery</a>
+          <a href="../index.html#contactSection">Contact</a>
+          <a href="donation.html" class="active">Donate</a>
+        </nav>
       </div>
     </header>
 
@@ -71,124 +88,219 @@
           />
         </div>
 
-       
+        <!-- Payment Method -->
+        <div class="payment-method">
+          <h3>Payment Method</h3>
+          <div class="method-options">
+            <label class="method-option">
+              <input type="radio" name="payment" value="mpesa" checked />
+              <i class="fas fa-mobile-alt"></i>
+              <span>M-Pesa</span>
+            </label>
 
-          <!-- Payment Method -->
-          <div class="payment-method">
-            <h3>Payment Method</h3>
-            <div class="method-options">
-              <label class="method-option">
-                <input type="radio" name="payment" value="mpesa" checked />
-                <i class="fas fa-mobile-alt"></i>
-                <span>M-Pesa</span>
-              </label>
-
-              <label class="method-option">
-                <input type="radio" name="payment" value="bank" />
-                <i class="fas fa-university"></i>
-                <span>Bank Transfer</span>
-              </label>
-            </div>
+            <label class="method-option">
+              <input type="radio" name="payment" value="bank" />
+              <i class="fas fa-university"></i>
+              <span>Bank Transfer</span>
+            </label>
           </div>
-
-          <!-- Donation Summary -->
-          <div class="donation-summary">
-            <div class="summary-item">
-              <span>Donation Amount:</span>
-              <span class="amount">KSH 5,000</span>
-            </div>
-            <div class="summary-total">
-              <span>Total to Donate:</span>
-              <span class="total-amount">KSH 5,000</span>
-            </div>
-          </div>
-
-          <!-- Submit Button -->
-          <button class="donate-btn">
-            <i class="fas fa-heart"></i> Donate Now
-          </button>
-
-          <p class="security-note">
-            <i class="fas fa-lock"></i> Secure payment • Tax deductible
-          </p>
         </div>
+
+        <!-- Payment Instructions (Dynamic) -->
+        <div class="payment-instructions">
+          <!-- M-Pesa Instructions (Default) -->
+          <div class="mpesa-instructions active">
+            <h3>
+              <i class="fas fa-mobile-alt"></i> M-Pesa Payment Instructions
+            </h3>
+            <div class="instructions-steps">
+              <div class="step">
+                <span class="step-number">1</span>
+                <p>Go to M-Pesa on your phone</p>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <p>Select <strong>"Lipa na M-Pesa"</strong></p>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <p>Enter Paybill Number: <strong>522522</strong></p>
+              </div>
+              <div class="step">
+                <span class="step-number">4</span>
+                <p>Enter Account Number: <strong>1226266797</strong></p>
+              </div>
+              <div class="step">
+                <span class="step-number">5</span>
+                <p>Enter Amount: <strong id="mpesaAmount">5,000</strong></p>
+              </div>
+              <div class="step">
+                <span class="step-number">6</span>
+                <p>Enter your M-Pesa PIN and Send</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bank Transfer Instructions -->
+          <div class="bank-instructions">
+            <h3><i class="fas fa-university"></i> Bank Transfer Details</h3>
+            <div class="bank-details-list">
+              <div class="detail-item">
+                <strong>Bank Name:</strong>
+                <span>KENYA COMMERCIAL BANK LTD</span>
+              </div>
+              <div class="detail-item">
+                <strong>Beneficiary Name:</strong>
+                <span>HCH-YOUTH PROJECT</span>
+              </div>
+              <div class="detail-item">
+                <strong>Account Number:</strong>
+                <span>1226266797</span>
+              </div>
+            </div>
+            <div class="bank-steps">
+              <h4>Transfer Instructions:</h4>
+              <ol>
+                <li>Use the bank details above for your transfer</li>
+                <li>Include your name as the reference</li>
+                <li>Complete the transfer through your bank</li>
+                <li>Save the transaction receipt</li>
+              </ol>
+            </div>
+            <div class="payment-note">
+              <p>
+                <i class="fas fa-info-circle"></i> Email your receipt to:
+                <strong>judithjojo9@gmail.com</strong> for confirmation
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donation Summary -->
+        <div class="donation-summary">
+          <div class="summary-item">
+            <span>Donation Amount:</span>
+            <span class="amount">KSH 5,000</span>
+          </div>
+          <div class="summary-total">
+            <span>Total to Donate:</span>
+            <span class="total-amount">KSH 5,000</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="donate-btn">
+          <i class="fas fa-heart"></i> Proceed to Payment
+        </button>
+
+        <p class="security-note">
+          <i class="fas fa-lock"></i> Secure payment • Tax deductible
+        </p>
       </div>
     </section>
 
-    <!-- Bank Details -->
-    <section class="bank-details">
-      <div class="container">
-        <h2>Bank Transfer Details</h2>
-
-        <div class="bank-info">
-          <div class="info-item">
-            <strong>Bank Name:</strong>
-            <span>[Bank Name]</span>
-          </div>
-          <div class="info-item">
-            <strong>Account Name:</strong>
-            <span>Out of School Youth Project</span>
-          </div>
-          <div class="info-item">
-            <strong>Account Number:</strong>
-            <span>[Account Number]</span>
-          </div>
-          <div class="info-item">
-            <strong>SWIFT Code:</strong>
-            <span>[SWIFT Code]</span>
-          </div>
-          <div class="info-item">
-            <strong>Branch:</strong>
-            <span>[Branch Name]</span>
-          </div>
-        </div>
-
-        <div class="instructions">
-          <h4>Instructions:</h4>
-          <ol>
-            <li>Use the bank details above for your transfer</li>
-            <li>Include your name as the reference</li>
-            <li>Email receipt to: judithjojo9@gmail.com</li>
-            <li>We'll send confirmation within 24 hours</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="simple-footer">
-      <div class="container">
+    <!-- Main Footer (Consistent with home page) -->
+    <footer class="main-footer">
+      <div class="footer-container">
         <div class="footer-content">
-          <div class="contact-info">
-            <h3>Out of School Youth Project</h3>
-            <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +254-798-804-000</p>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
-              North
+          <!-- Logo and Description -->
+          <div class="footer-logo-section">
+            <a href="../index.html" class="footer-logo">
+              <img
+                src="images/logo hch.jpeg"
+                alt="Youth Project Logo"
+                class="footer-logo-img"
+              />
+              <span class="footer-logo-text">Out of School Youth Project</span>
+            </a>
+            <p class="footer-description">
+              Empowering out-of-school youth in Nairobi through life skills
+              training, vocational education, and sustainable opportunities for
+              a better future.
             </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
           </div>
 
+          <!-- Quick Links -->
           <div class="footer-links">
-            <a href="../index.html">Home</a>
-            <a href="../index.html#programsSection">Programs</a>
-            <a href="../index.html#contactSection">Contact</a>
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links-list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#aboutSection">About Us</a></li>
+              <li><a href="../index.html#programsSection">Our Programs</a></li>
+              <li><a href="../index.html#contactSection">Contact Us</a></li>
+              <li><a href="donate.html">Donate Now</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="footer-contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cheshire Home, Kariobangi North, Nairobi, Kenya</span>
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span>judithjojo9@gmail.com</span>
+              </p>
+              <p>
+                <i class="fas fa-phone"></i>
+                <span>+254-798-804-000</span>
+              </p>
+              <p>
+                <i class="fas fa-clock"></i>
+                <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="footer-bottom">
           <p>
-            &copy; <span id="currentYear"></span> Out of School Youth Project
+            &copy; <span id="currentYear"></span> Out of School Youth Project.
+            All rights reserved. | Empowering Youth, Building Futures
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- Simple JavaScript -->
+    <!-- JavaScript -->
     <script>
       // Set current year
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const icon = mobileMenuBtn.querySelector("i");
+        if (navLinks.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.querySelector("i").classList.remove("fa-times");
+          mobileMenuBtn.querySelector("i").classList.add("fa-bars");
+        });
+      });
 
       // Handle quick donation buttons
       document.querySelectorAll(".amount-btn").forEach((btn) => {
@@ -211,21 +323,50 @@
         .getElementById("customAmount")
         .addEventListener("input", function () {
           const amount = this.value;
-          
           document
             .querySelectorAll(".amount-btn")
             .forEach((b) => b.classList.remove("active"));
           updateDonationSummary(amount);
         });
 
-      // Update donation summary
+      // Update donation summary and M-Pesa amount
       function updateDonationSummary(amount) {
         const formattedAmount = new Intl.NumberFormat("en-KE").format(amount);
         document.querySelector(".amount").textContent =
           `KSH ${formattedAmount}`;
         document.querySelector(".total-amount").textContent =
           `KSH ${formattedAmount}`;
+        document.getElementById("mpesaAmount").textContent = formattedAmount;
       }
+
+      // Handle payment method toggle
+      document.querySelectorAll('input[name="payment"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          const method = this.value;
+
+          // Hide all instructions
+          document
+            .querySelectorAll(".payment-instructions > div")
+            .forEach((div) => {
+              div.classList.remove("active");
+            });
+
+          // Show selected method instructions
+          if (method === "mpesa") {
+            document
+              .querySelector(".mpesa-instructions")
+              .classList.add("active");
+            document.querySelector(".donate-btn").innerHTML =
+              '<i class="fas fa-mobile-alt"></i> Pay with M-Pesa';
+          } else {
+            document
+              .querySelector(".bank-instructions")
+              .classList.add("active");
+            document.querySelector(".donate-btn").innerHTML =
+              '<i class="fas fa-university"></i> Complete Bank Transfer';
+          }
+        });
+      });
 
       // Form submission
       document
@@ -234,43 +375,46 @@
           e.preventDefault();
 
           const amount = document.getElementById("customAmount").value;
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
           const paymentMethod = document.querySelector(
             'input[name="payment"]:checked',
           ).value;
 
           // Simple validation
-          if (!name || !email) {
-            alert("Please fill in required fields");
-            return;
-          }
-
           if (!amount || amount < 100) {
             alert("Please enter a valid donation amount (minimum KSH 100)");
             return;
           }
 
-          // Show payment instructions based on method
+          // Show confirmation message
           let message = "Thank you for your donation!\n\n";
 
           if (paymentMethod === "mpesa") {
-            message += `M-Pesa Instructions:\n`;
-            message += `1. Go to M-Pesa\n`;
-            message += `2. Select "Lipa na M-Pesa"\n`;
-            message += `3. Paybill: 247247\n`;
-            message += `4. Account: OSYP001\n`;
-            message += `5. Amount: KSH ${amount}\n`;
-            message += `6. Send\n\n`;
+            message += `Please follow the M-Pesa instructions above.\n`;
+            message += `Paybill: 522522\n`;
+            message += `Account: 1226266797\n`;
+            const formattedAmount = new Intl.NumberFormat("en-KE").format(
+              amount,
+            );
+            message += `Amount: KSH ${formattedAmount}\n\n`;
           } else {
-            message += `Bank Transfer Instructions:\n`;
-            message += `Use the bank details provided above.\n\n`;
+            message += `Please use the bank details provided above.\n`;
+            message += `Account: 1226266797\n`;
+            const formattedAmount = new Intl.NumberFormat("en-KE").format(
+              amount,
+            );
+            message += `Amount: KSH ${formattedAmount}\n\n`;
           }
 
-          message += `After payment, email receipt to:\njudithjojo9@gmail.com`;
+          message += `Important: After payment, email your receipt to:\n`;
+          message += `judithjojo9@gmail.com\n\n`;
+          message += `We'll send a confirmation within 24 hours.`;
 
           alert(message);
         });
+
+      // Initialize
+      updateDonationSummary(5000);
     </script>
   </body>
 </html>
+Key Changes M
