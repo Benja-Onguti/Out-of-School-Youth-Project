@@ -844,11 +844,20 @@ p {
   padding: 0.5rem 0;
   position: relative;
   z-index: 1;
+
+  /* Line clamping with fallbacks */
   display: -webkit-box;
-  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
+  /* Standard property (modern browsers) */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
   max-height: 8.5rem;
+
+  /* Fallback for older browsers */
+  text-overflow: ellipsis;
 }
 
 .testimonial-card__author {
@@ -904,8 +913,9 @@ p {
   font-size: 1.2rem;
   background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1080,7 +1090,10 @@ p {
   }
 }
 
+/* =========================================== */
 /* RESPONSIVE BREAKPOINTS */
+/* =========================================== */
+
 /* Large Desktop (1200px+) */
 @media (min-width: 1200px) {
   .testimonials__carousel {
@@ -1097,6 +1110,7 @@ p {
     font-size: 1.2rem;
     line-height: 1.8;
     -webkit-line-clamp: 6;
+    line-clamp: 6;
     max-height: 10.8rem;
   }
 
@@ -1140,6 +1154,7 @@ p {
 
   .testimonial-card__quote p {
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     max-height: 6.8rem;
     line-height: 1.6;
   }
@@ -1190,6 +1205,7 @@ p {
   .testimonial-card__quote p {
     font-size: 1.05rem;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     max-height: 6.3rem;
     line-height: 1.6;
   }
@@ -1261,6 +1277,7 @@ p {
     font-size: 1rem;
     line-height: 1.5;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     max-height: 4.5rem;
     padding: 0.25rem 0;
   }
@@ -1345,6 +1362,7 @@ p {
   .testimonial-card__quote p {
     font-size: 0.95rem;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     max-height: 4.3rem;
     line-height: 1.45;
   }
@@ -1431,6 +1449,7 @@ p {
     font-size: 0.9rem;
     line-height: 1.4;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     max-height: 3.8rem;
   }
 
@@ -1511,6 +1530,7 @@ p {
   .testimonial-card__quote p {
     font-size: 0.85rem;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     max-height: 3.4rem;
   }
 
@@ -1534,6 +1554,7 @@ p {
 
   .testimonial-card__quote p {
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     max-height: 2.8rem;
   }
 
@@ -1592,6 +1613,37 @@ p {
   .testimonial-card {
     flex: 0 0 100% !important;
     margin-bottom: 1rem !important;
+  }
+}
+
+/* Vendor Prefix Fallbacks */
+@supports (-webkit-line-clamp: 2) or (line-clamp: 2) {
+  .testimonial-card__quote p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Modern browsers that support line-clamp */
+@supports (line-clamp: 2) {
+  .testimonial-card__quote p {
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: var(--line-clamp, 5);
+    line-clamp: var(--line-clamp, 5);
+  }
+}
+
+/* Fallback for browsers without line-clamp support */
+@supports not ((line-clamp: 2) or (-webkit-line-clamp: 2)) {
+  .testimonial-card__quote p {
+    max-height: calc(
+      var(--line-height, 1.7) * var(--font-size, 1.1rem) * var(--max-lines, 5)
+    );
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 }
 /* Gallery Section */

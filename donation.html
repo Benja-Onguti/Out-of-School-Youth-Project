@@ -35,11 +35,11 @@
 
         <nav class="nav-links" id="navLinks">
           <a href="../index.html">Home</a>
-          <a href="../index.html#aboutSection">About</a>
-          <a href="../index.html#programsSection">Programs</a>
+          <a href="../index.html#aboutSection">About US</a>
+          <a href="../index.html#programsSection"> Our Programs</a>
           <a href="../index.html#testimonialsSection">Testimonials</a>
           <a href="../index.html#gallery">Gallery</a>
-          <a href="../index.html#contactSection">Contact</a>
+          <a href="../index.html#contactSection">Contact US</a>
           <a href="donation.html" class="active">Donate</a>
         </nav>
       </div>
@@ -191,7 +191,7 @@
 
         <!-- Submit Button -->
         <button class="donate-btn">
-          <i class="fas fa-heart"></i> Proceed to Payment
+          <i class="fas fa-heart"></i> Complete Donation
         </button>
 
         <p class="security-note">
@@ -220,10 +220,16 @@
               a better future.
             </p>
             <div class="footer-social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/share/15QAFkts3z/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#"><i class="fab fa-x"></i></a>
+              <a href="https://www.instagram.com/out_of_school_youth_project"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/out-of-school-youth-project"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
             </div>
           </div>
 
@@ -266,7 +272,7 @@
         <div class="footer-bottom">
           <p>
             &copy; <span id="currentYear"></span> Out of School Youth Project.
-            All rights reserved. | Empowering Youth, Building Futures
+            All rights reserved.
           </p>
         </div>
       </div>
@@ -388,23 +394,6 @@
 
           // Show confirmation message
           let message = "Thank you for your donation!\n\n";
-
-          if (paymentMethod === "mpesa") {
-            message += `Please follow the M-Pesa instructions above.\n`;
-            message += `Paybill: 522522\n`;
-            message += `Account: 1226266797\n`;
-            const formattedAmount = new Intl.NumberFormat("en-KE").format(
-              amount,
-            );
-            message += `Amount: KSH ${formattedAmount}\n\n`;
-          } else {
-            message += `Please use the bank details provided above.\n`;
-            message += `Account: 1226266797\n`;
-            const formattedAmount = new Intl.NumberFormat("en-KE").format(
-              amount,
-            );
-            message += `Amount: KSH ${formattedAmount}\n\n`;
-          }
 
           message += `Important: After payment, email your receipt to:\n`;
           message += `judithjojo9@gmail.com\n\n`;
