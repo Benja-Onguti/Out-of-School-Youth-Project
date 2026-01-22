@@ -946,11 +946,11 @@
     </button>
 
     <!-- Modern JavaScript -->
-     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Initializing single-card carousel...');
+  <script>
+  // TESTIMONIALS CAROUSEL WITH LOOPING & READ MORE
+  document.addEventListener('DOMContentLoaded', function() {
     
-    // Get all elements
+    // ========== CAROUSEL FUNCTIONALITY ==========
     const carousel = document.querySelector('.testimonials__carousel');
     const track = document.querySelector('.testimonials__track');
     const cards = document.querySelectorAll('.testimonial-card');
@@ -958,116 +958,234 @@
     const nextBtn = document.querySelector('.carousel__btn--next');
     const indicators = document.querySelectorAll('.carousel__indicator');
     
-    console.log('Found:', {
-      carousel: !!carousel,
-      track: !!track,
-      cards: cards.length,
-      prevBtn: !!prevBtn,
-      nextBtn: !!nextBtn,
-      indicators: indicators.length
-    });
-    
-    if (cards.length === 0) return;
+    if (!carousel || !track || cards.length === 0) return;
     
     let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth;
+    const totalCards = cards.length;
+    let isAnimating = false;
+    let autoRotateInterval;
+    
+    // Clone first and last cards for seamless looping
+    function initializeCarousel() {
+      // Clone cards for infinite loop
+      const firstClone = cards[0].cloneNode(true);
+      const lastClone = cards[totalCards - 1].cloneNode(true);
+      
+      firstClone.classList.add('clone');
+      lastClone.classList.add('clone');
+      
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, cards[0]);
+      
+      // Update cards reference
+      const allCards = track.querySelectorAll('.testimonial-card');
+      
+      // Set initial position (showing first real card)
+      currentIndex = 1;
+      updateCarousel(true);
+      
+      // Initialize read more buttons for all cards
+      initializeReadMoreButtons();
+    }
     
     // Update carousel position
-    function updateCarousel() {
-      console.log('Moving to card:', currentIndex + 1);
+    function updateCarousel(instant = false) {
+      if (isAnimating) return;
+      isAnimating = true;
       
-      // Move track
-      const moveDistance = -currentIndex * cardWidth;
-      track.style.transform = `translateX(${moveDistance}px)`;
+      const allCards = track.querySelectorAll('.testimonial-card');
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 30; // Match CSS gap
       
-      // Update active classes
-      cards.forEach((card, index) => {
-        card.classList.toggle('active', index === currentIndex);
-      });
+      // Remove active class from all cards
+      allCards.forEach(card => card.classList.remove('active'));
+      
+      // Add active class to current card
+      if (allCards[currentIndex]) {
+        allCards[currentIndex].classList.add('active');
+      }
+      
+      // Calculate position (center the active card)
+      const containerWidth = track.parentElement.offsetWidth;
+      const cardWidthWithGap = cardWidth + gap;
+      const centerOffset = (containerWidth - cardWidth) / 2;
+      const position = -(currentIndex * cardWidthWithGap) + centerOffset;
+      
+      // Apply movement
+      if (instant) {
+        track.style.transition = 'none';
+      } else {
+        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      }
+      
+      track.style.transform = `translateX(${position}px)`;
       
       // Update indicators
+      const realIndex = getRealIndex();
       indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentIndex);
+        indicator.classList.toggle('active', index === realIndex);
       });
       
       // Update button states
-      if (prevBtn) prevBtn.disabled = currentIndex === 0;
-      if (nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
+      if (prevBtn) prevBtn.disabled = false;
+      if (nextBtn) nextBtn.disabled = false;
+      
+      // Reset animation flag
+      if (!instant) {
+        setTimeout(() => {
+          isAnimating = false;
+          handleLoop();
+        }, 500);
+      } else {
+        isAnimating = false;
+      }
+    }
+    
+    // Get real index (ignoring clones)
+    function getRealIndex() {
+      if (currentIndex === 0) return totalCards - 1;
+      if (currentIndex === totalCards + 1) return 0;
+      return currentIndex - 1;
+    }
+    
+    // Handle seamless looping
+    function handleLoop() {
+      const allCards = track.querySelectorAll('.testimonial-card');
+      
+      // Jump to opposite end if at clone
+      if (currentIndex === 0) {
+        currentIndex = totalCards;
+        updateCarousel(true);
+      } else if (currentIndex === totalCards + 1) {
+        currentIndex = 1;
+        updateCarousel(true);
+      }
     }
     
     // Navigation functions
-    function nextCard() {
-      if (currentIndex < cards.length - 1) {
-        currentIndex++;
-        updateCarousel();
-      }
+    function nextSlide() {
+      if (isAnimating) return;
+      currentIndex++;
+      updateCarousel();
+      resetAutoRotate();
     }
     
-    function prevCard() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
+    function prevSlide() {
+      if (isAnimating) return;
+      currentIndex--;
+      updateCarousel();
+      resetAutoRotate();
     }
     
-    // Add event listeners
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevCard);
-      console.log('✅ Previous button listener added');
+    function goToSlide(index) {
+      if (isAnimating) return;
+      currentIndex = index + 1; // +1 for clone offset
+      updateCarousel();
+      resetAutoRotate();
     }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextCard);
-      console.log('✅ Next button listener added');
-    }
-    
-    // Add indicator listeners
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
-    console.log('✅ Indicator listeners added');
     
     // Auto-rotate
-    let autoRotate = setInterval(nextCard, 5000);
+    function startAutoRotate() {
+      clearInterval(autoRotateInterval);
+      autoRotateInterval = setInterval(nextSlide, 5000);
+    }
     
-    // Pause on hover
-    if (carousel) {
-      carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
-      carousel.addEventListener('mouseleave', () => {
-        autoRotate = setInterval(nextCard, 5000);
+    function resetAutoRotate() {
+      clearInterval(autoRotateInterval);
+      startAutoRotate();
+    }
+    
+    // ========== READ MORE FUNCTIONALITY ==========
+    function initializeReadMoreButtons() {
+      const allCards = track.querySelectorAll('.testimonial-card');
+      
+      allCards.forEach(card => {
+        const quote = card.querySelector('.testimonial-card__quote p');
+        const quoteText = quote.textContent;
+        const wordCount = quoteText.split(' ').length;
+        
+        // Only add read more if quote is long (more than 40 words)
+        if (wordCount > 40) {
+          // Create read more button
+          const readMoreBtn = document.createElement('button');
+          readMoreBtn.className = 'read-more-btn';
+          readMoreBtn.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+          
+          // Insert after quote
+          quote.parentNode.insertBefore(readMoreBtn, quote.nextSibling);
+          
+          // Add click event
+          readMoreBtn.addEventListener('click', function() {
+            quote.classList.toggle('expanded');
+            const isExpanded = quote.classList.contains('expanded');
+            
+            if (isExpanded) {
+              this.innerHTML = '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
+              this.classList.add('expanded');
+            } else {
+              this.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+              this.classList.remove('expanded');
+            }
+          });
+        }
       });
     }
     
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      // Recalculate card width
-      const newCardWidth = cards[0].offsetWidth;
-      if (newCardWidth !== cardWidth) {
-        const moveDistance = -currentIndex * newCardWidth;
-        track.style.transform = `translateX(${moveDistance}px)`;
-      }
+    // ========== EVENT LISTENERS ==========
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => goToSlide(index));
     });
     
-    // Initialize
-    updateCarousel();
-    console.log('✅ Carousel ready!');
+    // Touch support
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      clearInterval(autoRotateInterval);
+    }, { passive: true });
     
-    // Test: Click buttons manually in console
-    window.testCarousel = {
-      next: nextCard,
-      prev: prevCard,
-      goTo: (index) => {
-        currentIndex = index;
-        updateCarousel();
-      },
-      current: () => currentIndex
-    };
-    console.log('💡 Test via: testCarousel.next() or testCarousel.goTo(2)');
+    carousel.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      const threshold = 50;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+      
+      startAutoRotate();
+    }, { passive: true });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
+    carousel.addEventListener('mouseleave', startAutoRotate);
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateCarousel(true);
+      }, 250);
+    });
+    
+    // ========== INITIALIZE ==========
+    setTimeout(() => {
+      initializeCarousel();
+      startAutoRotate();
+    }, 100);
+    
   });
-     </script>
+</script>
     <script src="js/modern.js" type="module"></script>
   </body>
 </html>
