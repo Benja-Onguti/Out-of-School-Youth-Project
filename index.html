@@ -62,21 +62,39 @@
               </li>
 
               <li class="nav__item">
-                <a href="#testimonialsSection" class="nav__link" data-nav-link
-                  >Testimonials</a
-                >
-              </li>
-              </li>
-              <li class="nav__item">
                 <a href="#gallerySection" class="nav__link" data-nav-link
                   >Gallery</a
                 >
               </li>
               <li class="nav__item">
-                <a href="#contactSection" class="nav__link" data-nav-link
-                  >Contact</a
+                <a href="#partnersSection" class="nav__link" data-nav-link
+                  >Partners</a
                 >
               </li>
+              <li class="nav__item">
+                <a href="#contactSection" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav__item dropdown">
+                <a href="#" class="nav__link" data-nav-link>
+                  Explore <i class="fas fa-chevron-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="stories.html" class="nav__link" data-nav-link
+                      >Success Stories</a
+                    >
+                  </li>
+                  <li class="nav__item">
+                    <a href="events.html" class="nav__link" data-nav-link
+                      >Events & Updates</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
               <li class="nav__item">
                 <a href="donation.html" class="btn btn--primary btn--small"
                   >Donate</a
@@ -656,7 +674,122 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===== PARTNERS & PARTNERSHIP SECTION ===== -->
+    <section class="partners-section" id="partnersSection">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="section__subtitle">Our Partners</span>
+          <h2>Trusted by Leading Organizations</h2>
+          <p class="section-subtitle">
+            Our mission is powered by collaboration with dedicated partners who
+            believe in transforming youth lives
+          </p>
+        </div>
+
+        <!-- Partners Marquee -->
+        <div class="partners-marquee">
+          <div class="marquee-track">
+            <!-- First Set of Partners -->
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner1.png"
+                alt="Ministry of Education Kenya"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner2.png"
+                alt="TESDA Certification"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner3.png"
+                alt="Nairobi County Government"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner4.png"
+                alt="Catholic Relief Services"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner5.png"
+                alt="Local Business Alliance"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner6.png"
+                alt="Community Development Fund"
+              />
+            </div>
+
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner1.png"
+                alt="Ministry of Education Kenya"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner2.png"
+                alt="TESDA Certification"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner3.png"
+                alt="Nairobi County Government"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner4.png"
+                alt="Catholic Relief Services"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner5.png"
+                alt="Local Business Alliance"
+              />
+            </div>
+            <div class="partner-logo">
+              <img
+                src="images/partners/partner6.png"
+                alt="Community Development Fund"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Triple CTA Buttons -->
+        <div class="partnership-cta">
+          <h3>Join Our Mission to Empower Youth</h3>
+          <p>
+            Your partnership creates lasting change in Korogocho, Huruma,
+            Kariobangi, and Madoya communities
+          </p>
+
+          <div class="cta-buttons">
+            <a href="index.html#contactSection" class="cta-btn primary-cta">
+              <i class="fas fa-handshake"></i> Become a Partner
+            </a>
+
+            <a href="donation.html" class="cta-btn tertiary-cta">
+              <i class="fas fa-donate"></i> Make a Donation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COntact section-->
     <section class="section contact" id="contactSection">
       <div class="container">
         <div class="section__header">
@@ -665,7 +798,9 @@
             Ready to make a difference? Get in touch today
           </h2>
         </div>
+
         <div class="contact__wrapper">
+          <!-- Contact Info Column -->
           <div class="contact__info">
             <div class="section__header">
               <span class="section__subtitle">Get In Touch</span>
@@ -678,6 +813,7 @@
             </p>
 
             <div class="contact__details">
+              <!-- Location -->
               <div class="contact-item">
                 <div class="contact-item__icon">
                   <i class="fas fa-map-marker-alt"></i>
@@ -685,33 +821,44 @@
                 <div class="contact-item__content">
                   <h3>Our Location</h3>
                   <p>
-                    Cheshire Home, Kariobangi North<br />Opposite Kariobangi
-                    Catholic Church
+                    Cheshire Home, Kariobangi North<br />
+                    Opposite Kariobangi Catholic Church
                   </p>
                 </div>
               </div>
 
+              <!-- Email - Now Clickable -->
               <div class="contact-item">
                 <div class="contact-item__icon">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="contact-item__content">
                   <h3>Email Us</h3>
-                  <p>judithjojo9@gmail.com<br />cateketch@gmail.com</p>
+                  <p>
+                    <a href="mailto:judithjojo9@gmail.com"
+                      >judithjojo9@gmail.com</a
+                    ><br />
+                    <a href="mailto:cateketch@gmail.com">cateketch@gmail.com</a>
+                  </p>
                 </div>
               </div>
 
+              <!-- Phone - Now Clickable -->
               <div class="contact-item">
                 <div class="contact-item__icon">
                   <i class="fas fa-phone"></i>
                 </div>
                 <div class="contact-item__content">
                   <h3>Call Us</h3>
-                  <p>+254-798-804-000<br />+254-712-089-629</p>
+                  <p>
+                    <a href="tel:+254798804000">+254-798-804-000</a><br />
+                    <a href="tel:+254712089629">+254-712-089-629</a>
+                  </p>
                 </div>
               </div>
             </div>
 
+            <!-- Social Media -->
             <div class="contact__social">
               <h3>Follow Our Journey</h3>
               <div class="social-links">
@@ -741,9 +888,23 @@
                 </a>
               </div>
             </div>
+
+            <!-- Map Section -->
+            <div class="contact__map">
+              <!-- Google Maps Embed -->
+              <!--    <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.854476447489!2d36.88020207462412!3d-1.2621518355670283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1752d8c32a0b%3A0x8c4b3a5d5a5b5b5b!2sKariobangi%20Catholic%20Church!5e0!3m2!1sen!2ske!4v1690000000000!5m2!1sen!2ske"
+                class="map-container"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            --></div>
           </div>
 
-          <!-- Contact Form Section -->
+          <!-- Contact Form Column (Smaller) -->
           <div class="contact__form">
             <form
               id="contactForm"
@@ -849,7 +1010,6 @@
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -946,246 +1106,257 @@
     </button>
 
     <!-- Modern JavaScript -->
-  <script>
-  // TESTIMONIALS CAROUSEL WITH LOOPING & READ MORE
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    // ========== CAROUSEL FUNCTIONALITY ==========
-    const carousel = document.querySelector('.testimonials__carousel');
-    const track = document.querySelector('.testimonials__track');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.carousel__btn--prev');
-    const nextBtn = document.querySelector('.carousel__btn--next');
-    const indicators = document.querySelectorAll('.carousel__indicator');
-    
-    if (!carousel || !track || cards.length === 0) return;
-    
-    let currentIndex = 0;
-    const totalCards = cards.length;
-    let isAnimating = false;
-    let autoRotateInterval;
-    
-    // Clone first and last cards for seamless looping
-    function initializeCarousel() {
-      // Clone cards for infinite loop
-      const firstClone = cards[0].cloneNode(true);
-      const lastClone = cards[totalCards - 1].cloneNode(true);
-      
-      firstClone.classList.add('clone');
-      lastClone.classList.add('clone');
-      
-      track.appendChild(firstClone);
-      track.insertBefore(lastClone, cards[0]);
-      
-      // Update cards reference
-      const allCards = track.querySelectorAll('.testimonial-card');
-      
-      // Set initial position (showing first real card)
-      currentIndex = 1;
-      updateCarousel(true);
-      
-      // Initialize read more buttons for all cards
-      initializeReadMoreButtons();
-    }
-    
-    // Update carousel position
-    function updateCarousel(instant = false) {
-      if (isAnimating) return;
-      isAnimating = true;
-      
-      const allCards = track.querySelectorAll('.testimonial-card');
-      const cardWidth = cards[0].offsetWidth;
-      const gap = 30; // Match CSS gap
-      
-      // Remove active class from all cards
-      allCards.forEach(card => card.classList.remove('active'));
-      
-      // Add active class to current card
-      if (allCards[currentIndex]) {
-        allCards[currentIndex].classList.add('active');
-      }
-      
-      // Calculate position (center the active card)
-      const containerWidth = track.parentElement.offsetWidth;
-      const cardWidthWithGap = cardWidth + gap;
-      const centerOffset = (containerWidth - cardWidth) / 2;
-      const position = -(currentIndex * cardWidthWithGap) + centerOffset;
-      
-      // Apply movement
-      if (instant) {
-        track.style.transition = 'none';
-      } else {
-        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-      }
-      
-      track.style.transform = `translateX(${position}px)`;
-      
-      // Update indicators
-      const realIndex = getRealIndex();
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === realIndex);
-      });
-      
-      // Update button states
-      if (prevBtn) prevBtn.disabled = false;
-      if (nextBtn) nextBtn.disabled = false;
-      
-      // Reset animation flag
-      if (!instant) {
-        setTimeout(() => {
-          isAnimating = false;
-          handleLoop();
-        }, 500);
-      } else {
-        isAnimating = false;
-      }
-    }
-    
-    // Get real index (ignoring clones)
-    function getRealIndex() {
-      if (currentIndex === 0) return totalCards - 1;
-      if (currentIndex === totalCards + 1) return 0;
-      return currentIndex - 1;
-    }
-    
-    // Handle seamless looping
-    function handleLoop() {
-      const allCards = track.querySelectorAll('.testimonial-card');
-      
-      // Jump to opposite end if at clone
-      if (currentIndex === 0) {
-        currentIndex = totalCards;
-        updateCarousel(true);
-      } else if (currentIndex === totalCards + 1) {
-        currentIndex = 1;
-        updateCarousel(true);
-      }
-    }
-    
-    // Navigation functions
-    function nextSlide() {
-      if (isAnimating) return;
-      currentIndex++;
-      updateCarousel();
-      resetAutoRotate();
-    }
-    
-    function prevSlide() {
-      if (isAnimating) return;
-      currentIndex--;
-      updateCarousel();
-      resetAutoRotate();
-    }
-    
-    function goToSlide(index) {
-      if (isAnimating) return;
-      currentIndex = index + 1; // +1 for clone offset
-      updateCarousel();
-      resetAutoRotate();
-    }
-    
-    // Auto-rotate
-    function startAutoRotate() {
-      clearInterval(autoRotateInterval);
-      autoRotateInterval = setInterval(nextSlide, 5000);
-    }
-    
-    function resetAutoRotate() {
-      clearInterval(autoRotateInterval);
-      startAutoRotate();
-    }
-    
-    // ========== READ MORE FUNCTIONALITY ==========
-    function initializeReadMoreButtons() {
-      const allCards = track.querySelectorAll('.testimonial-card');
-      
-      allCards.forEach(card => {
-        const quote = card.querySelector('.testimonial-card__quote p');
-        const quoteText = quote.textContent;
-        const wordCount = quoteText.split(' ').length;
-        
-        // Only add read more if quote is long (more than 40 words)
-        if (wordCount > 40) {
-          // Create read more button
-          const readMoreBtn = document.createElement('button');
-          readMoreBtn.className = 'read-more-btn';
-          readMoreBtn.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
-          
-          // Insert after quote
-          quote.parentNode.insertBefore(readMoreBtn, quote.nextSibling);
-          
-          // Add click event
-          readMoreBtn.addEventListener('click', function() {
-            quote.classList.toggle('expanded');
-            const isExpanded = quote.classList.contains('expanded');
-            
-            if (isExpanded) {
-              this.innerHTML = '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
-              this.classList.add('expanded');
-            } else {
-              this.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
-              this.classList.remove('expanded');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".testimonials__carousel");
+        const track = document.querySelector(".testimonials__track");
+        const cards = document.querySelectorAll(".testimonial-card");
+        const prevBtn = document.querySelector(".carousel__btn--prev");
+        const nextBtn = document.querySelector(".carousel__btn--next");
+        const indicators = document.querySelectorAll(".carousel__indicator");
+
+        if (!carousel || !track || cards.length === 0) return;
+
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let isAnimating = false;
+        let autoRotateInterval;
+
+        // Clone first and last cards for seamless looping
+        function initializeCarousel() {
+          // Clone cards for infinite loop
+          const firstClone = cards[0].cloneNode(true);
+          const lastClone = cards[totalCards - 1].cloneNode(true);
+
+          firstClone.classList.add("clone");
+          lastClone.classList.add("clone");
+
+          track.appendChild(firstClone);
+          track.insertBefore(lastClone, cards[0]);
+
+          // Update cards reference
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          // Set initial position (showing first real card)
+          currentIndex = 1;
+          updateCarousel(true);
+
+          // Initialize read more buttons for all cards
+          initializeReadMoreButtons();
+        }
+
+        // Update carousel position
+        function updateCarousel(instant = false) {
+          if (isAnimating) return;
+          isAnimating = true;
+
+          const allCards = track.querySelectorAll(".testimonial-card");
+          const cardWidth = cards[0].offsetWidth;
+          const gap = 30; // Match CSS gap
+
+          // Remove active class from all cards
+          allCards.forEach((card) => card.classList.remove("active"));
+
+          // Add active class to current card
+          if (allCards[currentIndex]) {
+            allCards[currentIndex].classList.add("active");
+          }
+
+          // Calculate position (center the active card)
+          const containerWidth = track.parentElement.offsetWidth;
+          const cardWidthWithGap = cardWidth + gap;
+          const centerOffset = (containerWidth - cardWidth) / 2;
+          const position = -(currentIndex * cardWidthWithGap) + centerOffset;
+
+          // Apply movement
+          if (instant) {
+            track.style.transition = "none";
+          } else {
+            track.style.transition =
+              "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+          }
+
+          track.style.transform = `translateX(${position}px)`;
+
+          // Update indicators
+          const realIndex = getRealIndex();
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === realIndex);
+          });
+
+          // Update button states
+          if (prevBtn) prevBtn.disabled = false;
+          if (nextBtn) nextBtn.disabled = false;
+
+          // Reset animation flag
+          if (!instant) {
+            setTimeout(() => {
+              isAnimating = false;
+              handleLoop();
+            }, 500);
+          } else {
+            isAnimating = false;
+          }
+        }
+
+        // Get real index (ignoring clones)
+        function getRealIndex() {
+          if (currentIndex === 0) return totalCards - 1;
+          if (currentIndex === totalCards + 1) return 0;
+          return currentIndex - 1;
+        }
+
+        // Handle seamless looping
+        function handleLoop() {
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          // Jump to opposite end if at clone
+          if (currentIndex === 0) {
+            currentIndex = totalCards;
+            updateCarousel(true);
+          } else if (currentIndex === totalCards + 1) {
+            currentIndex = 1;
+            updateCarousel(true);
+          }
+        }
+
+        // Navigation functions
+        function nextSlide() {
+          if (isAnimating) return;
+          currentIndex++;
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        function prevSlide() {
+          if (isAnimating) return;
+          currentIndex--;
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        function goToSlide(index) {
+          if (isAnimating) return;
+          currentIndex = index + 1; // +1 for clone offset
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        // Auto-rotate
+        function startAutoRotate() {
+          clearInterval(autoRotateInterval);
+          autoRotateInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoRotate() {
+          clearInterval(autoRotateInterval);
+          startAutoRotate();
+        }
+
+        // ========== READ MORE FUNCTIONALITY ==========
+        function initializeReadMoreButtons() {
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          allCards.forEach((card) => {
+            const quote = card.querySelector(".testimonial-card__quote p");
+            const quoteText = quote.textContent;
+            const wordCount = quoteText.split(" ").length;
+
+            // Only add read more if quote is long (more than 40 words)
+            if (wordCount > 40) {
+              // Create read more button
+              const readMoreBtn = document.createElement("button");
+              readMoreBtn.className = "read-more-btn";
+              readMoreBtn.innerHTML =
+                '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+
+              // Insert after quote
+              quote.parentNode.insertBefore(readMoreBtn, quote.nextSibling);
+
+              // Add click event
+              readMoreBtn.addEventListener("click", function () {
+                quote.classList.toggle("expanded");
+                const isExpanded = quote.classList.contains("expanded");
+
+                if (isExpanded) {
+                  this.innerHTML =
+                    '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
+                  this.classList.add("expanded");
+                } else {
+                  this.innerHTML =
+                    '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+                  this.classList.remove("expanded");
+                }
+              });
             }
           });
         }
+
+        // ========== EVENT LISTENERS ==========
+        if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+        if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => goToSlide(index));
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        carousel.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.touches[0].clientX;
+            clearInterval(autoRotateInterval);
+          },
+          { passive: true },
+        );
+
+        carousel.addEventListener(
+          "touchend",
+          (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            const threshold = 50;
+
+            if (Math.abs(diff) > threshold) {
+              if (diff > 0) nextSlide();
+              else prevSlide();
+            }
+
+            startAutoRotate();
+          },
+          { passive: true },
+        );
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") prevSlide();
+          if (e.key === "ArrowRight") nextSlide();
+        });
+
+        // Pause on hover
+        carousel.addEventListener("mouseenter", () =>
+          clearInterval(autoRotateInterval),
+        );
+        carousel.addEventListener("mouseleave", startAutoRotate);
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            updateCarousel(true);
+          }, 250);
+        });
+
+        // ========== INITIALIZE ==========
+        setTimeout(() => {
+          initializeCarousel();
+          startAutoRotate();
+        }, 100);
       });
-    }
-    
-    // ========== EVENT LISTENERS ==========
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => goToSlide(index));
-    });
-    
-    // Touch support
-    let touchStartX = 0;
-    carousel.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX;
-      clearInterval(autoRotateInterval);
-    }, { passive: true });
-    
-    carousel.addEventListener('touchend', (e) => {
-      const touchEndX = e.changedTouches[0].clientX;
-      const diff = touchStartX - touchEndX;
-      const threshold = 50;
-      
-      if (Math.abs(diff) > threshold) {
-        if (diff > 0) nextSlide();
-        else prevSlide();
-      }
-      
-      startAutoRotate();
-    }, { passive: true });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') prevSlide();
-      if (e.key === 'ArrowRight') nextSlide();
-    });
-    
-    // Pause on hover
-    carousel.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
-    carousel.addEventListener('mouseleave', startAutoRotate);
-    
-    // Handle window resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        updateCarousel(true);
-      }, 250);
-    });
-    
-    // ========== INITIALIZE ==========
-    setTimeout(() => {
-      initializeCarousel();
-      startAutoRotate();
-    }, 100);
-    
-  });
-</script>
+    </script>
     <script src="js/modern.js" type="module"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

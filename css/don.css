@@ -702,7 +702,7 @@ body {
 /* Header Styles matching home page */
 .main-header {
   background-color: #ffffff;
-  padding: 1rem 0;
+  padding: 8px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -744,16 +744,16 @@ body {
 }
 
 .nav-links a {
-  color: #800000;
+  color: var(--dark-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
   padding: 5px 10px;
   border-radius: 4px;
 }
 
 .nav-links a:hover {
-  color: #7f7f7f;
+  color: #e43a47;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
