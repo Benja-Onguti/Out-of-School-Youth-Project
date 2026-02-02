@@ -121,7 +121,8 @@
       .main-nav ul {
         display: flex;
         list-style: none;
-        gap: 25px;
+        gap: 5px;
+        align-items: baseline;
       }
       .main-nav a {
         color: var(--dark-color);
@@ -483,18 +484,26 @@
         </a>
         <nav class="main-nav">
           <ul>
-            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li>
               <a href="index.html#aboutSection">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#programsSection">Programs</a>
             </li>
             <li>
               <a href="index.html#gallerySection">Gallery</a>
             </li>
             <li>
-              <a href="success-stories.html" class="active">Success Stories</a>
+              <a href="stories.html" class="active">Success Stories</a>
             </li>
             <li>
               <a href="index.html#contactSection">Contact Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="donation.html" class="btn btn--primary btn--small"
+                >Donate</a
+              >
             </li>
           </ul>
         </nav>
