@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Success Stories | Out of School Youth Project</title>
 
-    <!-- Fonts & Icons (Same as Main Site) -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,15 +21,17 @@
     <style>
       /* ===== Root Variables & Base ===== */
       :root {
-        /* Color palette from the main site */
-        --primary: #2c3e50;
-        --secondary: #18bc9c;
-        --accent: #e74c3c;
+        --primary: #800000;
+        --primary-dark: #600000;
+        --secondary: #e43a47;
+        --secondary-dark: #d32f2f;
+        --accent: #1abc9c;
         --dark: #1a252f;
         --light: #ecf0f1;
         --gray: #95a5a6;
         --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         --transition: all 0.3s ease;
+        --modal-backdrop: rgba(0, 0, 0, 0.8);
       }
 
       * {
@@ -43,6 +45,11 @@
         line-height: 1.6;
         color: #333;
         background-color: #f9f9f9;
+        overflow-x: hidden;
+      }
+
+      body.modal-open {
+        overflow: hidden;
       }
 
       h1,
@@ -63,8 +70,8 @@
 
       .btn {
         display: inline-block;
-        padding: 12px 28px;
-        background: #e43a47;
+        padding: 10px 20px;
+        background: var(--secondary);
         color: white;
         border: none;
         border-radius: 4px;
@@ -72,10 +79,21 @@
         text-decoration: none;
         cursor: pointer;
         transition: var(--transition);
+        font-size: 0.9rem;
       }
       .btn:hover {
-        background: #aaa;
+        background: var(--secondary-dark);
         transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
       }
 
       /* ===== Header & Navigation ===== */
@@ -104,18 +122,15 @@
       .logo-img {
         height: 60px;
         width: auto;
+        border-radius: 8px;
       }
 
       .logo-text {
-        color: #800000;
+        color: var(--primary);
       }
       .logo-text h1 {
         font-size: 1.8rem;
         margin-bottom: 0;
-      }
-      .logo-text p {
-        font-size: 0.9rem;
-        opacity: 0.9;
       }
 
       .main-nav ul {
@@ -125,7 +140,7 @@
         align-items: baseline;
       }
       .main-nav a {
-        color: var(--dark-color);
+        color: var(--dark);
         text-decoration: none;
         font-weight: 500;
         padding: 8px 12px;
@@ -134,21 +149,19 @@
       }
       .main-nav a:hover,
       .main-nav a.active {
-        background-color: rgba(220, 157, 157, 0.1);
-        color: #800000;
+        background-color: var(--light);
+        color: var(--primary);
       }
 
       /* ===== Page Hero ===== */
       .page-hero {
-        background:
-          linear-gradient(#800000, #e43a47),
-          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80");
+        background-color: var(--primary);
         background-size: cover;
         background-position: center;
         color: white;
         text-align: center;
-        padding: 80px 20px;
-        margin-bottom: 60px;
+        padding: 40px 20px;
+        margin-bottom: 80px;
       }
       .page-hero h1 {
         font-size: 3rem;
@@ -158,24 +171,6 @@
         font-size: 1.2rem;
         max-width: 700px;
         margin: 0 auto;
-      }
-
-      /* ===== Success Stories Intro ===== */
-      .stories-intro {
-        text-align: center;
-        padding: 10px 20px;
-        margin-bottom: 40px;
-      }
-      .stories-intro h2 {
-        color: var(--primary);
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-      }
-      .stories-intro p {
-        font-size: 1.1rem;
-        color: var(--dark);
-        max-width: 800px;
-        margin: 0 auto 30px;
       }
 
       /* ===== Story Filters ===== */
@@ -196,8 +191,8 @@
       .filter-btn {
         padding: 8px 20px;
         background: white;
-        border: 2px solid #e43a47;
-        color: #e43a47;
+        border: 2px solid var(--secondary);
+        color: var(--secondary);
         border-radius: 30px;
         cursor: pointer;
         font-weight: 500;
@@ -205,7 +200,7 @@
       }
       .filter-btn.active,
       .filter-btn:hover {
-        background: #e43a47;
+        background: var(--secondary);
         color: white;
       }
 
@@ -247,7 +242,7 @@
         position: absolute;
         top: 15px;
         right: 15px;
-        background: #e43a47;
+        background: var(--secondary);
         color: white;
         padding: 5px 15px;
         border-radius: 30px;
@@ -264,7 +259,7 @@
         margin-bottom: 5px;
       }
       .story-location {
-        color: #e43a47;
+        color: var(--secondary);
         font-size: 0.9rem;
         margin-bottom: 15px;
         display: flex;
@@ -274,7 +269,7 @@
       .story-quote {
         font-style: italic;
         color: #555;
-        border-left: 3px solid var(--secondary);
+        border-left: 3px solid var(--accent);
         padding-left: 15px;
         margin: 20px 0;
       }
@@ -302,16 +297,230 @@
         margin-top: 5px;
       }
 
-      /* ===== Video Highlight ===== */
+      /* Card Action Buttons */
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .card-actions .btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+      }
+
+      /* ===== MODAL STYLES ===== */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--modal-backdrop);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        padding: 20px;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal {
+        background: white;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 900px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-overlay.active .modal {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .modal-header h2 {
+        color: var(--primary);
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      .modal-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--gray);
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .modal-close:hover {
+        background: #f5f5f5;
+        color: var(--secondary);
+      }
+
+      .modal-content {
+        padding: 30px;
+      }
+
+      /* Story Modal Specific */
+      .story-modal .story-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+        align-items: center;
+      }
+
+      .story-modal .story-hero-image {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .story-modal .story-hero-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .story-modal .story-hero-info h3 {
+        color: var(--primary);
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .story-modal .story-meta {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .story-modal .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gray);
+      }
+
+      .story-modal .meta-item i {
+        color: var(--secondary);
+      }
+
+      .story-modal .full-story {
+        margin: 30px 0;
+      }
+
+      .story-modal .full-story h4 {
+        color: var(--primary);
+        margin: 20px 0 10px;
+      }
+
+      .story-modal .timeline {
+        margin: 30px 0;
+        padding-left: 20px;
+        border-left: 3px solid var(--accent);
+      }
+
+      .story-modal .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .story-modal .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        background: var(--secondary);
+        border-radius: 50%;
+      }
+
+      .story-modal .impact-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+        background: var(--light);
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      /* Video Modal Specific */
+      .video-modal .modal {
+        max-width: 1000px;
+      }
+
+      .video-modal .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        margin: 20px 0;
+      }
+
+      .video-modal .video-container iframe,
+      .video-modal .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+
+      .video-modal .video-info {
+        margin-top: 20px;
+      }
+
+      .video-modal .video-info h3 {
+        color: var(--primary);
+      }
+
+      /* ===== Video Highlight Section ===== */
       .video-highlight {
         background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        color: #1a252f;
+        color: var(--dark);
         padding: 60px 20px;
         text-align: center;
         margin: 60px 0;
       }
       .video-highlight h2 {
-        color: #1a252f;
+        color: var(--dark);
         margin-bottom: 30px;
       }
       .video-wrapper {
@@ -344,11 +553,16 @@
         flex-wrap: wrap;
       }
       .cta-btn.primary {
-        background: #e43a47;
+        background: var(--secondary);
       }
       .cta-btn.secondary {
-        background-color: #e43a47;
-        border: 2px solid #e43a47;
+        background: transparent;
+        border: 2px solid var(--secondary);
+        color: var(--secondary);
+      }
+      .cta-btn.secondary:hover {
+        background: var(--secondary);
+        color: white;
       }
 
       /* ===== Footer ===== */
@@ -366,10 +580,11 @@
       .footer-logo {
         height: 50px;
         margin-bottom: 15px;
+        border-radius: 8px;
       }
       .footer-links h4,
       .footer-contact h4 {
-        color: #e43a47;
+        color: var(--secondary);
         margin-bottom: 10px;
         font-size: 1.2rem;
       }
@@ -385,7 +600,7 @@
         transition: var(--transition);
       }
       .footer-links a:hover {
-        color: #e43a47;
+        color: var(--secondary);
         padding-left: 5px;
       }
       .contact-info p {
@@ -397,7 +612,7 @@
       }
 
       .contact-info p i {
-        color: #e43a47;
+        color: var(--secondary);
         min-width: 20px;
       }
       .social-icons {
@@ -418,7 +633,7 @@
         transition: var(--transition);
       }
       .social-icon:hover {
-        background: #e43a47;
+        background: var(--secondary);
         transform: translateY(-3px);
       }
       .footer-bottom {
@@ -429,7 +644,7 @@
         color: #aaa;
       }
 
-      /* ===== Responsive Design ===== */
+      /* ===== RESPONSIVE DESIGN ===== */
       @media (max-width: 992px) {
         .page-hero h1 {
           font-size: 2.5rem;
@@ -437,7 +652,11 @@
         .stories-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+        .story-modal .story-hero {
+          grid-template-columns: 1fr;
+        }
       }
+
       @media (max-width: 768px) {
         .header-container {
           flex-direction: column;
@@ -456,6 +675,12 @@
         .stories-grid {
           grid-template-columns: 1fr;
         }
+        .card-actions {
+          flex-direction: column;
+        }
+        .card-actions .btn {
+          width: 100%;
+        }
         .cta-buttons {
           flex-direction: column;
           align-items: center;
@@ -463,6 +688,32 @@
         .cta-btn {
           width: 100%;
           max-width: 300px;
+        }
+        .modal {
+          max-width: 95%;
+          margin: 10px;
+        }
+        .modal-header {
+          padding: 15px 20px;
+        }
+        .modal-content {
+          padding: 20px;
+        }
+        .story-modal .impact-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .story-stats {
+          grid-template-columns: 1fr;
+        }
+        .story-modal .story-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .modal-header h2 {
+          font-size: 1.5rem;
         }
       }
     </style>
@@ -472,7 +723,6 @@
     <header class="main-header">
       <div class="container header-container">
         <a href="index.html" class="logo">
-          <!-- Replace with actual logo from the main site -->
           <img
             src="images/logo hch.jpeg"
             alt="Out of School Youth Project Logo"
@@ -519,25 +769,10 @@
           celebrate hundreds of vulnerable youth who have reclaimed their
           futures through vocational training and mentorship. These are more
           than just stories—they are testaments to resilience and new
-          beginnings. Explore their journeys by filtering for a specific
-          community or program below.
+          beginnings.
         </p>
       </div>
     </section>
-
-    <!-- Introduction -->
-    <!--  <section class="stories-intro">
-      <div class="container">
-        <h2>Transforming Lives, Building Futures</h2>
-        <p>
-          The Out of School Youth Project has empowered hundreds of young
-          individuals through life skills, vocational training, and mentorship.
-          Here, we celebrate their achievements and the bright paths they've
-          forged.
-        </p>
-        <p>Filter the stories below by program type or community.</p>
-      </div>
-    </section> -->
 
     <!-- Filter Buttons -->
     <section class="story-filters">
@@ -547,20 +782,6 @@
           <button class="filter-btn active" data-filter="all">
             All Stories
           </button>
-          <!--<button class="filter-btn" data-filter="vocational">
-            Vocational Training
-          </button>
-          <button class="filter-btn" data-filter="lifeskills">
-            Life Skills
-          </button>
-          <button class="filter-btn" data-filter="evangelization">
-            Youth Evangelization
-          </button>
-          <button class="filter-btn" data-filter="firstaid">
-            First Aid Training
-          </button>
-          <button class="filter-btn" data-filter="korogocho">Korogocho</button>
-          <button class="filter-btn" data-filter="huruma">Huruma</button> -->
         </div>
       </div>
     </section>
@@ -572,16 +793,17 @@
         <article class="story-card" data-categories="vocational huruma">
           <div class="story-media">
             <img src="images/avatar.png" alt="James at his welding workshop" />
-            <span class="story-badge">Vocational Graduate</span>
+            <span class="story-badge"> Tailor</span>
           </div>
           <div class="story-content">
-            <h3>James Mwangi</h3>
+            <h3>Ruth Akinyi</h3>
             <p class="story-location">
               <i class="fas fa-map-marker-alt"></i> Huruma, Nairobi
             </p>
             <blockquote class="story-quote">
-              "The welding course gave me more than a skill—it gave me dignity.
-              I now run my own small workshop and train two other youths."
+              "Through the Out Of School Youth Project, I discovered that change
+              is possible. The program taught me how to overcome personal
+              weaknesses, stay positive and push myself to build strength."
             </blockquote>
             <div class="story-stats">
               <div class="stat">
@@ -590,20 +812,25 @@
               </div>
               <div class="stat">
                 <span class="stat-label">Graduated</span>
-                <span class="stat-value">2023</span>
+                <span class="stat-value">2025</span>
               </div>
               <div class="stat">
-                <span class="stat-label">Trade</span>
-                <span class="stat-value">Welding</span>
+                <span class="stat-label">Course</span>
+                <span class="stat-value">Tailoring</span>
               </div>
               <div class="stat">
                 <span class="stat-label">Status</span>
-                <span class="stat-value">Employed +2</span>
+                <span class="stat-value">Self-Employed </span>
               </div>
             </div>
-            <a href="#" class="btn" onclick="openStoryModal('james')"
-              >Watch Full Story</a
-            >
+            <div class="card-actions">
+              <button class="btn btn-outline" onclick="openStoryModal('ruth')">
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('ruth')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
           </div>
         </article>
 
@@ -614,34 +841,44 @@
         >
           <div class="story-media">
             <img src="images/avatar2.png" alt="Faith teaching first aid" />
-            <span class="story-badge">Life Skills Trainer</span>
+            <span class="story-badge"> Hair Dresser</span>
           </div>
           <div class="story-content">
-            <h3>Faith Atieno</h3>
+            <h3>Rosabella Andeso</h3>
             <p class="story-location">
-              <i class="fas fa-map-marker-alt"></i> Korogocho, Nairobi
+              <i class="fas fa-map-marker-alt"></i> Huruma, Nairobi
             </p>
             <blockquote class="story-quote">
-              "The First Aid certification changed my life. I now volunteer with
-              a community health group and teach others in my neighborhood."
+              "She was enrolled for 8 weeks life skills and character formation
+              workshop where she improved on her self-esteem, become motivated
+              and scheduled for counseling session where she committed to begin
+              a new life."
             </blockquote>
             <div class="story-stats">
               <div class="stat">
                 <span class="stat-label">Age</span>
-                <span class="stat-value">22</span>
+                <span class="stat-value">25</span>
               </div>
               <div class="stat">
                 <span class="stat-label">Program</span>
-                <span class="stat-value">First Aid & Life Skills</span>
+                <span class="stat-value"> Vocational Training</span>
               </div>
               <div class="stat">
                 <span class="stat-label">Now</span>
-                <span class="stat-value">Community Trainer</span>
+                <span class="stat-value"> Hair Dresser</span>
               </div>
             </div>
-            <a href="#" class="btn" onclick="openStoryModal('faith')"
-              >Watch Full Story</a
-            >
+            <div class="card-actions">
+              <button
+                class="btn btn-outline"
+                onclick="openStoryModal('rosabella')"
+              >
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('rosabella')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
           </div>
         </article>
 
@@ -674,9 +911,138 @@
                 <span class="stat-value">15 Youths</span>
               </div>
             </div>
-            <a href="#" class="btn" onclick="openStoryModal('david')"
-              >Watch Full Story</a
-            >
+            <div class="card-actions">
+              <button class="btn btn-outline" onclick="openStoryModal('david')">
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('david')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Story Card 4 -->
+        <article class="story-card" data-categories="evangelization lifeskills">
+          <div class="story-media">
+            <img src="images/avatar.png" alt="David mentoring a group" />
+            <span class="story-badge">Patients Attendant</span>
+          </div>
+          <div class="story-content">
+            <h3>Hudson Otieno,</h3>
+            <p class="story-location">
+              <i class="fas fa-map-marker-alt"></i> Madoya, Nairobi
+            </p>
+            <blockquote class="story-quote">
+              "From the streets to now a patients attendant, I found my purpose
+              after rebalitation and life lessons at Mother Kevin Youth Centre."
+            </blockquote>
+            <div class="story-stats">
+              <div class="stat">
+                <span class="stat-label">Age</span>
+                <span class="stat-value">26</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Patients Attendant</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Impact</span>
+                <span class="stat-value"> Mentoring fellow youths.</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                class="btn btn-outline"
+                onclick="openStoryModal('hudson')"
+              >
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('hudson')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Story Card 5 -->
+        <article class="story-card" data-categories="evangelization lifeskills">
+          <div class="story-media">
+            <img src="images/avatar.png" alt="David " />
+            <span class="story-badge">Fitness Trainer</span>
+          </div>
+          <div class="story-content">
+            <h3>David Chad</h3>
+            <p class="story-location">
+              <i class="fas fa-map-marker-alt"></i> Kariobangi, Nairobi
+            </p>
+            <blockquote class="story-quote">
+              "My journey has been one of resilience, redemption and renewal."
+            </blockquote>
+            <div class="story-stats">
+              <div class="stat">
+                <span class="stat-label">Age</span>
+                <span class="stat-value">26</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Fitness Trainer</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Impact</span>
+                <span class="stat-value"> Mentoring 10+ </span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-outline" onclick="openStoryModal('chad')">
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('chad')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
+          </div>
+        </article>
+        <!-- Story Card 6 -->
+        <article class="story-card" data-categories="evangelization lifeskills">
+          <div class="story-media">
+            <img src="images/avatar.png" alt="David mentoring a group" />
+            <span class="story-badge">Patients Attendant</span>
+          </div>
+          <div class="story-content">
+            <h3>Esther Wachira</h3>
+            <p class="story-location">
+              <i class="fas fa-map-marker-alt"></i> Korogocho, Nairobi
+            </p>
+            <blockquote class="story-quote">
+              "Through the trainings I was able to realize that am very
+              important and I have to take a turning point for my life so that I
+              can be able to help my mother and siblings."
+            </blockquote>
+            <div class="story-stats">
+              <div class="stat">
+                <span class="stat-label">Age</span>
+                <span class="stat-value">22</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Role</span>
+                <span class="stat-value">Patients Attendant</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Impact</span>
+                <span class="stat-value">12 Youths</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button
+                class="btn btn-outline"
+                onclick="openStoryModal('esther')"
+              >
+                <i class="fas fa-book-reader"></i> Read Full Story
+              </button>
+              <button class="btn" onclick="openVideoModal('esther')">
+                <i class="fas fa-play-circle"></i> Watch Video
+              </button>
+            </div>
           </div>
         </article>
       </div>
@@ -685,16 +1051,15 @@
     <!-- Video Highlight Section -->
     <section class="video-highlight">
       <div class="container">
-        <h2>Hear From Our Graduates</h2>
+        <h2>Hear From Our Youths</h2>
         <p>
           Watch this compilation of testimonials from youths whose lives have
           been transformed.
         </p>
         <div class="video-wrapper">
-          <!-- Replace with actual project video -->
           <div style="padding: 56.25% 0 0 0; position: relative">
             <iframe
-              src="https://player.vimeo.com/video/123456789?h=abc123def&title=0&byline=0&portrait=0"
+              src="https://player.vimeo.com/video/824804225?h=abc123def&title=0&byline=0&portrait=0"
               style="
                 position: absolute;
                 top: 0;
@@ -707,7 +1072,6 @@
               allowfullscreen
             ></iframe>
           </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
       </div>
     </section>
@@ -747,23 +1111,17 @@
             <h4>Quick Links</h4>
             <ul>
               <li>
-                <a href="https://www.outofschoolyouthproject.com">Home</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
-                <a href="https://www.outofschoolyouthproject.com/#about"
-                  >About Our Mission</a
-                >
+                <a href="index.html#aboutSection">About Our Mission</a>
               </li>
               <li>
-                <a href="https://www.outofschoolyouthproject.com/#gallery"
-                  >Program Gallery</a
-                >
+                <a href="index.html#gallerySection">Program Gallery</a>
               </li>
-              <li><a href="success-stories.html">Success Stories</a></li>
+              <li><a href="stories.html">Success Stories</a></li>
               <li>
-                <a href="https://www.outofschoolyouthproject.com/#contact"
-                  >Get Involved</a
-                >
+                <a href="index.html#contactSection">Get Involved</a>
               </li>
             </ul>
           </div>
@@ -800,41 +1158,508 @@
       </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
+    <!-- Story Modal Template -->
+    <div id="storyModal" class="modal-overlay">
+      <div class="modal story-modal">
+        <div class="modal-header">
+          <h2 id="storyModalTitle">Success Story</h2>
+          <button class="modal-close" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-content" id="storyModalContent">
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Modal Template -->
+    <div id="videoModal" class="modal-overlay">
+      <div class="modal video-modal">
+        <div class="modal-header">
+          <h2 id="videoModalTitle">Video Testimony</h2>
+          <button class="modal-close" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-content">
+          <div class="video-container" id="videoPlayer">
+            <!-- Video will be dynamically inserted here -->
+          </div>
+          <div class="video-info" id="videoInfo">
+            <!-- Video info will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
       // Set current year in footer
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
       // Story Filtering Functionality
-      document.addEventListener('DOMContentLoaded', function() {
-          const filterButtons = document.querySelectorAll('.filter-btn');
-          const storyCards = document.querySelectorAll('.story-card');
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const storyCards = document.querySelectorAll(".story-card");
 
-          filterButtons.forEach(button => {
-              button.addEventListener('click', function() {
-                  // Update active button
-                  filterButtons.forEach(btn => btn.classList.remove('active'));
-                  this.classList.add('active');
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
 
-                  const filterValue = this.getAttribute('data-filter');
+            const filterValue = this.getAttribute("data-filter");
 
-                  // Filter cards
-                  storyCards.forEach(card => {++
-                      categories = card.getAttribute('data-categories');
-                      if (filterValue === 'all' || categories.includes(filterValue)) {
-                          card.style.display = 'block';
-                      } else {
-                          card.style.display = 'none';
-                      }
-                  });
-              });
+            storyCards.forEach((card) => {
+              const categories = card.getAttribute("data-categories");
+              if (filterValue === "all" || categories.includes(filterValue)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
           });
+        });
       });
 
-      // Modal function (placeholder - in practice, you would implement a full modal)
+      // Modal Functions
+      function openModal(modalId) {
+        document.body.classList.add("modal-open");
+        document.getElementById(modalId).classList.add("active");
+        document.addEventListener("keydown", handleEscapeKey);
+      }
+
+      function closeModal() {
+        document.body.classList.remove("modal-open");
+        document.querySelectorAll(".modal-overlay").forEach((modal) => {
+          modal.classList.remove("active");
+        });
+        document.removeEventListener("keydown", handleEscapeKey);
+      }
+
+      function handleEscapeKey(e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      }
+
+      // Close modal when clicking outside
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+      });
+
+      // Story Data
+      const storyData = {
+        ruth: {
+          title: "Ruth Akinyi - From Hopeless to Self Employed",
+          image: "images/avatar.png",
+          name: "Ruth Akinyi",
+          age: 24,
+          location: "Huruma, Nairobi",
+          program: "Vocational Training - Tailoring",
+          graduated: "2025",
+          status: "Business Owner & Trainer",
+          impact: "2 employees trained",
+          fullStory: `
+                  <div class="full-story">
+                      <p> My name is Ruth Akinyi and today I am proud to say that I am building a career in tailoring and
+dress making. <br> My journey to this point was not easy. Before I came to the Out of School Youth Program
+nothing seemed to interest me. I had dropped out of school and couldn’t continue to college, I
+was very aggressive, disappointed with life and often clashed with my mother because I blamed
+her for everything. My behavior was distractive and I could not see a future for myself.</p>
+                      
+                      <h4>The Turning Point</h4>
+                      <p> Everything changed the day I walked through the gates of the Out of School Youth Program. They welcomed me warmly and received me with kindness.
+                         Their encouragement made me feel at home. <br> Through their lessons, I learned about behavior change a process that helped me reflect deeper
+on my life and helped me tell my story, I learnt the value of respect and displine. Slowly, my
+aggression faded.<br><br>Through the Out Of School Youth Project, I discovered that change is possible. The program
+taught me how to overcome personal weaknesses, stay positive and push myself to build
+strength. When I completed the program, I received sponsorship to pursue a short course in
+Tailoring and Dress making. </p>
+                      
+                      
+                      
+                      <h4>Impact & Future Plans</h4>
+                      <p> Today, l am thriving in my work, earning an income and supporting my family. I am deeply
+grateful to the teachers and mentors at the Out of School Youth Center who respected us,
+believed in us and helped us see that we are good people capable of change. </p>
+                      
+                      <div class="impact-stats">
+                          <div>
+                              <h4>Monthly Income</h4>
+                              <p>KSH 25,000+</p>
+                          </div>
+                          <div>
+                              <h4>Youths Trained</h4>
+                              <p>2</p>
+                          </div>
+                          <div>
+                              <h4>Jobs Created</h4>
+                              <p>3</p>
+                          </div>
+                          <div>
+                              <h4>Community Projects</h4>
+                              <p>5+</p>
+                          </div>
+                      </div>
+                  </div>
+              `,
+        },
+        rosabella: {
+          title: "Rosabella Andeso - Hair Dresser",
+          image: "images/avatar2.png",
+          name: "Rosabella Andeso",
+          age: 22,
+          location: "Huruma, Nairobi",
+          program: "Life Skills and Vocational Training",
+          graduated: "2025",
+          status: " Employed as Hair Dresser",
+          impact: " Giving back to the community",
+          fullStory: `
+                  <div class="full-story">
+                      <p> Rosabella came from a family of six children. She is the second born.Rosebella is an orphan after the death of her father. She was left under the care of her mother
+who used to do casual work for their survival. The first born girl was forced to get married at an
+early age because life was very difficult for the family. Later on Rosebella’s mother died leaving
+her and other siblings under the care of their elder sister who at the time married. Rosebella was
+forced to drop out of school and start working as a house maid so that she can help her sister to
+provide for the family.</p>
+                      
+                      <h4> Her Journey</h4>
+                      <p>She was enrolled for 8 weeks life skills and
+character formation workshop where she improved on her self-esteem, become motivated and
+scheduled for counseling session where she committed to begin a new life. <br>When she in the
+trainings, during the training she was determined and followed all the training without missing.
+After completing the life skill and character formation workshop she was sponsored into hair
+dressing and beauty therapy course in which she still in training. She is hopeful that she will be
+able to complete and either be employed or start her own beauty shop. She is so grateful to all
+that helped her to change her life situation.</p>
+                       
+                      
+                      </div>
+                  </div>
+              `,
+        },
+        david: {
+          title: "David Ochieng - Finding Purpose Through Mentorship",
+          image: "images/avatar.png",
+          name: "David Ochieng",
+          age: 26,
+          location: "Kariobangi, Nairobi",
+          program: "Youth Evangelization & Life Skills",
+          graduated: "2022",
+          status: "Youth Mentor & Leader",
+          impact: "15 youths currently mentored",
+          fullStory: `
+                  <div class="full-story">
+                      <p>David was involved with negative peer groups after dropping out of school. He felt directionless until he attended an OSYP youth evangelization workshop that changed his perspective completely.</p>
+                      
+                      <h4>The Awakening</h4>
+                      <p>The peer-to-peer evangelization program helped David discover leadership qualities he never knew he had. He went from being a participant to leading sessions within six months.</p>
+                      
+                      <h4>The Leadership Journey</h4>
+                      <div class="timeline">
+                          <div class="timeline-item">
+                              <strong>2021 (September):</strong> Attended first evangelization workshop
+                          </div>
+                          <div class="timeline-item">
+                              <strong>2022 (March):</strong> Completed leadership training
+                          </div>
+                          <div class="timeline-item">
+                              <strong>2022 (June):</strong> Started mentoring 5 youth
+                          </div>
+                          <div class="timeline-item">
+                              <strong>2023 (January):</strong> Expanded mentorship to 15 youth
+                          </div>
+                          <div class="timeline-item">
+                              <strong>2023 (Present):</strong> Coordinating community youth programs
+                          </div>
+                      </div>
+                      
+                      <h4>Creating Positive Change</h4>
+                      <p>David now leads a youth group that organizes community clean-ups, sports events, and mentorship sessions. Three of his mentees have enrolled in vocational training programs.</p>
+                      
+                      <div class="impact-stats">
+                          <div>
+                              <h4>Youths Mentored</h4>
+                              <p>15</p>
+                          </div>
+                          <div>
+                              <h4>Community Events Organized</h4>
+                              <p>8</p>
+                          </div>
+                          <div>
+                              <h4>Mentees in Training</h4>
+                              <p>3</p>
+                          </div>
+                          <div>
+                              <h4>Peer Workshops Conducted</h4>
+                              <p>20+</p>
+                          </div>
+                      </div>
+                  </div>
+              `,
+        },
+
+        hudson: {
+          title: "Hudson Otieno - Finding Purpose Through Mentorship",
+          image: "images/avatar.png",
+          name: "Hudson Otieno",
+          age: 26,
+          location: "Madoya, Nairobi",
+          program: " Life Skills and Training",
+          graduated: "2025",
+          status: " Patients Attendant",
+          impact: "Mentoring fellow youths",
+          fullStory: `
+                  <div class="full-story">
+                      <p>Hudson came from a humble background where he and his 5  siblings were brought by a single mother. His life had very many challenges where he was
+always in and out of school because my mother could not afford and eventually droppped out.He got
+involved in hawking water to help my mother take care of the family. Life of hawking water was not easy
+since there were so many challenges that came with it.On the streets I was involved in crimes that led my life to be in danger. I
+would take drugs to ease my stress.</p>
+                      
+                      <h4>The Awakening</h4>
+                      <p>streets  He was rescued by the social workers who
+referred him to our youth project for rehabilitation.The peer-to-peer evangelization program with help me but the staff at Mother kevin youth centre helped him and walked with him until he recovered. Later on he was sponsored into patient
+attendant course which took four months. He successfully completed the course and  looking forward
+to get a better job.</p>
+                      
+                      
+                      
+                      <h4>Creating Positive Change</h4>
+                      <pCurrently he work on locum/part-time basis and it has really helped. "I am very grateful
+for the support I got from the out of school youth staff"</p>
+                      
+                      <div class="impact-stats">
+                          <div>
+                              <h4>Youths Mentored</h4>
+                              <p>8</p>
+                          </div>
+                        
+                          <div>
+                              <h4>Mentees in Training</h4>
+                              <p>3</p>
+                          </div>
+                          <div>
+                              <h4>Peer Workshops Conducted</h4>
+                              <p>5+</p>
+                          </div>
+                      </div>
+                  </div>
+              `,
+        },
+
+        chad: {
+          title: "David Chad - Resilience, Redemption and Renewal.",
+          image: "images/avatar.png",
+          name: "David Chad",
+          age: 26,
+          location: "Kariobangi, Nairobi",
+          program: "Youth Evangelization, Life Skills and Vocational Training",
+          graduated: "2025",
+          status: "Fitness and Nutrition Trainer",
+          impact: "15 youths currently mentored",
+          fullStory: `
+                  <div class="full-story">
+                      <p> My name is David Chad and my journey has been one of resilience, redemption and renewal.
+After finishing high school in Kakamega, I moved to Nairobi with hopes of building a better
+future. I lived with my mother and enrolled in driving school, preparing to become a matatu
+driver (Taxi Driver). But life took an unexpected turn. I become a tout (Taxi Conductor) at
+Eastleigh Sacco, and soon I was drawn into unhealthy groups and distractive habits. I stopped
+caring about passengers, withheld their change, and eventually slipped into petty crimes like
+stealing.
+I moved out to Dandora, where the company I kept only deepened my involvement in crime. My
+life was dying out each day and I was losing the values I had been raised with./p>
+                      
+                      <h4>The Awakening</h4>
+                      <p>Everything changed last year when someone recognized my struggles and introduced me to
+Mother Kevin. At First, I resisted the guidance, but over time, through behavior change programs
+that helped me tell my story and look for an alternative behavior, mentorship and reflection I
+began to see the possibility of a different life.
+May faith Increased through the faith Development program, I was also helped to reconcile with
+my mother, and I was welcomed back home. That moment of healing gave me the strength to
+build my life.</p>
+                      
+                      <h4>Building New Feature</h4>
+                      <p> With the support of sponsorship, I enrolled in school and pursed a diploma in Fitness and
+Nutrition. Today, I am proud to say I have successfully completed my studies. I am now
+equipped not only with professional skills but also with the determination to use them to uplift
+others.
+
+My dream is to help young people in Nairobi and beyond make healthier choices. Stay away
+from crime and embrace positive lifestyles. I want to be a living examples that change is possible
+no matter how far someone has fallen. </p>
+                      
+                      <h4>Creating Positive Change</h4>
+                      <p>David now leads a youth group that organizes community clean-ups, sports events, and mentorship sessions. Three of his mentees have enrolled in vocational training programs.</p>
+                      
+                     
+                  </div>
+              `,
+        },
+
+        esther: {
+          title: " Esther Wachira - Finding Purpose Through Mentorship",
+          image: "images/avatar.png",
+          name: "Esther Wachira",
+          age: 22,
+          location: "Korogocho, Nairobi",
+          program: " Life Skills and Vocational Training ",
+          graduated: "2025",
+          status: " Patients Attendant and a Youth Mentor & Leader",
+          impact: "Mentoring ",
+          fullStory: `
+                  <div class="full-story">
+                      <p>My name is Esther Wachira, third born in a family of five children. I was raised up by a single
+mother who is the bread winner for my family plus other cousins whose parents died due to
+HIV. Life was not pleasant to me as I was to drop out of school for one year so that I can help
+my mother provide for the family. I was doing employed as a house help so that I can
+supplement my mother’s source of income. Later on I went back to school and finished my
+form four education where I scored C plain. My two elder sisters got married so that they can
+run away from family poverty we were facing.</p>
+                      
+                      <h4>The Awakening</h4>
+                      <p>I was enrolled at Hands of care and
+hope for Behaviour change programme and life skills sessions. Through the trainings I was able
+to realize that am very important and I have to take a turning point for my life so that I can be
+able to help my mother come out of poverty. I was trained on various life skills such as time
+management, motivation, self-awareness among others which has really helped me a lot.</p>
+                      
+                      
+                      
+                      <h4>Success Story</h4>
+                      <p>After the training I was sponsored to do a patient attendant course at avenue Home care ltd for
+four months. During the trainings I was able to use what I learned such as time management,
+values and goal setting.After the four months
+of the course I managed to get a job at Karen Hospital where am currently employed. Therefore
+am very happy to see that my family and I can get something and something can come out of
+me. I thank those who made my dream come true. God bless you abundantly.</p>
+                      
+                      
+                  </div>
+              `,
+        },
+      };
+
+      // Video Data
+      const videoData = {
+        ruth: {
+          title: "Ruth's Journey",
+          videoId: "824804225",
+          description:
+            "Watch Ruth share how OSYP's vocational training transformed his life.",
+          duration: "3:45",
+        },
+        rosabella: {
+          title: " Watch Rosabbela's journey",
+          videoId: "824804226",
+          description:
+            "Rosabella demonstrates skills and  techniques and shares her journey too.",
+          duration: "4:20",
+        },
+        david: {
+          title: "David Ochieng - Leading by Example",
+          videoId: "824804227",
+          description:
+            "David shares his transformation and how he now mentors other youth in his community.",
+          duration: "5:15",
+        },
+        hudson: {
+          title: "Hudson's Life Story",
+          videoId: "824804225",
+          description:
+            "Watch HUdson share how he transformed his life around after having a rough journey.",
+          duration: "3:45",
+        },
+        chad: {
+          title: "Chas's Journey",
+          videoId: "824804225",
+          description:
+            "Watch Chad share how Out of School Youth Project transformed his life.",
+          duration: "3:45",
+        },
+        esther: {
+          title: "Esther's Story and Journey of her life",
+          videoId: "824804225",
+          description:
+            "Watch Esther share how Out of School Youth Project's vocational training transformed his life.",
+          duration: "3:45",
+        },
+      };
+
+      // Story Modal Function
       function openStoryModal(storyId) {
-          alert('In the full implementation, this would open a detailed modal or page for story: ' + storyId + '\n\nIt would include:\n- Full biography\n- Extended video testimony\n- Detailed journey timeline\n- Photo gallery\n- Impact metrics');
-          // You can implement a proper modal window here
+        const story = storyData[storyId];
+        if (!story) return;
+
+        document.getElementById("storyModalTitle").textContent = story.title;
+
+        const content = document.getElementById("storyModalContent");
+        content.innerHTML = `
+              <div class="story-hero">
+                  <div class="story-hero-image">
+                      <img src="${story.image}" alt="${story.name}">
+                  </div>
+                  <div class="story-hero-info">
+                      <h3>${story.name}</h3>
+                      <div class="story-meta">
+                          <div class="meta-item">
+                              <i class="fas fa-user"></i>
+                              <span>Age: ${story.age}</span>
+                          </div>
+                          <div class="meta-item">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <span>${story.location}</span>
+                          </div>
+                          <div class="meta-item">
+                              <i class="fas fa-graduation-cap"></i>
+                              <span>${story.program}</span>
+                          </div>
+                          <div class="meta-item">
+                              <i class="fas fa-calendar-alt"></i>
+                              <span>Graduated: ${story.graduated}</span>
+                          </div>
+                      </div>
+                      <p><strong>Current Status:</strong> ${story.status}</p>
+                      <p><strong>Community Impact:</strong> ${story.impact}</p>
+                  </div>
+              </div>
+              ${story.fullStory}
+          `;
+
+        openModal("storyModal");
+      }
+
+      // Video Modal Function
+      function openVideoModal(storyId) {
+        const video = videoData[storyId];
+        if (!video) return;
+
+        document.getElementById("videoModalTitle").textContent = video.title;
+
+        const videoPlayer = document.getElementById("videoPlayer");
+        videoPlayer.innerHTML = `
+              <iframe 
+                  src="https://player.vimeo.com/video/${video.videoId}?h=abc123def&title=0&byline=0&portrait=0&autoplay=1"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+          `;
+
+        const videoInfo = document.getElementById("videoInfo");
+        videoInfo.innerHTML = `
+              <h3>${video.title}</h3>
+              <p>${video.description}</p>
+              <p><i class="fas fa-clock"></i> Duration: ${video.duration}</p>
+          `;
+
+        openModal("videoModal");
       }
     </script>
   </body>

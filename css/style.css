@@ -2483,17 +2483,6 @@ p {
   margin-left: auto;
 }
 
-.contact__form::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #e43a47;
-  border-radius: 10px 10px 0 0;
-}
-
 .form__title {
   color: #2c3e50;
   font-size: 1.3rem;
