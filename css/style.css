@@ -2188,64 +2188,6 @@ p {
     transform: none;
   }
 }
-/* Dark mode support (if applicable) */
-@media (prefers-color-scheme: dark) {
-  .partners-section {
-    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
-  }
-
-  .partners-section::before {
-    background: linear-gradient(90deg, transparent, #34495e, transparent);
-  }
-
-  .partners-section .section-header h2 {
-    color: #ecf0f1;
-  }
-
-  .section-subtitle {
-    color: #bdc3c7;
-  }
-  .partners-marquee::before {
-    background: linear-gradient(to right, #1a252f, transparent);
-  }
-  .partners-marquee::after {
-    background: linear-gradient(to left, #1a252f, transparent);
-  }
-  .partner-logo {
-    background: #2c3e50;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  }
-  .partner-logo img {
-    filter: grayscale(100%) brightness(0.8);
-  }
-  .partner-logo:hover img {
-    filter: grayscale(0%) brightness(1);
-  }
-  .stat-number {
-    color: #ecf0f1;
-  }
-  .stat-label {
-    color: #bdc3c7;
-  }
-  .partnership-cta {
-    background: #2c3e50;
-    border-color: #34495e;
-  }
-  .partnership-cta h3 {
-    color: #ecf0f1;
-  }
-  .partnership-cta > p {
-    color: #bdc3c7;
-  }
-  .cta-btn.secondary-cta,
-  .cta-btn.tertiary-cta {
-    background: #34495e;
-    color: #ecf0f1;
-  }
-  .cta-note {
-    color: #95a5a6;
-  }
-}
 
 /* ===== COMPACT CONTACT SECTION ===== */
 .section.contact {
