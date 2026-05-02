@@ -1,4 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  const body = document.body;
+
+  // Mobile Navigation Functionality
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      this.classList.toggle("active");
+      nav.classList.toggle("active");
+      body.classList.toggle("menu-open");
+    });
+
+    // Close menu when clicking a nav link
+    document.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", function () {
+        navToggle.classList.remove("active");
+        nav.classList.remove("active");
+        body.classList.remove("menu-open");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (
+        nav.classList.contains("active") &&
+        !nav.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
+        navToggle.classList.remove("active");
+        nav.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("active")) {
+        navToggle.classList.remove("active");
+        nav.classList.remove("active");
+        body.classList.remove("menu-open");
+      }
+    });
+  }
+
+  // Dropdown menus
   const dropdowns = document.querySelectorAll(".nav__item.dropdown");
 
   // Toggle mobile dropdowns

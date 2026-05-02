@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Styles -->
     <style>
@@ -97,62 +98,7 @@
         color: white;
       }
 
-      /* ===== Header & Navigation ===== */
-      .main-header {
-        background-color: white;
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: var(--shadow);
-      }
-
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        text-decoration: none;
-      }
-
-      .logo-img {
-        height: 60px;
-        width: auto;
-        border-radius: 8px;
-      }
-
-      .logo-text {
-        color: var(--primary);
-      }
-      .logo-text h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0;
-      }
-
-      .main-nav ul {
-        display: flex;
-        list-style: none;
-        gap: 5px;
-        align-items: baseline;
-      }
-      .main-nav a {
-        color: var(--dark);
-        text-decoration: none;
-        font-weight: 500;
-        padding: 8px 12px;
-        border-radius: 4px;
-        transition: var(--transition);
-      }
-      .main-nav a:hover,
-      .main-nav a.active {
-        background-color: var(--light);
-        color: var(--primary);
-      }
+      
 
       /* ===== Page Hero ===== */
       .page-hero {
@@ -659,14 +605,6 @@
       }
 
       @media (max-width: 768px) {
-        .header-container {
-          flex-direction: column;
-          gap: 20px;
-        }
-        .main-nav ul {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
         .page-hero h1 {
           font-size: 2rem;
         }
@@ -720,44 +658,83 @@
     </style>
   </head>
   <body>
-    <!-- Header with Logo & Navigation -->
-    <header class="main-header">
-      <div class="container header-container">
-        <a href="index.html" class="logo">
-          <img
-            src="images/logo hch.jpeg"
-            alt="Out of School Youth Project Logo"
-            class="logo-img"
-          />
-          <div class="logo-text">
-            <h1>OSYP</h1>
-          </div>
-        </a>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
-              <a href="index.html#aboutSection">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="index.html#programsSection">Programs</a>
-            </li>
-            <li>
-              <a href="index.html#gallerySection">Gallery</a>
-            </li>
-            <li>
-              <a href="stories.html" class="active">Success Stories</a>
-            </li>
-            <li>
-              <a href="index.html#contactSection">Contact Us</a>
-            </li>
-            <li class="nav__item">
-              <a href="donation.html" class="btn btn--primary btn--small"
-                >Donate</a
-              >
-            </li>
-          </ul>
-        </nav>
+    <!-- Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="index.html" class="logo">
+            <img
+              src="images/logo hch.jpeg"
+              alt="Out Of School Youth Project Logo"
+              class="logo__image"
+            />
+            <span class="logo__text">OSYP</span>
+          </a>
+
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+          </button>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="index.html#homeSection" class="nav__link" data-nav-link
+                  >Home</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#aboutSection" class="nav__link" data-nav-link
+                  >About Us</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#programsSection" class="nav__link" data-nav-link
+                  >Programs</a
+                >
+              </li>
+
+              <li class="nav__item">
+                <a href="index.html#gallerySection" class="nav__link" data-nav-link
+                  >Gallery</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#partnersSection" class="nav__link" data-nav-link
+                  >Partners</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#contactSection" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav__item dropdown">
+                <a href="#" class="nav__link" data-nav-link>
+                  Explore <i class="fas fa-chevron-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="stories.html" class="nav__link active" data-nav-link
+                      >Success Stories</a
+                    >
+                  </li>
+                  <li class="nav__item">
+                    <a href="events.html" class="nav__link" data-nav-link
+                      >Events & Updates</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="donation.html" class="btn btn--primary btn--small"
+                  >Donate</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -1195,6 +1172,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="js/script.js"></script>
     <script>
       // Set current year in footer
       document.getElementById("currentYear").textContent =

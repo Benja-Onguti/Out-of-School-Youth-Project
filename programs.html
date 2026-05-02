@@ -15,14 +15,15 @@
     />
 
     <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/programs.css" />
   </head>
   <body>
     <!-- Navigation -->
-    <header class="programs-header">
+    <header class="header">
       <div class="container">
         <div class="header__inner">
-          <a href="../index.html" class="logo">
+          <a href="index.html" class="logo">
             <img
               src="images/logo hch.jpeg"
               alt="Out Of School Youth Project Logo"
@@ -31,13 +32,68 @@
             <span class="logo__text">OSYP</span>
           </a>
 
-          <nav class="programs-nav">
-            <a href="../index.html" class="nav-link">
-              <i class="fas fa-home"></i> Home
-            </a>
-            <a href="donation.html" class="btn btn--primary">
-              <i class="fas fa-heart"></i> Donate
-            </a>
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+          </button>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="index.html#homeSection" class="nav__link" data-nav-link
+                  >Home</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#aboutSection" class="nav__link" data-nav-link
+                  >About Us</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#programsSection" class="nav__link active" data-nav-link
+                  >Programs</a
+                >
+              </li>
+
+              <li class="nav__item">
+                <a href="index.html#gallerySection" class="nav__link" data-nav-link
+                  >Gallery</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#partnersSection" class="nav__link" data-nav-link
+                  >Partners</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="index.html#contactSection" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav__item dropdown">
+                <a href="#" class="nav__link" data-nav-link>
+                  Explore <i class="fas fa-chevron-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="stories.html" class="nav__link" data-nav-link
+                      >Success Stories</a
+                    >
+                  </li>
+                  <li class="nav__item">
+                    <a href="events.html" class="nav__link" data-nav-link
+                      >Events & Updates</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="donation.html" class="btn btn--primary btn--small"
+                  >Donate</a
+                >
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -345,20 +401,11 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="js/script.js"></script>
     <script>
       // Set current year
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
-
-      // Simple navigation active state
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        link.addEventListener("click", function () {
-          document
-            .querySelectorAll(".nav-link")
-            .forEach((l) => l.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
     </script>
   </body>
 </html>
