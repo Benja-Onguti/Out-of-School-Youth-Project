@@ -132,7 +132,8 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("../images/img28.jpeg");
   background-size: cover;
   background-position: center;

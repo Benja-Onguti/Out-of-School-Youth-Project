@@ -32,11 +32,26 @@
   <lastmod>2026-02-18T09:53:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
+  <url>
   <loc>https://www.outofschoolyouthproject.com/index.html</loc>
   <lastmod>2026-02-18T09:34:11+00:00</lastmod>
   <priority>0.80</priority>
-</url>
+  </url>
+  <url>
+  <loc>https://www.outofschoolyouthproject.com/about.html</loc>
+  <lastmod>2026-05-05T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  </url>
+  <url>
+  <loc>https://www.outofschoolyouthproject.com/gallery.html</loc>
+  <lastmod>2026-05-05T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  </url>
+  <url>
+  <loc>https://www.outofschoolyouthproject.com/contact.html</loc>
+  <lastmod>2026-05-05T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  </url>
 
 
 </urlset>
