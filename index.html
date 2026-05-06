@@ -1,1004 +1,1348 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Out Of School Youth Project | Empowering Nairobi's Youth</title>
-<meta name="description" content="The Hands of Care and Hope Initiative empowers out-of-school youth in Nairobi through vocational training, life skills, and mentorship. Join us in transforming lives." />
-<link rel="icon" type="image/png" href="images/logo hch.jpeg" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Out Of School Youth Project</title>
+    <link rel="icon" type="image/png" href="images/logo hch.jpeg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-rel="stylesheet"
-/>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-/>
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/home.css" />
-</head>
-<body>
-<header class="header" id="mainHeader">
-<div class="container">
-<div class="header__inner">
-<a href="#homeSection" class="logo">
-<img
-src="images/logo hch.jpeg"
-alt="Out Of School Youth Project Logo"
-class="logo__image"
-/>
-<span class="logo__text">OSYP</span>
-</a>
+    <!-- Modern Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-<button class="nav-toggle" aria-label="Toggle navigation">
-<span class="hamburger"></span>
-</button>
+    <!-- Modern CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+    <!-- Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="#homeSection" class="logo">
+            <img
+              src="images/logo hch.jpeg"
+              alt="Out Of School Youth Project Logo"
+              class="logo__image"
+            />
+            <span class="logo__text">OSYP</span>
+          </a>
 
-<nav class="nav">
-<ul class="nav__list">
-<li class="nav__item">
-<a href="#homeSection" class="nav__link active" data-nav-link
->Home</a
->
-</li>
-<li class="nav__item">
-<a href="about.html" class="nav__link" data-nav-link
->About Us</a
->
-</li>
-<li class="nav__item">
-<a href="#programsSection" class="nav__link" data-nav-link
->Programs</a
->
-</li>
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+          </button>
 
-<li class="nav__item">
-<a href="gallery.html" class="nav__link" data-nav-link
->Gallery</a
->
-</li>
-<li class="nav__item">
-<a href="#partnersSection" class="nav__link" data-nav-link
->Partners</a
->
-</li>
-<li class="nav__item">
-<a href="contact.html" class="nav__link" data-nav-link
->Contact Us</a
->
-</li>
-<li class="nav__item dropdown">
-<a href="#" class="nav__link" data-nav-link>
-Explore <i class="fas fa-chevron-down"></i>
-</a>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#homeSection" class="nav__link active" data-nav-link
+                  >Home</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#aboutSection" class="nav__link" data-nav-link
+                  >About Us</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#programsSection" class="nav__link" data-nav-link
+                  >Programs</a
+                >
+              </li>
 
-<ul class="dropdown-menu">
-<li class="nav__item">
-<a href="stories.html" class="nav__link" data-nav-link
->Success Stories</a
->
-</li>
-<li class="nav__item">
-<a href="events.html" class="nav__link" data-nav-link
->Events & Updates</a
->
-</li>
-</ul>
-</li>
+              <li class="nav__item">
+                <a href="#gallerySection" class="nav__link" data-nav-link
+                  >Gallery</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#partnersSection" class="nav__link" data-nav-link
+                  >Partners</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#contactSection" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav__item dropdown">
+                <a href="#" class="nav__link" data-nav-link>
+                  Explore <i class="fas fa-chevron-down"></i>
+                </a>
 
-<li class="nav__item">
-<a href="donation.html" class="btn btn--primary btn--small"
->Donate</a
->
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</header>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="stories.html" class="nav__link" data-nav-link
+                      >Success Stories</a
+                    >
+                  </li>
+                  <li class="nav__item">
+                    <a href="events.html" class="nav__link" data-nav-link
+                      >Events & Updates</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero" id="homeSection">
-<div class="hero__bg">
-<img src="images/img12.jpeg" alt="" class="hero__bg-img" />
-</div>
-<div class="hero__overlay"></div>
-<div class="container">
-<div class="hero__content">
-<div class="hero__text">
-<div class="hero__badge">
-<i class="fas fa-heart"></i> Hands of Care & Hope
-</div>
-<h1 class="hero__title">
-Empowering <span>Out-of-School</span> Youth for a Brighter Future
-</h1>
-<p class="hero__subtitle">
-Transforming lives in Nairobi's underserved communities through vocational training, life skills mentorship, and spiritual guidance. Giving young adults the tools to build careers, confidence, and hope.
-</p>
-<div class="hero__stats">
-<div class="stat">
-<span class="stat__number" data-count="1400">0</span><span class="stat__suffix">+</span>
-<span class="stat__label">Youths Impacted</span>
-</div>
-<div class="stat">
-<span class="stat__number" data-count="1095">0</span><span class="stat__suffix">+</span>
-<span class="stat__label">Children in School</span>
-</div>
-<div class="stat">
-<span class="stat__number" data-count="4">0</span>
-<span class="stat__label">Core Programs</span>
-</div>
-<div class="stat">
-<span class="stat__number">18-26</span>
-<span class="stat__label">Age Focus</span>
-</div>
-</div>
-<div class="hero__actions">
-<a href="donation.html" class="btn btn--primary btn--lg">
-<i class="fas fa-hand-holding-heart"></i> Support Our Work
-</a>
-<a href="contact.html" class="btn btn--outline-white btn--lg">
-<i class="fas fa-user-plus"></i> Join a Program
-</a>
-</div>
-</div>
+              <li class="nav__item">
+                <a href="donation.html" class="btn btn--primary btn--small"
+                  >Donate</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-<div class="hero__image">
-<div class="hero__image-frame">
-<img
-src="images/img12.jpeg"
-alt="Youth at Mother Kevin Youth Centre"
-loading="lazy"
-/>
-<div class="hero__image-overlay">
-<p class="hero__testimonial">"This program gave us hope and a new beginning"</p>
-<span class="hero__testimonial-author">- Program Graduates</span>
-</div>
-</div>
-<div class="hero__float-card hero__float-card--1">
-<i class="fas fa-graduation-cap"></i>
-<div>
-<strong>1,095+</strong>
-<span>Children Educated</span>
-</div>
-</div>
-<div class="hero__float-card hero__float-card--2">
-<i class="fas fa-tools"></i>
-<div>
-<strong>4</strong>
-<span>Programs</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <!-- Hero Section -->
+    <section class="hero" id="homeSection">
+      <div class="hero__overlay"></div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              Empowering <span>Out of School</span> Youth
+            </h1>
+            <p class="hero__subtitle">
+              The Hands of Care and Hope Initiative (HCH) is a community-based
+              project dedicated to uplifting marginalized residents in the
+              Huruma and Kariobangi regions of Nairobi. While the initiative
+              provides a foundation for the future by putting 1,095 children
+              through formal school, it also addresses the immediate crisis
+              facing "out-of-school" youth. By utilizing the Mother Kevin Youth
+              Centre, HCH offers a safe haven and rehabilitative programs for
+              young adults (18–26) battling hopelessness and anti-social
+              behaviors, helping them transition from the fringes of society
+              back into active community life.
+            </p>
+            <div class="hero__stats">
+              <div class="stat">
+                <span class="stat__number">1,400+</span>
+                <span class="stat__label">Youths Impacted</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">4</span>
+                <span class="stat__label">Core Programs</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">18-26</span>
+                <span class="stat__label">Age Focus</span>
+              </div>
+            </div>
+            <div class="hero__actions">
+              <a href="donation.html" class="btn btn--primary">
+                <i class="fas fa-hand-holding-heart"></i> Support Our Work
+              </a>
+              <a href="#contactSection" class="btn btn--secondary">
+                <i class="fas fa-user-plus"></i> Join Program
+              </a>
+            </div>
+          </div>
 
-<a href="#impactBanner" class="scroll-indicator">
-<span>Discover More</span>
-<i class="fas fa-chevron-down"></i>
-</a>
-</section>
+          <div class="hero__image">
+            <div class="image-container">
+              <img
+                src="images/img12.jpeg"
+                alt="Youth at Mother Kevin Youth Centre"
+                loading="lazy"
+              />
+              <div class="image-overlay">
+                <div class="testimonial">
+                  <p>"This program gave us hope and a new beginning"</p>
+                  <span>- Program Graduates</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<!-- ===== IMPACT BANNER ===== -->
-<section class="impact-banner" id="impactBanner">
-<div class="container">
-<div class="impact-banner__grid">
-<div class="impact-card">
-<div class="impact-card__icon">
-<i class="fas fa-user-graduate"></i>
-</div>
-<div class="impact-card__number" data-count="1400">0</div>
-<div class="impact-card__suffix">+</div>
-<div class="impact-card__label">Youths Empowered</div>
-</div>
-<div class="impact-card">
-<div class="impact-card__icon">
-<i class="fas fa-school"></i>
-</div>
-<div class="impact-card__number" data-count="1095">0</div>
-<div class="impact-card__suffix">+</div>
-<div class="impact-card__label">Children in School</div>
-</div>
-<div class="impact-card">
-<div class="impact-card__icon">
-<i class="fas fa-hands-helping"></i>
-</div>
-<div class="impact-card__number" data-count="4">0</div>
-<div class="impact-card__suffix"></div>
-<div class="impact-card__label">Active Programs</div>
-</div>
-<div class="impact-card">
-<div class="impact-card__icon">
-<i class="fas fa-map-marker-alt"></i>
-</div>
-<div class="impact-card__number" data-count="4">0</div>
-<div class="impact-card__suffix"></div>
-<div class="impact-card__label">Communities Served</div>
-</div>
-</div>
-</div>
-</section>
+      <a href="#aboutSection" class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+    <!-- About Section -->
+    <section class="section about" id="aboutSection">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">About US</span>
+          <h2 class="section__title">Empowering Youth, Building Futures</h2>
+        </div>
 
-<!-- ===== ABOUT TEASER ===== -->
-<section class="about-teaser" id="aboutTeaser">
-<div class="container">
-<div class="about-teaser__grid">
-<div class="about-teaser__image-col">
-<div class="about-teaser__image">
-<img src="images/img28.jpeg" alt="Youth training session" loading="lazy" />
-</div>
-<div class="about-teaser__accent-box">
-<span class="about-teaser__accent-number">15+</span>
-<span class="about-teaser__accent-text">Years Serving Communities</span>
-</div>
-</div>
-<div class="about-teaser__content">
-<span class="section__subtitle">Who We Are</span>
-<h2 class="section__title">Turning Hopelessness Into <span>Opportunity</span></h2>
-<p class="about-teaser__lead">
-Managed by the <strong>Franciscan Missionary Sisters for Africa</strong>, the Hands of Care and Hope Initiative serves marginalized communities in Huruma, Madoya, Korogocho, and Kariobangi North.
-</p>
-<p class="about-teaser__text">
-Our youth program reaches out to 18-26-year-olds who have fallen through the cracks of the education system. Through a mix of vocational training, behavior change mentorship, and youth-led evangelism, we give them the tools to build a career and a better life.
-</p>
-<div class="about-teaser__highlights">
-<div class="about-teaser__highlight">
-<i class="fas fa-bullseye"></i>
-<div>
-<strong>Our Mission</strong>
-<span>Empowering youths holistically through skills and mentorship</span>
-</div>
-</div>
-<div class="about-teaser__highlight">
-<i class="fas fa-eye"></i>
-<div>
-<strong>Our Vision</strong>
-<span>Eradicating poverty by empowering marginalized youths</span>
-</div>
-</div>
-</div>
-<a href="about.html" class="btn btn--primary">
-Learn More About Us <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-</div>
-</div>
-</section>
+        <div class="about__content">
+          <div class="about__text">
+            <p class="lead">
+              Managed by the
+              <strong>Franciscan Missionary Sisters for Africa</strong>, we
+              serve marginalized communities in Huruma, Madoya, Korogocho, and
+              Kariobangi North.
+            </p>
+            <p>
+              Our mission in Nairobi’s informal settlements is to turn
+              'hopelessness' into 'opportunity.' Our youth program reaches out
+              to 18–26-year-olds who have fallen through the cracks of the
+              education system. Through a mix of vocational training, behavior
+              change mentorship, and youth-led evangelism, we give them the
+              tools to build a career and a better life. We’re here to ensure
+              that every young person in our community has the chance to become
+              self-sufficient and proud of their path.
+            </p>
+          </div>
 
-<!-- ===== PROGRAMS SECTION ===== -->
-<section class="section programs" id="programsSection">
-<div class="container">
-<div class="section__header">
-<span class="section__subtitle">What We Do</span>
-<h2 class="section__title">Our Core Programs</h2>
-<p class="section__description">Empowering youth with practical skills for sustainable livelihoods and personal growth.</p>
-</div>
+          <div class="cards">
+            <div class="card card--mission">
+              <div class="card__icon">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="card__title">Our Mission</h3>
+              <p class="card__text">
+                Empowering youths holistically in the slums of korogocho, Huruma
+                and Madoya through life skills sessions, mentorship and
+                sponsorship for technical Vocational training for employment
+                opportunities
+              </p>
+            </div>
 
-<div class="programs__grid">
-<article class="program-card">
-<div class="program-card__image">
-<img
-src="images/img28.jpeg"
-alt="Life Skills Training"
-loading="lazy"
-/>
-<div class="program-card__badge-wrap">
-<span class="program-card__badge">Essential</span>
-</div>
-</div>
-<div class="program-card__content">
-<h3 class="program-card__title">Life Skills Training</h3>
-<p class="program-card__description">
-Comprehensive training in communication, problem-solving,
-financial literacy, and personal development.
-</p>
-<div class="program-card__meta">
-<div class="meta-item">
-<i class="fas fa-coins"></i>
-<span class="donation-target"
->Target: <strong>KSH 50,000</strong></span
->
-</div>
-</div>
-<a href="programs.html" class="btn btn--outline">See More <i class="fas fa-arrow-right"></i></a>
-</div>
-</article>
+            <div class="card card--vision">
+              <div class="card__icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3 class="card__title">Our Vision</h3>
+              <p class="card__text">
+                To eradicate poverty by empowering marginalized youths with
+                skills and opportunities.
+              </p>
+            </div>
 
-<article class="program-card">
-<div class="program-card__image">
-<img
-src="images/img53.jpeg"
-alt="First Aid Training"
-loading="lazy"
-/>
-<div class="program-card__badge-wrap">
-<span class="program-card__badge">Certified</span>
-</div>
-</div>
-<div class="program-card__content">
-<h3 class="program-card__title">First Aid Training</h3>
-<p class="program-card__description">
-Certified emergency response training providing valuable skills
-for community safety and employment.
-</p>
-<div class="program-card__meta">
-<div class="meta-item">
-<i class="fas fa-coins"></i>
-<span class="donation-target"
->Target: <strong>KSH 50,000</strong></span
->
-</div>
-</div>
-<a href="programs.html" class="btn btn--outline">See More <i class="fas fa-arrow-right"></i></a>
-</div>
-</article>
+            <div class="card card--goals">
+              <div class="card__icon">
+                <i class="fas fa-flag-checkered"></i>
+              </div>
+              <h3 class="card__title">Our Goals</h3>
+              <p class="card__text">
+                Help young people find their spark again. Through technical
+                skills and personal mentorship, we’re helping them move from
+                just surviving to building a future where they are independent,
+                resilient, and successful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
 
-<article class="program-card">
-<div class="program-card__image">
-<img
-src="img/YS2.JPG"
-alt="Youth Evangelization"
-loading="lazy"
-/>
-<div class="program-card__badge-wrap">
-<span class="program-card__badge">Spiritual</span>
-</div>
-</div>
-<div class="program-card__content">
-<h3 class="program-card__title">Youth Evangelization</h3>
-<p class="program-card__description">
-Peer-to-peer spiritual guidance fostering hope, purpose, and
-positive community engagement.
-</p>
-<div class="program-card__meta">
-<div class="meta-item">
-<i class="fas fa-coins"></i>
-<span class="donation-target"
->Target: <strong>KSH 28,000</strong></span
->
-</div>
-</div>
-<a href="programs.html" class="btn btn--outline">See More <i class="fas fa-arrow-right"></i></a>
-</div>
-</article>
+    <!-- Programs Section -->
+    <section class="section programs" id="programsSection">
+      <div class="container">
+        <div class="section__header">
+          <!--<span class="section__subtitle">Our Impact</span>-->
+          <h2 class="section__title">Core Programs</h2>
+        </div>
 
-<article class="program-card">
-<div class="program-card__image">
-<img
-src="images/img23.jpeg"
-alt="Vocational Training"
-loading="lazy"
-/>
-<div class="program-card__badge-wrap">
-<span class="program-card__badge">Career</span>
-</div>
-</div>
-<div class="program-card__content">
-<h3 class="program-card__title">Vocational Training</h3>
-<p class="program-card__description">
-Technical skills training in various trades leading to
-sustainable employment and entrepreneurship.
-</p>
-<div class="program-card__meta">
-<div class="meta-item">
-<i class="fas fa-coins"></i>
-<span class="donation-target"
->Target: <strong>KSH 65,000</strong></span
->
-</div>
-</div>
-<a href="programs.html" class="btn btn--outline">See More <i class="fas fa-arrow-right"></i></a>
-</div>
-</article>
-</div>
-</div>
-</section>
+        <div class="programs__grid">
+          <article class="program-card">
+            <div class="program-card__image">
+              <img
+                src="images/img28.jpeg"
+                alt="Life Skills Training"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-card__content">
+              <div class="program-card__header">
+                <h3 class="program-card__title">Life Skills Training</h3>
+                <span class="program-card__badge">Essential</span>
+              </div>
+              <p class="program-card__description">
+                Comprehensive training in communication, problem-solving,
+                financial literacy, and personal development.
+              </p>
+              <div class="program-card__meta">
+                <div class="meta-item">
+                  <i class="fas fa-coins"></i>
+                  <span class="donation-target"
+                    >Target: <strong>KSH 50,000 (€358)</strong></span
+                  >
+                </div>
+              </div>
+              <a href="programs.html" class="btn btn--outline">See More</a>
+            </div>
+          </article>
 
-<!-- ===== TESTIMONIALS SECTION ===== -->
-<section class="section testimonials" id="testimonialsSection">
-<div class="container">
-<div class="section__header">
-<span class="section__subtitle">Success Stories</span>
-<h2 class="section__title">Voices of Transformation</h2>
-<p class="section__description">
-Hear from youth whose lives have been changed through our programs
-</p>
-</div>
+          <article class="program-card">
+            <div class="program-card__image">
+              <img
+                src="images/img53.jpeg"
+                alt="First Aid Training"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-card__content">
+              <div class="program-card__header">
+                <h3 class="program-card__title">
+                  First Aid<br />
+                  Training
+                </h3>
+                <span class="program-card__badge">Certified</span>
+              </div>
+              <p class="program-card__description">
+                Certified emergency response training providing valuable skills
+                for community safety and employment.
+              </p>
+              <div class="program-card__meta">
+                <div class="meta-item">
+                  <i class="fas fa-coins"></i>
+                  <span class="donation-target"
+                    >Target: <strong>KSH 50,000 (€358)</strong></span
+                  >
+                </div>
+              </div>
+              <a href="programs.html" class="btn btn--outline">See More</a>
+            </div>
+          </article>
 
-<div class="testimonials__carousel">
-<button
-class="carousel__btn carousel__btn--prev"
-aria-label="Previous testimonial"
->
-<i class="fas fa-chevron-left"></i>
-</button>
+          <article class="program-card">
+            <div class="program-card__image">
+              <img
+                src="img/YS2.JPG"
+                alt="Youth Evangelization"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-card__content">
+              <div class="program-card__header">
+                <h3 class="program-card__title">Youth Evangelization</h3>
+                <span class="program-card__badge">Spiritual</span>
+              </div>
+              <p class="program-card__description">
+                Peer-to-peer spiritual guidance fostering hope, purpose, and
+                positive community engagement.
+              </p>
+              <div class="program-card__meta">
+                <div class="meta-item">
+                  <i class="fas fa-coins"></i>
+                  <span class="donation-target"
+                    >Target: <strong>KSH 28,000(€200) </strong></span
+                  >
+                </div>
+              </div>
+              <a href="programs.html" class="btn btn--outline"> See More</a>
+            </div>
+          </article>
 
-<div class="testimonials__track-container">
-<div class="testimonials__track">
-<article class="testimonial-card active">
-<div class="testimonial-card__content">
-<div class="testimonial-card__quote">
-<i class="fas fa-quote-left"></i>
-<p>
-This program gave me hope when I had none. The life skills
-training helped me secure my first job, and now I can
-support my family. It's more than education—it's a new
-beginning.
-</p>
-</div>
+          <article class="program-card">
+            <div class="program-card__image">
+              <img
+                src="images/img23.jpeg"
+                alt="Vocational Training"
+                loading="lazy"
+              />
+            </div>
+            <div class="program-card__content">
+              <div class="program-card__header">
+                <h3 class="program-card__title">Vocational Training</h3>
+                <span class="program-card__badge">Career</span>
+              </div>
+              <p class="program-card__description">
+                Technical skills training in various trades leading to
+                sustainable employment and entrepreneurship.
+              </p>
+              <div class="program-card__meta">
+                <div class="meta-item">
+                  <i class="fas fa-coins"></i>
+                  <span class="donation-target"
+                    >Target: <strong>KSH 65,000 (€465)</strong></span
+                  >
+                </div>
+              </div>
+              <a href="programs.html" class="btn btn--outline"> See More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="testimonial-card__author">
-<div class="author__avatar">
-<img
-src="images/avatar.png"
-alt="Brian Omondi"
-loading="lazy"
-onerror="this.src='https://via.placeholder.com/70?text=Brian'"
-/>
-<div class="avatar__status"></div>
-</div>
-<div class="author__info">
-<h4 class="author__name">Brian Omondi</h4>
-<p class="author__role">Vocational Training Graduate</p>
-<div class="author__meta">
-<span class="meta__badge">Electrician</span>
-<span class="meta__date">Class of 2025</span>
-</div>
-</div>
-</div>
-</div>
-</article>
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonialsSection">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Success Stories</span>
+          <h2 class="section__title">Voices of Transformation</h2>
+          <p class="section__description">
+            Hear from youth whose lives have been changed through our programs
+          </p>
+        </div>
 
-<article class="testimonial-card">
-<div class="testimonial-card__content">
-<div class="testimonial-card__quote">
-<i class="fas fa-quote-left"></i>
-<p>
-The first aid certification opened doors I never imagined.
-I now work as a safety officer at a construction company.
-The practical skills we learned are invaluable in the real
-world.
-</p>
-</div>
+        <!-- Carousel Container - SIMPLIFIED -->
+        <div class="testimonials__carousel">
+          <button
+            class="carousel__btn carousel__btn--prev"
+            aria-label="Previous testimonial"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
 
-<div class="testimonial-card__author">
-<div class="author__avatar">
-<img
-src="images/avatar2.png"
-alt="Grace Mwende"
-loading="lazy"
-onerror="this.src='https://via.placeholder.com/70?text=Grace'"
-/>
-<div class="avatar__status"></div>
-</div>
-<div class="author__info">
-<h4 class="author__name">Grace Mwende</h4>
-<p class="author__role">First Aid Graduate</p>
-<div class="author__meta">
-<span class="meta__badge">Safety Officer</span>
-<span class="meta__date">Class of 2024</span>
-</div>
-</div>
-</div>
-</div>
-</article>
+          <div class="testimonials__track-container">
+            <div class="testimonials__track">
+              <!-- Testimonial 1 -->
+              <article class="testimonial-card active">
+                <div class="testimonial-card__content">
+                  <div class="testimonial-card__quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>
+                      This program gave me hope when I had none. The life skills
+                      training helped me secure my first job, and now I can
+                      support my family. It's more than education—it's a new
+                      beginning.
+                    </p>
+                  </div>
 
-<article class="testimonial-card">
-<div class="testimonial-card__content">
-<div class="testimonial-card__quote">
-<i class="fas fa-quote-left"></i>
-<p>
-After dropping out of school, I felt lost. The youth
-evangelization program helped me find purpose and
-community. Now I mentor other young people facing similar
-challenges.
-</p>
-</div>
+                  <div class="testimonial-card__author">
+                    <div class="author__avatar">
+                      <img
+                        src="images/avatar.png"
+                        alt="Brian Omondi"
+                        loading="lazy"
+                        onerror="
+                          this.src = 'https://via.placeholder.com/70?text=Brian'
+                        "
+                      />
+                      <div class="avatar__status"></div>
+                    </div>
+                    <div class="author__info">
+                      <h4 class="author__name">Brian Omondi</h4>
+                      <p class="author__role">Vocational Training Graduate</p>
+                      <div class="author__meta">
+                        <span class="meta__badge">Electrician</span>
+                        <span class="meta__date">Class of 2025</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-<div class="testimonial-card__author">
-<div class="author__avatar">
-<img
-src="images/avatar.png"
-alt="Samuel Kiprotich"
-loading="lazy"
-onerror="this.src='https://via.placeholder.com/70?text=Samuel'"
-/>
-<div class="avatar__status"></div>
-</div>
-<div class="author__info">
-<h4 class="author__name">Samuel Kiprotich</h4>
-<p class="author__role">Youth Evangelization Leader</p>
-<div class="author__meta">
-<span class="meta__badge">Mentor</span>
-<span class="meta__date">Class of 2024</span>
-</div>
-</div>
-</div>
-</div>
-</article>
+              <!-- Testimonial 2 -->
+              <article class="testimonial-card">
+                <div class="testimonial-card__content">
+                  <div class="testimonial-card__quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>
+                      The first aid certification opened doors I never imagined.
+                      I now work as a safety officer at a construction company.
+                      The practical skills we learned are invaluable in the real
+                      world.
+                    </p>
+                  </div>
 
-<article class="testimonial-card">
-<div class="testimonial-card__content">
-<div class="testimonial-card__quote">
-<i class="fas fa-quote-left"></i>
-<p>
-The financial literacy sessions changed how I manage
-money. I started a small tailoring business and now employ
-two other graduates. This program builds entrepreneurs,
-not just employees.
-</p>
-</div>
+                  <div class="testimonial-card__author">
+                    <div class="author__avatar">
+                      <img
+                        src="images/avatar2.png"
+                        alt="Grace Mwende"
+                        loading="lazy"
+                        onerror="
+                          this.src = 'https://via.placeholder.com/70?text=Grace'
+                        "
+                      />
+                      <div class="avatar__status"></div>
+                    </div>
+                    <div class="author__info">
+                      <h4 class="author__name">Grace Mwende</h4>
+                      <p class="author__role">First Aid Graduate</p>
+                      <div class="author__meta">
+                        <span class="meta__badge">Safety Officer</span>
+                        <span class="meta__date">Class of 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-<div class="testimonial-card__author">
-<div class="author__avatar">
-<img
-src="images/avatar2.png"
-alt="Susan Atieno"
-loading="lazy"
-onerror="this.src='https://via.placeholder.com/70?text=Susan'"
-/>
-<div class="avatar__status"></div>
-</div>
-<div class="author__info">
-<h4 class="author__name">Susan Atieno</h4>
-<p class="author__role">Life Skills Graduate</p>
-<div class="author__meta">
-<span class="meta__badge">Entrepreneur</span>
-<span class="meta__date">Class of 2025</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-</div>
-</div>
+              <!-- Testimonial 3 -->
+              <article class="testimonial-card">
+                <div class="testimonial-card__content">
+                  <div class="testimonial-card__quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>
+                      After dropping out of school, I felt lost. The youth
+                      evangelization program helped me find purpose and
+                      community. Now I mentor other young people facing similar
+                      challenges.
+                    </p>
+                  </div>
 
-<button
-class="carousel__btn carousel__btn--next"
-aria-label="Next testimonial"
->
-<i class="fas fa-chevron-right"></i>
-</button>
+                  <div class="testimonial-card__author">
+                    <div class="author__avatar">
+                      <img
+                        src="images/avatar.png"
+                        alt="Samuel Kiprotich"
+                        loading="lazy"
+                        onerror="
+                          this.src =
+                            'https://via.placeholder.com/70?text=Samuel'
+                        "
+                      />
+                      <div class="avatar__status"></div>
+                    </div>
+                    <div class="author__info">
+                      <h4 class="author__name">Samuel Kiprotich</h4>
+                      <p class="author__role">Youth Evangelization Leader</p>
+                      <div class="author__meta">
+                        <span class="meta__badge">Mentor</span>
+                        <span class="meta__date">Class of 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
-<div class="carousel__indicators">
-<button class="carousel__indicator active" aria-label="Go to testimonial 1"></button>
-<button class="carousel__indicator" aria-label="Go to testimonial 2"></button>
-<button class="carousel__indicator" aria-label="Go to testimonial 3"></button>
-<button class="carousel__indicator" aria-label="Go to testimonial 4"></button>
-</div>
-</div>
-</div>
-</section>
+              <!-- Testimonial 4 -->
+              <article class="testimonial-card">
+                <div class="testimonial-card__content">
+                  <div class="testimonial-card__quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>
+                      The financial literacy sessions changed how I manage
+                      money. I started a small tailoring business and now employ
+                      two other graduates. This program builds entrepreneurs,
+                      not just employees.
+                    </p>
+                  </div>
 
-<!-- ===== FEATURED GALLERY ===== -->
-<section class="featured-gallery" id="featuredGallery">
-<div class="container">
-<div class="section__header">
-<span class="section__subtitle">Through Our Lens</span>
-<h2 class="section__title">Moments That Matter</h2>
-<p class="section__description">Capturing the journey of transformation, learning, and community.</p>
-</div>
-<div class="featured-gallery__grid">
-<div class="featured-gallery__item featured-gallery__item--wide">
-<img src="img/YS1.JPG" alt="Youth during break time" loading="lazy" />
-<div class="featured-gallery__caption">
-<h3>Break Time Connections</h3>
-<p>Building relationships during breaks</p>
-</div>
-</div>
-<div class="featured-gallery__item">
-<img src="images/img28.jpeg" alt="Life skills training" loading="lazy" />
-<div class="featured-gallery__caption">
-<h3>Interactive Learning</h3>
-<p>Life skills training session</p>
-</div>
-</div>
-<div class="featured-gallery__item">
-<img src="img/FA3.JPG" alt="First Aid Training" loading="lazy" />
-<div class="featured-gallery__caption">
-<h3>First Aid Training</h3>
-<p>Practical emergency response skills</p>
-</div>
-</div>
-<div class="featured-gallery__item">
-<img src="img/ye.JPG" alt="Community Spirit" loading="lazy" />
-<div class="featured-gallery__caption">
-<h3>Community Spirit</h3>
-<p>Our diverse youth community</p>
-</div>
-</div>
-<div class="featured-gallery__item featured-gallery__item--wide">
-<img src="img/Dona.JPG" alt="Giving Donations" loading="lazy" />
-<div class="featured-gallery__caption">
-<h3>Giving Back</h3>
-<p>Distributing donations to the community</p>
-</div>
-</div>
-</div>
-<div class="featured-gallery__cta">
-<a href="gallery.html" class="btn btn--primary">
-View Full Gallery <i class="fas fa-images"></i>
-</a>
-</div>
-</div>
-</section>
+                  <div class="testimonial-card__author">
+                    <div class="author__avatar">
+                      <img
+                        src="images/avatar2.png"
+                        alt="Susan Atieno"
+                        loading="lazy"
+                        onerror="
+                          this.src = 'https://via.placeholder.com/70?text=Susan'
+                        "
+                      />
+                      <div class="avatar__status"></div>
+                    </div>
+                    <div class="author__info">
+                      <h4 class="author__name">Susan Atieno</h4>
+                      <p class="author__role">Life Skills Graduate</p>
+                      <div class="author__meta">
+                        <span class="meta__badge">Entrepreneur</span>
+                        <span class="meta__date">Class of 2025</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
 
-<!-- ===== PARTNERS SECTION ===== -->
-<section class="partners-section" id="partnersSection">
-<div class="container">
-<div class="section-header">
-<span class="section__subtitle">Our Partners</span>
-<h2>Trusted by Leading Organizations</h2>
-<p class="section-subtitle">
-Our mission is powered by collaboration with dedicated partners who
-believe in transforming youth lives
-</p>
-</div>
+          <button
+            class="carousel__btn carousel__btn--next"
+            aria-label="Next testimonial"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-<div class="partnership-cta">
-<h3>Join Our Mission to Empower Youth</h3>
-<p>
-Your partnership creates lasting change in Korogocho, Huruma,
-Kariobangi, and Madoya communities
-</p>
+          <!-- Indicators - ONE PER CARD -->
+          <div class="carousel__indicators">
+            <button
+              class="carousel__indicator active"
+              aria-label="Go to testimonial 1"
+            ></button>
+            <button
+              class="carousel__indicator"
+              aria-label="Go to testimonial 2"
+            ></button>
+            <button
+              class="carousel__indicator"
+              aria-label="Go to testimonial 3"
+            ></button>
+            <button
+              class="carousel__indicator"
+              aria-label="Go to testimonial 4"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="cta-buttons">
-<a href="contact.html" class="cta-btn primary-cta">
-<i class="fas fa-handshake"></i> Become a Partner
-</a>
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallerySection">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Through Our Lens</span>
+          <h2 class="section__title">Our Journey</h2>
+        </div>
 
-<a href="donation.html" class="cta-btn tertiary-cta">
-<i class="fas fa-donate"></i> Make a Donation
-</a>
-</div>
-</div>
-</div>
-</section>
+        <div class="gallery__grid">
+          <figure class="gallery-item" data-category="training">
+            <img
+              src="img/YS1.JPG"
+              alt="Youth during break time"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Break Time Connections</h3>
+              <p>Building relationships during breaks</p>
+            </figcaption>
+          </figure>
 
-<!-- ===== CTA / NEWSLETTER ===== -->
-<section class="cta-newsletter">
-<div class="container">
-<div class="cta-newsletter__inner">
-<div class="cta-newsletter__content">
-<span class="cta-newsletter__badge"><i class="fas fa-bell"></i> Stay Updated</span>
-<h2 class="cta-newsletter__title">Join Our Mission</h2>
-<p class="cta-newsletter__text">Stay informed about our programs, events, and the impact we're making in Nairobi's communities. Together, we can create lasting change.</p>
-</div>
-<div class="cta-newsletter__actions">
-<a href="donation.html" class="btn btn--primary btn--lg">
-<i class="fas fa-heart"></i> Donate Now
-</a>
-<a href="contact.html" class="btn btn--outline-white btn--lg">
-<i class="fas fa-envelope"></i> Get in Touch
-</a>
-</div>
-</div>
-</div>
-</section>
+          <figure class="gallery-item" data-category="training">
+            <img
+              src="images/img28.jpeg"
+              alt="Life skills lesson in progress"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Interactive Learning</h3>
+              <p>Life skills training session</p>
+            </figcaption>
+          </figure>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-<div class="footer__top">
-<div class="container">
-<div class="footer__grid">
-<div class="footer__brand">
-<a href="#homeSection" class="footer__logo">
-<img src="images/logo hch.jpeg" alt="OSYP Logo" />
-<div class="footer__logo-text">
-<h3>Out of School Youth Project</h3>
-<p>Hands of Care & Hope Initiative</p>
-</div>
-</a>
-<p class="footer__description">
-Transforming lives through education, skills training, and holistic support for marginalized youth in Nairobi's underserved communities.
-</p>
-<div class="footer__social">
-<a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener" aria-label="Facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
-<a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener" aria-label="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener" aria-label="LinkedIn">
-<i class="fab fa-linkedin-in"></i>
-</a>
-</div>
-</div>
+          <figure class="gallery-item" data-category="training">
+            <img
+              src="img/Cleanin 1.JPG"
+              alt="Community cleaning Activity"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Community Cleaning Activity</h3>
+              <p>Cleaning</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="training">
+            <img
+              src="img/Cleaning 2.JPG"
+              alt="Community cleaning Activity"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Community Cleaning Activity</h3>
+              <p>Cleaning</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="training">
+            <img
+              src="img/Cleaning 3.JPG"
+              alt="Community cleaning Activity"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Community Cleaning Activity</h3>
+              <p>Cleaning</p>
+            </figcaption>
+          </figure>
 
-<div class="footer__col">
-<h4 class="footer__heading">Quick Links</h4>
-<ul class="footer__list">
-<li><a href="#homeSection">Home</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="#programsSection">Programs</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="donation.html">Donate</a></li>
-</ul>
-</div>
+          <figure class="gallery-item" data-category="graduation">
+            <img src="img/FA3.JPG" alt="First Aid Training" loading="lazy" />
+            <figcaption class="gallery-item__caption">
+              <h3>First Aid Training</h3>
+              <p>First Aid Traing Session</p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="graduation">
+            <img src="img/FA2.JPG" alt="First Aid Training" loading="lazy" />
+            <figcaption class="gallery-item__caption">
+              <h3>First Aid Training</h3>
+              <p>First Aid Traing Session</p>
+            </figcaption>
+          </figure>
 
-<div class="footer__col">
-<h4 class="footer__heading">Explore</h4>
-<ul class="footer__list">
-<li><a href="stories.html">Success Stories</a></li>
-<li><a href="events.html">Events & Updates</a></li>
-<li><a href="programs.html">Life Skills Training</a></li>
-<li><a href="programs.html">First Aid Training</a></li>
-<li><a href="programs.html">Youth Evangelization</a></li>
-<li><a href="programs.html">Vocational Training</a></li>
-</ul>
-</div>
+          <figure class="gallery-item" data-category="community">
+            <img
+              src="img/ye.JPG"
+              alt="Group photo of participants"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Community Spirit</h3>
+              <p>Our diverse youth community</p>
+            </figcaption>
+          </figure>
 
-<div class="footer__col">
-<h4 class="footer__heading">Contact Us</h4>
-<div class="footer__contact-list">
-<div class="footer__contact-item">
-<i class="fas fa-map-marker-alt"></i>
-<div>
-<span>Cheshire Home, Kariobangi North</span>
-<span>Opposite Kariobangi Catholic Church</span>
-</div>
-</div>
-<div class="footer__contact-item">
-<i class="fas fa-envelope"></i>
-<div>
-<a href="mailto:judithjojo9@gmail.com">judithjojo9@gmail.com</a>
-<a href="mailto:cateketch@gmail.com">cateketch@gmail.com</a>
-</div>
-</div>
-<div class="footer__contact-item">
-<i class="fas fa-phone"></i>
-<div>
-<a href="tel:+254798804000">+254-798-804-000</a>
-<a href="tel:+254712089629">+254-712-089-629</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+          <figure class="gallery-item" data-category="donation">
+            <img
+              src="img/Dona.JPG"
+              alt="Distibuting Donations"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Giving Donations</h3>
+              <p>Giving out donations</p>
+            </figcaption>
+          </figure>
 
-<div class="footer__bottom">
-<div class="container">
-<div class="footer__bottom-inner">
-<p class="footer__copyright">
-&copy; <span id="currentYear"></span> Out of School Youth Project. All rights reserved.
-</p>
-<div class="footer__bottom-links">
-<a href="about.html">Privacy Policy</a>
-<a href="about.html">Terms of Service</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
+          <figure class="gallery-item" data-category="spiritual">
+            <img
+              src="img/Barister Course.png"
+              alt=" Barister Course"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Barister Program</h3>
+              <p>Vocational Training</p>
+            </figcaption>
+          </figure>
 
-<!-- Back to Top Button -->
-<button class="back-to-top" aria-label="Back to top">
-<i class="fas fa-arrow-up"></i>
-</button>
+          <figure class="gallery-item" data-category="spiritual">
+            <img
+              src="img/Nail technology.png"
+              alt=" Barister Course"
+              loading="lazy"
+            />
+            <figcaption class="gallery-item__caption">
+              <h3>Nail Technology</h3>
+              <p>Vocational Training</p>
+            </figcaption>
+          </figure>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+          <figure class="gallery-item" data-category="youths">
+            <img src="img/prog.jfif" alt="After Traing" loading="lazy" />
+            <figcaption class="gallery-item__caption">
+              <h3>Vocational Training</h3>
+              <p>At DiferrentTraining Session</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-// ===== CURRENT YEAR =====
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+    <!-- ===== PARTNERS & PARTNERSHIP SECTION ===== -->
+    <section class="partners-section" id="partnersSection">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="section__subtitle">Our Partners</span>
+          <h2>Trusted by Leading Organizations</h2>
+          <p class="section-subtitle">
+            Our mission is powered by collaboration with dedicated partners who
+            believe in transforming youth lives
+          </p>
+        </div>
 
-// ===== HEADER SCROLL EFFECT =====
-var header = document.getElementById("mainHeader");
-var lastScroll = 0;
-window.addEventListener("scroll", function () {
-var currentScroll = window.scrollY;
-if (currentScroll > 80) {
-header.classList.add("header--scrolled");
-} else {
-header.classList.remove("header--scrolled");
-}
-lastScroll = currentScroll;
-});
+        <!-- Triple CTA Buttons -->
+        <div class="partnership-cta">
+          <h3>Join Our Mission to Empower Youth</h3>
+          <p>
+            Your partnership creates lasting change in Korogocho, Huruma,
+            Kariobangi, and Madoya communities
+          </p>
 
-// ===== BACK TO TOP =====
-var backToTop = document.querySelector(".back-to-top");
-window.addEventListener("scroll", function () {
-if (window.scrollY > 400) {
-backToTop.classList.add("visible");
-} else {
-backToTop.classList.remove("visible");
-}
-});
-backToTop.addEventListener("click", function () {
-window.scrollTo({ top: 0, behavior: "smooth" });
-});
+          <div class="cta-buttons">
+            <a href="index.html#contactSection" class="cta-btn primary-cta">
+              <i class="fas fa-handshake"></i> Become a Partner
+            </a>
 
-// ===== COUNTER ANIMATION =====
-function animateCounters() {
-var counters = document.querySelectorAll("[data-count]");
-counters.forEach(function (counter) {
-if (counter.dataset.animated === "true") return;
-var rect = counter.getBoundingClientRect();
-if (rect.top < window.innerHeight && rect.bottom > 0) {
-counter.dataset.animated = "true";
-var target = parseInt(counter.getAttribute("data-count"));
-var duration = 2000;
-var start = 0;
-var startTime = null;
-function step(timestamp) {
-if (!startTime) startTime = timestamp;
-var progress = Math.min((timestamp - startTime) / duration, 1);
-var eased = 1 - Math.pow(1 - progress, 3);
-var current = Math.floor(eased * target);
-counter.textContent = current.toLocaleString();
-if (progress < 1) {
-requestAnimationFrame(step);
-} else {
-counter.textContent = target.toLocaleString();
-}
-}
-requestAnimationFrame(step);
-}
-});
-}
-window.addEventListener("scroll", animateCounters);
-animateCounters();
+            <a href="donation.html" class="cta-btn tertiary-cta">
+              <i class="fas fa-donate"></i> Make a Donation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-// ===== SCROLL REVEAL =====
-var revealElements = document.querySelectorAll(".about-teaser, .programs, .testimonials, .featured-gallery, .partners-section, .cta-newsletter, .impact-banner");
-var observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-entry.target.classList.add("revealed");
-observer.unobserve(entry.target);
-}
-});
-}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-revealElements.forEach(function (el) {
-el.classList.add("reveal-target");
-observer.observe(el);
-});
+    <!-- COntact section-->
+    <section class="section contact" id="contactSection">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">Let Us Connect</span>
+          <h2 class="section__title">
+            Ready to make a difference? Get in touch today
+          </h2>
+        </div>
 
-// ===== TESTIMONIALS CAROUSEL =====
-var carousel = document.querySelector(".testimonials__carousel");
-var track = document.querySelector(".testimonials__track");
-var cards = document.querySelectorAll(".testimonial-card");
-var prevBtn = document.querySelector(".carousel__btn--prev");
-var nextBtn = document.querySelector(".carousel__btn--next");
-var indicators = document.querySelectorAll(".carousel__indicator");
+        <div class="contact__wrapper">
+          <!-- Contact Info Column -->
+          <div class="contact__info">
+            <div class="section__header">
+              <span class="section__subtitle">Get In Touch</span>
+            </div>
 
-if (carousel && track && cards.length > 0) {
-var currentIndex = 0;
-var totalCards = cards.length;
-var isAnimating = false;
-var autoRotateInterval;
+            <p class="contact__intro">
+              Reach out to learn more, volunteer, or support our mission to
+              empower Nairobi's youth.
+            </p>
 
-function initializeCarousel() {
-var firstClone = cards[0].cloneNode(true);
-var lastClone = cards[totalCards - 1].cloneNode(true);
-firstClone.classList.add("clone");
-lastClone.classList.add("clone");
-track.appendChild(firstClone);
-track.insertBefore(lastClone, cards[0]);
-currentIndex = 1;
-updateCarousel(true);
-initializeReadMoreButtons();
-}
+            <div class="contact__details">
+              <!-- Location -->
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-item__content">
+                  <h3>Our Location</h3>
+                  <p>
+                    Cheshire Home, Kariobangi North<br />
+                    Opposite Kariobangi Catholic Church
+                  </p>
+                </div>
+              </div>
 
-function updateCarousel(instant) {
-if (isAnimating) return;
-isAnimating = true;
-var cardWidth = cards[0].offsetWidth;
-var gap = 30;
-var allCards = track.querySelectorAll(".testimonial-card");
-allCards.forEach(function (c) { c.classList.remove("active"); });
-if (allCards[currentIndex]) allCards[currentIndex].classList.add("active");
-var containerWidth = track.parentElement.offsetWidth;
-var cardWidthWithGap = cardWidth + gap;
-var centerOffset = (containerWidth - cardWidth) / 2;
-var position = -(currentIndex * cardWidthWithGap) + centerOffset;
-if (instant) { track.style.transition = "none"; }
-else { track.style.transition = "transform 0.5s cubic-bezier(0.4,0,0.2,1)"; }
-track.style.transform = "translateX(" + position + "px)";
-var realIndex = getRealIndex();
-indicators.forEach(function (ind, i) { ind.classList.toggle("active", i === realIndex); });
-if (prevBtn) prevBtn.disabled = false;
-if (nextBtn) nextBtn.disabled = false;
-if (!instant) { setTimeout(function () { isAnimating = false; handleLoop(); }, 500); }
-else { isAnimating = false; }
-}
+              <!-- Email - Now Clickable -->
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-item__content">
+                  <h3>Email Us</h3>
+                  <p>
+                    <a href="mailto:judithjojo9@gmail.com"
+                      >judithjojo9@gmail.com</a
+                    ><br />
+                    <a href="mailto:cateketch@gmail.com">cateketch@gmail.com</a>
+                  </p>
+                </div>
+              </div>
 
-function getRealIndex() {
-if (currentIndex === 0) return totalCards - 1;
-if (currentIndex === totalCards + 1) return 0;
-return currentIndex - 1;
-}
+              <!-- Phone - Now Clickable -->
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-item__content">
+                  <h3>Call Us</h3>
+                  <p>
+                    <a href="tel:+254798804000">+254-798-804-000</a><br />
+                    <a href="tel:+254712089629">+254-712-089-629</a>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-function handleLoop() {
-if (currentIndex === 0) { currentIndex = totalCards; updateCarousel(true); }
-else if (currentIndex === totalCards + 1) { currentIndex = 1; updateCarousel(true); }
-}
+            <!-- Social Media -->
+            <div class="contact__social">
+              <h3>Follow Our Journey</h3>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/share/15QAFkts3z/"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/out_of_school_youth_project"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/out-of-school-youth-project"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
 
-function nextSlide() { if (isAnimating) return; currentIndex++; updateCarousel(); resetAutoRotate(); }
-function prevSlide() { if (isAnimating) return; currentIndex--; updateCarousel(); resetAutoRotate(); }
-function goToSlide(index) { if (isAnimating) return; currentIndex = index + 1; updateCarousel(); resetAutoRotate(); }
+          <!-- Contact Form Column (Smaller) -->
+          <div class="contact__form">
+            <form
+              id="contactForm"
+              class="form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="e92f7783-f9e4-43c5-a959-f67e1735e3bf"
+              />
 
-function startAutoRotate() { clearInterval(autoRotateInterval); autoRotateInterval = setInterval(nextSlide, 5000); }
-function resetAutoRotate() { clearInterval(autoRotateInterval); startAutoRotate(); }
+              <h3 class="form__title">Send Us a Message</h3>
 
-function initializeReadMoreButtons() {
-var allCards = track.querySelectorAll(".testimonial-card");
-allCards.forEach(function (card) {
-var quote = card.querySelector(".testimonial-card__quote p");
-if (!quote) return;
-var wordCount = quote.textContent.split(" ").length;
-if (wordCount > 40) {
-var readMoreBtn = document.createElement("button");
-readMoreBtn.className = "read-more-btn";
-readMoreBtn.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
-quote.parentNode.insertBefore(readMoreBtn, quote.nextSibling);
-readMoreBtn.addEventListener("click", function () {
-quote.classList.toggle("expanded");
-if (quote.classList.contains("expanded")) {
-this.innerHTML = '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
-this.classList.add("expanded");
-} else {
-this.innerHTML = '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
-this.classList.remove("expanded");
-}
-});
-}
-});
-}
+              <!-- Name Field -->
+              <div class="form__group">
+                <label for="name" class="form__label">
+                  <i class="fas fa-user"></i> Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form__input"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
 
-if (prevBtn) prevBtn.addEventListener("click", prevSlide);
-if (nextBtn) nextBtn.addEventListener("click", nextSlide);
-indicators.forEach(function (ind, i) { ind.addEventListener("click", function () { goToSlide(i); }); });
+              <!-- Email Field -->
+              <div class="form__group">
+                <label for="email" class="form__label">
+                  <i class="fas fa-envelope"></i> Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form__input"
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
 
-var touchStartX = 0;
-carousel.addEventListener("touchstart", function (e) { touchStartX = e.touches[0].clientX; clearInterval(autoRotateInterval); }, { passive: true });
-carousel.addEventListener("touchend", function (e) {
-var diff = touchStartX - e.changedTouches[0].clientX;
-if (Math.abs(diff) > 50) { if (diff > 0) nextSlide(); else prevSlide(); }
-startAutoRotate();
-}, { passive: true });
+              <!-- Phone Field -->
+              <div class="form__group">
+                <label for="phone" class="form__label">
+                  <i class="fas fa-phone"></i> Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form__input"
+                  placeholder="Enter your phone number"
+                />
+              </div>
 
-document.addEventListener("keydown", function (e) {
-if (e.key === "ArrowLeft") prevSlide();
-if (e.key === "ArrowRight") nextSlide();
-});
+              <!-- Subject Field -->
+              <div class="form__group">
+                <label for="subject" class="form__label">
+                  <i class="fas fa-tag"></i> Subject
+                </label>
+                <select id="subject" name="subject" class="form__input">
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="donation">Donation Question</option>
+                  <option value="program">Program Information</option>
+                  <option value="volunteer">Volunteer Opportunity</option>
+                  <option value="partnership">Partnership Inquiry</option>
+                </select>
+                <i class="fas fa-chevron-down form__select-arrow"></i>
+              </div>
 
-carousel.addEventListener("mouseenter", function () { clearInterval(autoRotateInterval); });
-carousel.addEventListener("mouseleave", startAutoRotate);
+              <!-- Message Field -->
+              <div class="form__group">
+                <label for="message" class="form__label">
+                  <i class="fas fa-comment"></i> Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form__input form__textarea"
+                  rows="5"
+                  placeholder="Type your message here..."
+                  required
+                ></textarea>
+              </div>
 
-var resizeTimeout;
-window.addEventListener("resize", function () {
-clearTimeout(resizeTimeout);
-resizeTimeout = setTimeout(function () { updateCarousel(true); }, 250);
-});
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn--primary btn--block">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
 
-setTimeout(function () { initializeCarousel(); startAutoRotate(); }, 100);
-}
+              <!-- Privacy Notice -->
+              <p class="form__notice">
+                <i class="fas fa-lock"></i> Your information is secure and will
+                not be shared.
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="contact__map">
+          <div class="container">
+            <div class="section__header">
+              <h2 class="section__title">Our Location on the Map</h2>
+            </div>
 
-// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-link.addEventListener("click", function (e) {
-var targetId = this.getAttribute("href");
-if (targetId === "#") return;
-var targetEl = document.querySelector(targetId);
-if (targetEl) {
-e.preventDefault();
-targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-});
-});
-});
-</script>
-<script src="js/script.js"></script>
-</body>
+            <!-- Map Container with Pin -->
+            <div class="map-wrapper">
+              <!-- Google Maps Embed -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1209.5184210159446!2d36.87611050862791!3d-1.2570192180781077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f150069ec031b%3A0xe93c3e80c732454b!2sMother%20Kevin%20Youth%20Project!5e1!3m2!1sen!2ske!4v1770026780220!5m2!1sen!2ske"
+                class="map-container"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mother Kevin Youth Project Location"
+              >
+              </iframe>
+
+              <!-- Optional: Directions Button -->
+              <div class="map-directions">
+                <a
+                  href="https://www.google.com/maps/dir//Mother+Kevin+Youth+Project"
+                  target="_blank"
+                  rel="noopener"
+                  class="map-directions-btn"
+                >
+                  <i class="fas fa-directions"></i>
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <a href="#homeSection" class="footer__logo">
+              <img src="images/logo hch.jpeg" alt="OSYP Logo" />
+              <div class="footer__logo-text">
+                <h3>Out of School Youth Project</h3>
+                <p>Empowering Nairobi's Youth</p>
+              </div>
+            </a>
+            <p class="footer__description">
+              Transforming lives through education, skills training, and
+              holistic support for marginalized youth.
+            </p>
+          </div>
+
+          <div class="footer__links">
+            <h3 class="footer__title">Quick Links</h3>
+            <ul class="footer__list">
+              <li><a href="#homeSection">Home</a></li>
+              <li><a href="#aboutSection">About Us</a></li>
+              <li><a href="#programsSection">Programs</a></li>
+              <li><a href="#gallerySection">Gallery</a></li>
+              <li><a href="#contactSection">Contact</a></li>
+              <li><a href="donation.html">Donate</a></li>
+              <li><a href="stories.html">Success Stories</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__programs">
+            <h3 class="footer__title">Our Programs</h3>
+            <ul class="footer__list">
+              <li>
+                <a href="programs.html">Life Skills Training</a>
+              </li>
+              <li><a href="programs.html">First Aid Training</a></li>
+              <li>
+                <a href="programs.html">Youth Evangelization</a>
+              </li>
+              <li>
+                <a href="programs.html">Vocational Training</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__contact">
+            <h3 class="footer__title">Contact Info</h3>
+            <div class="footer__contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
+                North
+              </p>
+              <p><i class="fas fa-phone"></i> +254-798-804-000</p>
+              <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; <span id="currentYear"></span> Out of School Youth Project.
+            All rights reserved.
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.facebook.com/share/15QAFkts3z/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/out_of_school_youth_project"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/out-of-school-youth-project"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modern JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".testimonials__carousel");
+        const track = document.querySelector(".testimonials__track");
+        const cards = document.querySelectorAll(".testimonial-card");
+        const prevBtn = document.querySelector(".carousel__btn--prev");
+        const nextBtn = document.querySelector(".carousel__btn--next");
+        const indicators = document.querySelectorAll(".carousel__indicator");
+
+        if (!carousel || !track || cards.length === 0) return;
+
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let isAnimating = false;
+        let autoRotateInterval;
+
+        // Clone first and last cards for seamless looping
+        function initializeCarousel() {
+          // Clone cards for infinite loop
+          const firstClone = cards[0].cloneNode(true);
+          const lastClone = cards[totalCards - 1].cloneNode(true);
+
+          firstClone.classList.add("clone");
+          lastClone.classList.add("clone");
+
+          track.appendChild(firstClone);
+          track.insertBefore(lastClone, cards[0]);
+
+          // Update cards reference
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          // Set initial position (showing first real card)
+          currentIndex = 1;
+          updateCarousel(true);
+
+          // Initialize read more buttons for all cards
+          initializeReadMoreButtons();
+        }
+
+        // Update carousel position
+        function updateCarousel(instant = false) {
+          if (isAnimating) return;
+          isAnimating = true;
+
+          const allCards = track.querySelectorAll(".testimonial-card");
+          const cardWidth = cards[0].offsetWidth;
+          const gap = 30; // Match CSS gap
+
+          // Remove active class from all cards
+          allCards.forEach((card) => card.classList.remove("active"));
+
+          // Add active class to current card
+          if (allCards[currentIndex]) {
+            allCards[currentIndex].classList.add("active");
+          }
+
+          // Calculate position (center the active card)
+          const containerWidth = track.parentElement.offsetWidth;
+          const cardWidthWithGap = cardWidth + gap;
+          const centerOffset = (containerWidth - cardWidth) / 2;
+          const position = -(currentIndex * cardWidthWithGap) + centerOffset;
+
+          // Apply movement
+          if (instant) {
+            track.style.transition = "none";
+          } else {
+            track.style.transition =
+              "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+          }
+
+          track.style.transform = `translateX(${position}px)`;
+
+          // Update indicators
+          const realIndex = getRealIndex();
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === realIndex);
+          });
+
+          // Update button states
+          if (prevBtn) prevBtn.disabled = false;
+          if (nextBtn) nextBtn.disabled = false;
+
+          // Reset animation flag
+          if (!instant) {
+            setTimeout(() => {
+              isAnimating = false;
+              handleLoop();
+            }, 500);
+          } else {
+            isAnimating = false;
+          }
+        }
+
+        // Get real index (ignoring clones)
+        function getRealIndex() {
+          if (currentIndex === 0) return totalCards - 1;
+          if (currentIndex === totalCards + 1) return 0;
+          return currentIndex - 1;
+        }
+
+        // Handle seamless looping
+        function handleLoop() {
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          // Jump to opposite end if at clone
+          if (currentIndex === 0) {
+            currentIndex = totalCards;
+            updateCarousel(true);
+          } else if (currentIndex === totalCards + 1) {
+            currentIndex = 1;
+            updateCarousel(true);
+          }
+        }
+
+        // Navigation functions
+        function nextSlide() {
+          if (isAnimating) return;
+          currentIndex++;
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        function prevSlide() {
+          if (isAnimating) return;
+          currentIndex--;
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        function goToSlide(index) {
+          if (isAnimating) return;
+          currentIndex = index + 1; // +1 for clone offset
+          updateCarousel();
+          resetAutoRotate();
+        }
+
+        // Auto-rotate
+        function startAutoRotate() {
+          clearInterval(autoRotateInterval);
+          autoRotateInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoRotate() {
+          clearInterval(autoRotateInterval);
+          startAutoRotate();
+        }
+
+        // ========== READ MORE FUNCTIONALITY ==========
+        function initializeReadMoreButtons() {
+          const allCards = track.querySelectorAll(".testimonial-card");
+
+          allCards.forEach((card) => {
+            const quote = card.querySelector(".testimonial-card__quote p");
+            const quoteText = quote.textContent;
+            const wordCount = quoteText.split(" ").length;
+
+            // Only add read more if quote is long (more than 40 words)
+            if (wordCount > 40) {
+              // Create read more button
+              const readMoreBtn = document.createElement("button");
+              readMoreBtn.className = "read-more-btn";
+              readMoreBtn.innerHTML =
+                '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+
+              // Insert after quote
+              quote.parentNode.insertBefore(readMoreBtn, quote.nextSibling);
+
+              // Add click event
+              readMoreBtn.addEventListener("click", function () {
+                quote.classList.toggle("expanded");
+                const isExpanded = quote.classList.contains("expanded");
+
+                if (isExpanded) {
+                  this.innerHTML =
+                    '<span>Read Less</span> <i class="fas fa-chevron-up"></i>';
+                  this.classList.add("expanded");
+                } else {
+                  this.innerHTML =
+                    '<span>Read More</span> <i class="fas fa-chevron-down"></i>';
+                  this.classList.remove("expanded");
+                }
+              });
+            }
+          });
+        }
+
+        // ========== EVENT LISTENERS ==========
+        if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+        if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => goToSlide(index));
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        carousel.addEventListener(
+          "touchstart",
+          (e) => {
+            touchStartX = e.touches[0].clientX;
+            clearInterval(autoRotateInterval);
+          },
+          { passive: true },
+        );
+
+        carousel.addEventListener(
+          "touchend",
+          (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            const threshold = 50;
+
+            if (Math.abs(diff) > threshold) {
+              if (diff > 0) nextSlide();
+              else prevSlide();
+            }
+
+            startAutoRotate();
+          },
+          { passive: true },
+        );
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") prevSlide();
+          if (e.key === "ArrowRight") nextSlide();
+        });
+
+        // Pause on hover
+        carousel.addEventListener("mouseenter", () =>
+          clearInterval(autoRotateInterval),
+        );
+        carousel.addEventListener("mouseleave", startAutoRotate);
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            updateCarousel(true);
+          }, 250);
+        });
+
+        // ========== INITIALIZE ==========
+        setTimeout(() => {
+          initializeCarousel();
+          startAutoRotate();
+        }, 100);
+      });
+    </script>
+    <script src="js/modern.js" type="module"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
