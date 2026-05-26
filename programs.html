@@ -6,17 +6,54 @@
     <title>Our Programs | Out of School Youth Project</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/logo1.jpeg" />
+    <link rel="icon" type="image/png" href="images/logo hch.jpeg" />
 
     <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/programs.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <style>
+      .programs-section { padding: 60px 0; background: var(--light-color); }
+      .section-header { text-align: center; margin-bottom: 50px; }
+      .section-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; text-align: center; }
+      .section-title::after { content: ""; display: block; width: 80px; height: 3px; background: var(--secondary-color); margin: 10px auto 0; }
+      .section-description { font-size: 1.1rem; color: var(--gray-medium); max-width: 600px; margin: 0 auto; }
+      .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+      .program-box { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition-normal); border: 1px solid var(--gray-light); }
+      .program-box.featured { border: 2px solid var(--secondary-color); }
+      .program-box:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+      .program-box.featured:hover { transform: translateY(-10px); }
+      .program-image { height: 250px; overflow: hidden; }
+      .program-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+      .program-box:hover .program-image img { transform: scale(1.1); }
+      .program-content { padding: 25px; }
+      .program-header { margin-bottom: 15px; border-bottom: 1px solid var(--gray-light); padding-bottom: 15px; }
+      .program-title { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px; }
+      .program-cost { display: flex; align-items: baseline; gap: 5px; }
+      .program-cost .amount { font-size: 1.3rem; font-weight: 700; color: var(--dark-color); }
+      .program-cost .note { font-size: 0.9rem; color: var(--gray-medium); }
+      .program-description { color: var(--gray-medium); margin-bottom: 20px; line-height: 1.7; }
+      .program-details { margin-bottom: 25px; }
+      .detail-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.95rem; }
+      .detail-item i { color: var(--secondary-color); font-size: 0.9rem; }
+      .program-footer { text-align: center; }
+      .program-footer .btn { width: 100%; }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -49,7 +86,7 @@
       >
               </li>
               <li class="nav__item">
-                <a href="index.html#programsSection" class="nav__link active" data-nav-link
+                <a href="programs.html" class="nav__link active" data-nav-link
                   >Programs</a
                 >
               </li>
@@ -100,14 +137,14 @@
     </header>
 
     <!-- Hero Banner -->
-    <section class="programs-hero">
-      <div class="hero-overlay"></div>
+    <section class="page-hero page-hero--about">
+      <div class="page-hero__overlay"></div>
       <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Our Programs</h1>
-          <p class="hero-subtitle">
-            Empowering out-of-school youth with essential skills for a better
-            future.
+        <div class="page-hero__content">
+          <span class="page-hero__badge"><i class="fas fa-hands-helping"></i> What We Offer</span>
+          <h1 class="page-hero__title">Our <span>Programs</span></h1>
+          <p class="page-hero__subtitle">
+            Empowering out-of-school youth with essential skills for a better future.
           </p>
         </div>
       </div>
@@ -333,79 +370,112 @@
     </section>
 
     <!-- Footer -->
-    <footer class="programs-footer">
+    <footer class="footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <h3>Out of School Youth Project</h3>
-            <p>
-              Empowering marginalized youth through education and skills
-              training in Nairobi.
+        <div class="footer__content">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              <img src="images/logo hch.jpeg" alt="OSYP Logo" />
+              <div class="footer__logo-text">
+                <h3>Out of School Youth Project</h3>
+                <p>Empowering Nairobi's Youth</p>
+              </div>
+            </a>
+            <p class="footer__description">
+              Transforming lives through education, skills training, and
+              holistic support for marginalized youth.
             </p>
+          </div>
 
-            <div class="contact-info">
-              <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
-              <p><i class="fas fa-phone"></i> +254-798-804-000</p>
+          <div class="footer__links">
+            <h3 class="footer__title">Quick Links</h3>
+            <ul class="footer__list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donation.html">Donate</a></li>
+              <li><a href="stories.html">Success Stories</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__programs">
+            <h3 class="footer__title">Our Programs</h3>
+            <ul class="footer__list">
+              <li><a href="programs.html">Life Skills Training</a></li>
+              <li><a href="programs.html">First Aid Training</a></li>
+              <li><a href="programs.html">Youth Evangelization</a></li>
+              <li><a href="programs.html">Vocational Training</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__contact">
+            <h3 class="footer__title">Contact Info</h3>
+            <div class="footer__contact-info">
               <p>
                 <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
                 North
               </p>
-            </div>
-          </div>
-
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="#programsSection">Programs</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-          </div>
-
-          <div class="footer-social">
-            <h4>Follow Us</h4>
-            <div class="social-icons">
-              <a
-                href="https://www.facebook.com/share/15QAFkts3z/"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/out_of_school_youth_project"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/out-of-school-youth-project"
-                class="social-link"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+              <p><i class="fas fa-phone"></i> +254-798-804-000</p>
+              <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
             </div>
           </div>
         </div>
 
-        <div class="footer-bottom">
-          <p>
-            &copy; <span id="currentYear"></span> HCH-Out of School Youth
-            Project. All Rights Reserved.
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; <span id="currentYear"></span> Out of School Youth Project.
+            All rights reserved.
           </p>
+          <div class="footer__social">
+            <a
+              href="https://www.facebook.com/share/15QAFkts3z/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/out_of_school_youth_project"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/out-of-school-youth-project"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
-      // Set current year
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      const backToTop = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+      backToTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,13 +9,24 @@
     <link rel="icon" type="image/png" href="images/logo hch.jpeg" />
 
     <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/don.css" />
   </head>
   <body>
@@ -48,7 +60,7 @@
       >
               </li>
               <li class="nav__item">
-                <a href="index.html#programsSection" class="nav__link" data-nav-link
+                <a href="programs.html" class="nav__link" data-nav-link
                   >Programs</a
                 >
               </li>
@@ -298,7 +310,7 @@
             <ul class="footer__list">
               <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="index.html#programsSection">Programs</a></li>
+      <li><a href="programs.html">Programs</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
               <li><a href="donation.html">Donate</a></li>
@@ -335,27 +347,37 @@
             All rights reserved.
           </p>
           <div class="footer__social">
-            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#"><i class="fab fa-x"></i></a>
-            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
-      // Set current year
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTop.classList.add("visible");
+          } else {
+            backToTop.classList.remove("visible");
+          }
+        });
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
 
       // Format currency
       function formatCurrency(amount) {

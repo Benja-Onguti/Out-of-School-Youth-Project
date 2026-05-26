@@ -5,739 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events & Updates | Out of School Youth Project</title>
     <link rel="icon" type="image/png" href="images/logo hch.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      :root {
-        --primary-color: #800000;
-        --secondary-color: #e43a47;
-        --light-gray: #f8f9fa;
-        --gray: #e2e2e2;
-        --dark-gray: #666;
-        --text-color: #333;
-        --white: #ffffff;
-        --accent: #ff6b6b;
-        --shadow: 0 4px 12px rgba(128, 0, 0, 0.08);
-        --shadow-hover: 0 8px 25px rgba(128, 0, 0, 0.15);
-        --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.3);
-        --border-radius: 15px;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      /* Page Hero */
-      .page-hero-header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color) 0%,
-          #5a0000 100%
-        );
-        color: var(--white);
-        padding: 80px 0 60px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(
-          to right,
-          var(--secondary-color),
-          var(--accent)
-        );
-      }
-
-      .page-title-area {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 15px;
-        letter-spacing: -1px;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      .page-title-area span {
-        color: var(--secondary-color);
-      }
-
-      .tagline {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        max-width: 700px;
-        margin: 0 auto 30px;
-        animation: fadeInUp 0.8s ease 0.2s both;
-      }
-
-      .motto {
-        background-color: rgba(255, 255, 255, 0.15);
-        padding: 18px 35px;
-        border-radius: 50px;
-        display: inline-block;
-        margin-top: 20px;
-        font-size: 1.4rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        animation: fadeInUp 0.8s ease 0.4s both;
-        backdrop-filter: blur(10px);
-      }
-
-      /* Main Content */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .page-title {
-        text-align: center;
-        margin: 50px 0 40px;
-        position: relative;
-      }
-
-      .page-title h1 {
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .page-title h1:after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: var(--secondary-color);
-        border-radius: 2px;
-      }
-
-      .page-title .subtitle {
-        color: var(--dark-gray);
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 25px auto;
-      }
-
-      .year-badge {
-        background: linear-gradient(
-          135deg,
-          var(--secondary-color),
-          var(--accent)
-        );
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 700;
-        display: inline-block;
-        margin-top: 20px;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3);
-        animation: pulse 2s infinite;
-      }
-
-      /* Stats Section */
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 25px;
-        margin: 60px 0;
-      }
-
-      .stat-card {
-        background-color: var(--white);
-        padding: 35px 25px;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-        text-align: center;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-        border-top: 5px solid var(--primary-color);
-      }
-
-      .stat-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .stat-card:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-      }
-
-      .stat-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: var(--primary-color);
-        line-height: 1;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .stat-label {
-        color: var(--dark-gray);
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Months Grid */
-      .months-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin: 60px 0;
-      }
-
-      .month-card {
-        background: linear-gradient(145deg, #ffffff, #f5f5f5);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-        padding: 30px;
-        text-align: center;
-        transition: var(--transition);
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        border: 2px solid transparent;
-      }
-
-      .month-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--primary-color);
-      }
-
-      .month-card:active {
-        transform: translateY(-5px) scale(1.01);
-      }
-
-      .month-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        font-size: 2.5rem;
-        color: white;
-        box-shadow: 0 8px 20px rgba(128, 0, 0, 0.2);
-      }
-
-      .month-name {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-bottom: 10px;
-      }
-
-      .month-programs {
-        color: var(--dark-gray);
-        font-size: 1rem;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      .month-programs i {
-        color: var(--secondary-color);
-      }
-
-      .month-days {
-        background-color: rgba(128, 0, 0, 0.1);
-        color: var(--primary-color);
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: inline-block;
-      }
-
-      .view-programs-btn {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: var(--transition);
-        margin-top: 20px;
-        width: 100%;
-        box-shadow: 0 4px 15px rgba(128, 0, 0, 0.2);
-      }
-
-      .view-programs-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3);
-      }
-
-      /* Modal Overlay */
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 20px;
-      }
-
-      .modal-overlay.active {
-        display: flex;
-        opacity: 1;
-        animation: fadeIn 0.3s ease;
-      }
-
-      .modal-content {
-        background-color: var(--white);
-        border-radius: var(--border-radius);
-        width: 90%;
-        max-width: 800px;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: var(--shadow-modal);
-        transform: translateY(30px);
-        transition: transform 0.4s ease;
-        position: relative;
-      }
-
-      .modal-overlay.active .modal-content {
-        transform: translateY(0);
-      }
-
-      .modal-header {
-        background: linear-gradient(135deg, var(--primary-color), #5a0000);
-        color: white;
-        padding: 30px;
-        border-radius: var(--border-radius) var(--border-radius) 0 0;
-        position: relative;
-      }
-
-      .modal-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .modal-subtitle {
-        font-size: 1.1rem;
-        opacity: 0.9;
-      }
-
-      .close-modal {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .close-modal:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: rotate(90deg);
-      }
-
-      .modal-body {
-        padding: 30px;
-      }
-
-      .modal-events {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .modal-event-item {
-        padding: 20px;
-        border-radius: 10px;
-        background-color: var(--light-gray);
-        border-left: 4px solid var(--secondary-color);
-        transition: var(--transition);
-      }
-
-      .modal-event-item:hover {
-        background-color: #fff0f0;
-        transform: translateX(5px);
-      }
-
-      .modal-event-date {
-        font-weight: 700;
-        color: var(--primary-color);
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .modal-event-title {
-        font-weight: 600;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        color: var(--text-color);
-      }
-
-      .modal-event-details {
-        color: var(--dark-gray);
-        line-height: 1.6;
-      }
-
-      /* Quote Section */
-      .quote-section {
-        background: linear-gradient(
-          135deg,
-          rgba(128, 0, 0, 0.08) 0%,
-          rgba(228, 58, 71, 0.08) 100%
-        );
-        padding: 60px 40px;
-        border-radius: var(--border-radius);
-        margin: 80px 0 50px;
-        border-left: 6px solid var(--secondary-color);
-        position: relative;
-        text-align: center;
-      }
-
-      .quote-icon {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: var(--secondary-color);
-        opacity: 0.2;
-        font-size: 3rem;
-      }
-
-      .quote-text {
-        font-size: 1.8rem;
-        font-style: italic;
-        color: var(--text-color);
-        margin-bottom: 20px;
-        line-height: 1.8;
-        max-width: 900px;
-        margin: 0 auto 30px;
-        position: relative;
-      }
-
-      .quote-author {
-        font-weight: 700;
-        color: var(--primary-color);
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      /* Footer Content */
-      .footer-content {
-        text-align: center;
-        margin-top: 50px;
-        padding: 40px 0;
-        border-top: 2px solid var(--gray);
-      }
-
-      .master-text {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: var(--primary-color);
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .program-info {
-        color: var(--dark-gray);
-        font-size: 1.1rem;
-        margin-top: 15px;
-      }
-
-      /* Site Footer */
-      .site-footer {
-        background-color: #222;
-        color: var(--white);
-        padding: 3rem 0 1.5rem;
-        margin-top: 4rem;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-      }
-
-      .footer-col h3 {
-        color: var(--white);
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-      }
-
-      .footer-col h3:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        background-color: var(--secondary-color);
-      }
-
-      .footer-col p {
-        color: #aaa;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.8rem;
-      }
-
-      .footer-links a {
-        color: #aaa;
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .footer-links a:hover {
-        color: var(--secondary-color);
-        padding-left: 5px;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-links a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: var(--white);
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      .social-links a:hover {
-        background-color: var(--secondary-color);
-        transform: translateY(-3px);
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 2rem;
-        margin-top: 2rem;
-        border-top: 1px solid #444;
-        color: #aaa;
-        font-size: 0.9rem;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3);
-        }
-        50% {
-          box-shadow: 0 4px 25px rgba(228, 58, 71, 0.5);
-        }
-        100% {
-          box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3);
-        }
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .months-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .footer-container {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .page-hero-header {
-          padding: 60px 0 40px;
-        }
-
-        .page-title-area {
-          font-size: 2.2rem;
-        }
-
-        .motto {
-          font-size: 1.2rem;
-          padding: 15px 25px;
-        }
-
-        .page-title h1 {
-          font-size: 2rem;
-        }
-
-        .months-grid {
-          grid-template-columns: 1fr;
-          gap: 25px;
-        }
-
-        .quote-text {
-          font-size: 1.5rem;
-        }
-
-        .master-text {
-          font-size: 2rem;
-        }
-
-        .stats {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-        }
-
-        .stat-card {
-          padding: 25px 15px;
-        }
-
-        .stat-number {
-          font-size: 2.8rem;
-        }
-
-        .footer-container {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .page-hero-header {
-          padding: 50px 0 30px;
-        }
-
-        .page-title-area {
-          font-size: 1.8rem;
-        }
-
-        .year-badge {
-          padding: 10px 20px;
-          font-size: 1rem;
-        }
-
-        .stats {
-          grid-template-columns: 1fr;
-        }
-
-        .quote-section {
-          padding: 40px 20px;
-        }
-
-        .quote-text {
-          font-size: 1.3rem;
-        }
-
-        .modal-header {
-          padding: 20px;
-        }
-
-        .modal-title {
-          font-size: 1.8rem;
-        }
-      }
+      /* ===== Events Content Styles ===== */
+      .page-title { text-align: center; margin: 50px 0 40px; }
+      .page-title h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; position: relative; display: inline-block; }
+      .page-title h1:after { content: ""; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; }
+      .page-title .subtitle { color: var(--gray-medium); font-size: 1.2rem; max-width: 700px; margin: 25px auto; }
+      .year-badge { background: linear-gradient(135deg, var(--secondary-color), #ff6b6b); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 700; display: inline-block; margin-top: 20px; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3); animation: pulse 2s infinite; }
+      .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin: 60px 0; }
+      .stat-card { background-color: var(--white); padding: 35px 25px; border-radius: 15px; box-shadow: var(--shadow-md); text-align: center; transition: var(--transition-normal); border-top: 5px solid var(--primary-color); }
+      .stat-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+      .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--primary-color); line-height: 1; margin-bottom: 15px; }
+      .stat-label { color: var(--gray-medium); font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+      .months-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 60px 0; }
+      .month-card { background: var(--white); border-radius: 15px; box-shadow: var(--shadow-md); padding: 30px; text-align: center; transition: var(--transition-normal); cursor: pointer; border: 2px solid transparent; }
+      .month-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--primary-color); }
+      .month-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.5rem; color: white; box-shadow: 0 8px 20px rgba(128, 0, 0, 0.2); }
+      .month-name { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); margin-bottom: 10px; }
+      .month-programs { color: var(--gray-medium); font-size: 1rem; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+      .month-programs i { color: var(--secondary-color); }
+      .month-days { background-color: rgba(128, 0, 0, 0.1); color: var(--primary-color); padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; display: inline-block; }
+      .view-programs-btn { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: var(--transition-normal); margin-top: 20px; width: 100%; }
+      .view-programs-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3); }
+      .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 2000; padding: 20px; }
+      .modal-overlay.active { display: flex; }
+      .modal-content { background-color: var(--white); border-radius: 15px; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); position: relative; }
+      .modal-header { background: linear-gradient(135deg, var(--primary-color), #5a0000); color: white; padding: 30px; border-radius: 15px 15px 0 0; }
+      .modal-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+      .modal-subtitle { font-size: 1.1rem; opacity: 0.9; }
+      .close-modal { position: absolute; top: 25px; right: 25px; background: rgba(255,255,255,0.2); border: none; width: 40px; height: 40px; border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; transition: var(--transition-normal); display: flex; align-items: center; justify-content: center; }
+      .close-modal:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
+      .modal-body { padding: 30px; }
+      .modal-events { display: flex; flex-direction: column; gap: 20px; }
+      .modal-event-item { padding: 20px; border-radius: 10px; background-color: var(--light-color); border-left: 4px solid var(--secondary-color); transition: var(--transition-normal); }
+      .modal-event-item:hover { background-color: #fff0f0; transform: translateX(5px); }
+      .modal-event-date { font-weight: 700; color: var(--primary-color); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+      .modal-event-title { font-weight: 600; font-size: 1.2rem; margin-bottom: 8px; }
+      .modal-event-details { color: var(--gray-medium); line-height: 1.6; }
+      .quote-section { background: linear-gradient(135deg, rgba(128,0,0,0.08) 0%, rgba(228,58,71,0.08) 100%); padding: 60px 40px; border-radius: 15px; margin: 80px 0 50px; border-left: 6px solid var(--secondary-color); position: relative; text-align: center; }
+      .quote-icon { position: absolute; top: 30px; left: 30px; color: var(--secondary-color); opacity: 0.2; font-size: 3rem; }
+      .quote-text { font-size: 1.8rem; font-style: italic; max-width: 900px; margin: 0 auto 30px; line-height: 1.8; }
+      .quote-author { font-weight: 700; color: var(--primary-color); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 2px; }
+      .events-footer-text { text-align: center; margin-top: 50px; padding: 40px 0; border-top: 2px solid var(--gray-light); }
+      .events-footer-text .master-text { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; text-transform: uppercase; }
+      .events-footer-text p { color: var(--gray-medium); font-size: 1.1rem; }
+      @keyframes pulse { 0% { box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3); } 50% { box-shadow: 0 4px 25px rgba(228, 58, 71, 0.5); } 100% { box-shadow: 0 4px 15px rgba(228, 58, 71, 0.3); } }
+      @media (max-width: 992px) { .months-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 768px) { .months-grid { grid-template-columns: 1fr; gap: 25px; } .page-title h1 { font-size: 2rem; } .quote-text { font-size: 1.5rem; } .stats { grid-template-columns: repeat(2, 1fr); } .stat-number { font-size: 2.8rem; } }
+      @media (max-width: 480px) { .page-title h1 { font-size: 1.8rem; } .stats { grid-template-columns: 1fr; } .quote-section { padding: 40px 20px; } .quote-text { font-size: 1.3rem; } .modal-header { padding: 20px; } .modal-title { font-size: 1.8rem; } }
     </style>
   </head>
   <body>
@@ -761,74 +92,35 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="index.html#homeSection" class="nav__link" data-nav-link
-                  >Home</a
-                >
+                <a href="index.html" class="nav__link" data-nav-link>Home</a>
               </li>
               <li class="nav__item">
-        <a
-          href="about.html"
-          class="nav__link"
-          data-nav-link
-          >About Us</a
-        >
+                <a href="about.html" class="nav__link" data-nav-link>About Us</a>
               </li>
               <li class="nav__item">
-                <a
-                  href="index.html#programsSection"
-                  class="nav__link"
-                  data-nav-link
-                  >Programs</a
-                >
-              </li>
-
-              <li class="nav__item">
-        <a
-          href="gallery.html"
-          class="nav__link"
-          data-nav-link
-          >Gallery</a
-        >
+                <a href="programs.html" class="nav__link" data-nav-link>Programs</a>
               </li>
               <li class="nav__item">
-                <a
-                  href="index.html#partnersSection"
-                  class="nav__link"
-                  data-nav-link
-                  >Partners</a
-                >
+                <a href="gallery.html" class="nav__link" data-nav-link>Gallery</a>
               </li>
               <li class="nav__item">
-        <a
-          href="contact.html"
-          class="nav__link"
-          data-nav-link
-          >Contact Us</a
-        >
+                <a href="contact.html" class="nav__link" data-nav-link>Contact Us</a>
               </li>
               <li class="nav__item dropdown">
                 <a href="#" class="nav__link" data-nav-link>
                   Explore <i class="fas fa-chevron-down"></i>
                 </a>
-
                 <ul class="dropdown-menu">
                   <li class="nav__item">
-                    <a href="stories.html" class="nav__link" data-nav-link
-                      >Success Stories</a
-                    >
+                    <a href="stories.html" class="nav__link" data-nav-link>Success Stories</a>
                   </li>
                   <li class="nav__item">
-                    <a href="events.html" class="nav__link active" data-nav-link
-                      >Events & Updates</a
-                    >
+                    <a href="events.html" class="nav__link active" data-nav-link>Events & Updates</a>
                   </li>
                 </ul>
               </li>
-
               <li class="nav__item">
-                <a href="donation.html" class="btn btn--primary btn--small"
-                  >Donate</a
-                >
+                <a href="donation.html" class="btn btn--primary btn--small">Donate</a>
               </li>
             </ul>
           </nav>
@@ -837,16 +129,23 @@
     </header>
 
     <!-- Hero Section -->
-    <div class="page-hero-header">
+    <section class="page-hero page-hero--about">
+      <div class="page-hero__overlay"></div>
       <div class="container">
-        <div class="page-title-area">2026 Program Schedule</div>
-        <p class="tagline">
-          Explore our transformative journey through interactive monthly
-          calendars
-        </p>
-        <div class="motto">Motto: I AM THE CAPTAIN OF MY SOUL</div>
+        <div class="page-hero__content">
+          <span class="page-hero__badge"><i class="fas fa-calendar-alt"></i> 2026 Program Schedule</span>
+          <h1 class="page-hero__title">Events & <span>Updates</span></h1>
+          <p class="page-hero__subtitle">
+            Explore our transformative journey through interactive monthly calendars.
+          </p>
+          <div style="margin-top: 20px;">
+            <span style="display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 14px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; border: 2px solid rgba(255,255,255,0.2);">
+              Motto: I AM THE CAPTAIN OF MY SOUL
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <div class="container">
       <div class="page-title">
@@ -954,86 +253,101 @@
       </div>
 
       <!-- Footer Content -->
-      <div class="footer-content">
+      <div class="events-footer-text">
         <div class="master-text">I AM THE MASTER OF MY FATE</div>
-        <p class="program-info">
+        <p>
           Out of School Youth Project 2026 Program Schedule
         </p>
       </div>
     </div>
 
-    <!-- Site Footer -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3>Out of School Youth</h3>
-          <p>
-            The Hands of Care and Hope Initiative (HCH) is a community-based
-            project dedicated to uplifting marginalized residents in the Huruma
-            and Kariobangi regions of Nairobi.
-          </p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/share/15QAFkts3z/"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              <img src="images/logo hch.jpeg" alt="OSYP Logo" />
+              <div class="footer__logo-text">
+                <h3>Out of School Youth Project</h3>
+                <p>Empowering Nairobi's Youth</p>
+              </div>
+            </a>
+            <p class="footer__description">
+              Transforming lives through education, skills training, and
+              holistic support for marginalized youth.
+            </p>
+          </div>
 
-            <a href="https://www.instagram.com/out_of_school_youth_project"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/out-of-school-youth-project"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+          <div class="footer__links">
+            <h3 class="footer__title">Quick Links</h3>
+            <ul class="footer__list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donation.html">Donate</a></li>
+              <li><a href="stories.html">Success Stories</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__programs">
+            <h3 class="footer__title">Our Programs</h3>
+            <ul class="footer__list">
+              <li><a href="programs.html">Life Skills Training</a></li>
+              <li><a href="programs.html">First Aid Training</a></li>
+              <li><a href="programs.html">Youth Evangelization</a></li>
+              <li><a href="programs.html">Vocational Training</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__contact">
+            <h3 class="footer__title">Contact Info</h3>
+            <div class="footer__contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi North</p>
+              <p><i class="fas fa-phone"></i> +254-798-804-000</p>
+              <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
+            </div>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-  <li><a href="about.html">About Us</a></li>
-  <li><a href="index.html#programsSection">Programs</a></li>
-  <li><a href="stories.html">Success Stories</a></li>
-  <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Programs</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="index.html#programsSection">Life Skills Training</a>
-            </li>
-            <li><a href="index.html#programsSection">First Aid Training</a></li>
-            <li>
-              <a href="index.html#programsSection">Youth Evangelization</a>
-            </li>
-            <li>
-              <a href="index.html#programsSection">Vocational Training</a>
-            </li>
-            <li><a href="index.html#programsSection">Events & Workshops</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Contact Us</h3>
-          <p>
-            <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
-            North Opposite Kariobangi Catholic Church
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; <span id="currentYear"></span> Out of School Youth Project. All rights reserved.
           </p>
-          <p><i class="fas fa-phone"></i> +254-798-804-000</p>
-          <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
-      </div>
-
-      <div class="copyright">
-        <p>&copy; 2026 Out of School Youth Project. All rights reserved.</p>
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="js/script.js"></script>
     <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTop.classList.add("visible");
+          } else {
+            backToTop.classList.remove("visible");
+          }
+        });
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
       // Month data
       const monthData = {
         january: {
@@ -1202,31 +516,6 @@
       };
 
       document.addEventListener("DOMContentLoaded", function () {
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const navLinks = document.getElementById("navLinks");
-
-        mobileMenuBtn.addEventListener("click", function () {
-          navLinks.classList.toggle("active");
-          const icon = this.querySelector("i");
-          if (navLinks.classList.contains("active")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-times");
-          } else {
-            icon.classList.remove("fa-times");
-            icon.classList.add("fa-bars");
-          }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll(".nav-links a").forEach((link) => {
-          link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            mobileMenuBtn.querySelector("i").classList.remove("fa-times");
-            mobileMenuBtn.querySelector("i").classList.add("fa-bars");
-          });
-        });
-
         // Month card click handlers
         const monthCards = document.querySelectorAll(".month-card");
         const monthModal = document.getElementById("monthModal");
