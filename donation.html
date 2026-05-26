@@ -55,9 +55,9 @@
                 >
               </li>
               <li class="nav__item">
-      <a href="about.html" class="nav__link" data-nav-link
-        >About Us</a
-      >
+                <a href="about.html" class="nav__link" data-nav-link
+                  >About Us</a
+                >
               </li>
               <li class="nav__item">
                 <a href="programs.html" class="nav__link" data-nav-link
@@ -66,19 +66,15 @@
               </li>
 
               <li class="nav__item">
-      <a href="gallery.html" class="nav__link" data-nav-link
-        >Gallery</a
-      >
-              </li>
-              <li class="nav__item">
-                <a href="index.html#partnersSection" class="nav__link" data-nav-link
-                  >Partners</a
+                <a href="gallery.html" class="nav__link" data-nav-link
+                  >Gallery</a
                 >
               </li>
+
               <li class="nav__item">
-      <a href="contact.html" class="nav__link" data-nav-link
-        >Contact Us</a
-      >
+                <a href="contact.html" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
               </li>
               <li class="nav__item dropdown">
                 <a href="#" class="nav__link" data-nav-link>
@@ -100,7 +96,9 @@
               </li>
 
               <li class="nav__item">
-                <a href="donation.html" class="btn btn--primary btn--small active"
+                <a
+                  href="donation.html"
+                  class="btn btn--primary btn--small active"
                   >Donate</a
                 >
               </li>
@@ -309,10 +307,10 @@
             <h3 class="footer__title">Quick Links</h3>
             <ul class="footer__list">
               <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
               <li><a href="donation.html">Donate</a></li>
               <li><a href="stories.html">Success Stories</a></li>
             </ul>
@@ -347,9 +345,24 @@
             All rights reserved.
           </p>
           <div class="footer__social">
-            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a
+              href="https://www.facebook.com/share/15QAFkts3z/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/out_of_school_youth_project"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/out-of-school-youth-project"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -363,7 +376,8 @@
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
       const backToTop = document.querySelector(".back-to-top");
       if (backToTop) {
@@ -387,8 +401,10 @@
       // Update donation summary
       function updateDonationSummary(amount) {
         const formattedAmount = formatCurrency(amount);
-        document.querySelector(".amount").textContent = `KSH ${formattedAmount}`;
-        document.querySelector(".total-amount").textContent = `KSH ${formattedAmount}`;
+        document.querySelector(".amount").textContent =
+          `KSH ${formattedAmount}`;
+        document.querySelector(".total-amount").textContent =
+          `KSH ${formattedAmount}`;
         document.getElementById("mpesaAmount").textContent = formattedAmount;
       }
 
