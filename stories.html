@@ -23,67 +23,423 @@
     <link rel="stylesheet" href="css/pages.css" />
     <style>
       /* ===== Stories Content Styles ===== */
-      .story-filters { background: var(--light-color); padding: 25px; border-radius: 8px; margin-bottom: 50px; text-align: center; }
-      .filter-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-      .filter-btn { padding: 8px 20px; background: white; border: 2px solid var(--secondary-color); color: var(--secondary-color); border-radius: 30px; cursor: pointer; font-weight: 500; transition: var(--transition-normal); }
-      .filter-btn.active, .filter-btn:hover { background: var(--secondary-color); color: white; }
-      .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
-      .story-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition-normal); }
-      .story-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
-      .story-media { height: 250px; position: relative; overflow: hidden; }
-      .story-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-      .story-card:hover .story-media img { transform: scale(1.05); }
-      .story-badge { position: absolute; top: 15px; right: 15px; background: var(--secondary-color); color: white; padding: 5px 15px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; }
-      .story-content { padding: 25px; }
-      .story-content h3 { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 5px; }
-      .story-location { color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
-      .story-quote { font-style: italic; color: #555; border-left: 3px solid #1abc9c; padding-left: 15px; margin: 20px 0; }
-      .story-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-      .story-stats .stat { text-align: center; padding: 12px; background: var(--light-color); border-radius: 6px; }
-      .story-stats .stat .stat-label { font-size: 0.8rem; color: var(--gray-medium); display: block; }
-      .story-stats .stat .stat-value { font-weight: 700; color: var(--primary-color); display: block; margin-top: 5px; }
-      .card-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-      .card-actions .btn { flex: 1; min-width: 120px; text-align: center; }
-      .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px; }
-      .modal-overlay.active { opacity: 1; visibility: visible; }
-      .modal { background: white; border-radius: 12px; width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(-50px); opacity: 0; transition: all 0.4s ease; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-      .modal-overlay.active .modal { transform: translateY(0); opacity: 1; }
-      .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 10; border-radius: 12px 12px 0 0; }
-      .modal-header h2 { color: var(--primary-color); margin: 0; font-size: 1.8rem; }
-      .modal-close { background: none; border: none; font-size: 1.5rem; color: var(--gray-medium); cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition-normal); }
-      .modal-close:hover { background: #f5f5f5; color: var(--secondary-color); }
-      .story-modal .modal-content { padding: 30px; }
-      .story-modal .story-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; align-items: center; }
-      .story-modal .story-hero-image { border-radius: 10px; overflow: hidden; }
-      .story-modal .story-hero-image img { width: 100%; height: 300px; object-fit: cover; }
-      .story-modal .story-hero-info h3 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 10px; }
-      .story-modal .story-meta { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
-      .story-modal .meta-item { display: flex; align-items: center; gap: 8px; color: var(--gray-medium); }
-      .story-modal .meta-item i { color: var(--secondary-color); }
-      .story-modal .full-story { margin: 30px 0; }
-      .story-modal .full-story h4 { color: var(--primary-color); margin: 20px 0 10px; }
-      .story-modal .timeline { margin: 30px 0; padding-left: 20px; border-left: 3px solid #1abc9c; }
-      .story-modal .timeline-item { margin-bottom: 20px; position: relative; padding-left: 20px; }
-      .story-modal .timeline-item::before { content: ""; position: absolute; left: -26px; top: 8px; width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; }
-      .story-modal .impact-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 20px; margin: 30px 0; background: var(--light-color); padding: 25px; border-radius: 10px; }
-      .video-modal .modal { max-width: 1000px; }
-      .video-modal .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
-      .video-modal .video-container iframe, .video-modal .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; }
-      .video-modal .video-info { margin-top: 20px; }
-      .video-modal .video-info h3 { color: var(--primary-color); }
-      .video-highlight { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 60px 20px; text-align: center; margin: 60px 0; }
-      .video-highlight h2 { margin-bottom: 30px; }
-      .video-wrapper { max-width: 900px; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-      .cta-section { background: var(--light-color); text-align: center; padding: 70px 20px; border-radius: 10px; margin: 60px 0; }
-      .cta-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
-      .cta-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-      .cta-btn.primary { background: var(--secondary-color); color: white; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: var(--transition-normal); }
-      .cta-btn.primary:hover { background: #d32f2f; transform: translateY(-2px); }
-      .cta-btn.secondary { background: transparent; border: 2px solid var(--secondary-color); color: var(--secondary-color); padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: var(--transition-normal); }
-      .cta-btn.secondary:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
-      @media (max-width: 992px) { .stories-grid { grid-template-columns: repeat(2, 1fr); } .story-modal .story-hero { grid-template-columns: 1fr; } }
-      @media (max-width: 768px) { .stories-grid { grid-template-columns: 1fr; } .card-actions { flex-direction: column; } .card-actions .btn { width: 100%; } .cta-buttons { flex-direction: column; align-items: center; } .cta-btn { width: 100%; max-width: 300px; } .modal { max-width: 95%; margin: 10px; } .modal-header { padding: 15px 20px; } .story-modal .modal-content { padding: 20px; } .story-modal .impact-stats { grid-template-columns: 1fr; } }
-      @media (max-width: 480px) { .story-stats { grid-template-columns: 1fr; } .story-modal .story-meta { flex-direction: column; gap: 10px; } .modal-header h2 { font-size: 1.5rem; } }
+      .story-filters {
+        background: var(--light-color);
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .filter-btn {
+        padding: 8px 20px;
+        background: white;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition-normal);
+      }
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--secondary-color);
+        color: white;
+      }
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+      .story-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition-normal);
+      }
+      .story-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xl);
+      }
+      .story-media {
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      .story-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .story-card:hover .story-media img {
+        transform: scale(1.05);
+      }
+      .story-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--secondary-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .story-content {
+        padding: 25px;
+      }
+      .story-content h3 {
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+      }
+      .story-location {
+        color: var(--secondary-color);
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .story-quote {
+        font-style: italic;
+        color: #555;
+        border-left: 3px solid #1abc9c;
+        padding-left: 15px;
+        margin: 20px 0;
+      }
+      .story-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+      }
+      .story-stats .stat {
+        text-align: center;
+        padding: 12px;
+        background: var(--light-color);
+        border-radius: 6px;
+      }
+      .story-stats .stat .stat-label {
+        font-size: 0.8rem;
+        color: var(--gray-medium);
+        display: block;
+      }
+      .story-stats .stat .stat-value {
+        font-weight: 700;
+        color: var(--primary-color);
+        display: block;
+        margin-top: 5px;
+      }
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .card-actions .btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+      }
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        padding: 20px;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal {
+        background: white;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 900px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+      .modal-overlay.active .modal {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        border-radius: 12px 12px 0 0;
+      }
+      .modal-header h2 {
+        color: var(--primary-color);
+        margin: 0;
+        font-size: 1.8rem;
+      }
+      .modal-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--gray-medium);
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition-normal);
+      }
+      .modal-close:hover {
+        background: #f5f5f5;
+        color: var(--secondary-color);
+      }
+      .story-modal .modal-content {
+        padding: 30px;
+      }
+      .story-modal .story-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+        align-items: center;
+      }
+      .story-modal .story-hero-image {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .story-modal .story-hero-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      .story-modal .story-hero-info h3 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      .story-modal .story-meta {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .story-modal .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gray-medium);
+      }
+      .story-modal .meta-item i {
+        color: var(--secondary-color);
+      }
+      .story-modal .full-story {
+        margin: 30px 0;
+      }
+      .story-modal .full-story h4 {
+        color: var(--primary-color);
+        margin: 20px 0 10px;
+      }
+      .story-modal .timeline {
+        margin: 30px 0;
+        padding-left: 20px;
+        border-left: 3px solid #1abc9c;
+      }
+      .story-modal .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+      }
+      .story-modal .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        background: var(--secondary-color);
+        border-radius: 50%;
+      }
+      .story-modal .impact-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+        background: var(--light-color);
+        padding: 25px;
+        border-radius: 10px;
+      }
+      .video-modal .modal {
+        max-width: 1000px;
+      }
+      .video-modal .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        margin: 20px 0;
+      }
+      .video-modal .video-container iframe,
+      .video-modal .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+      .video-modal .video-info {
+        margin-top: 20px;
+      }
+      .video-modal .video-info h3 {
+        color: var(--primary-color);
+      }
+      .video-highlight {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        padding: 60px 20px;
+        text-align: center;
+        margin: 60px 0;
+      }
+      .video-highlight h2 {
+        margin-bottom: 30px;
+      }
+      .video-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .cta-section {
+        background: var(--light-color);
+        text-align: center;
+        padding: 70px 20px;
+        border-radius: 10px;
+        margin: 60px 0;
+      }
+      .cta-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+      .cta-btn.primary {
+        background: var(--secondary-color);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition-normal);
+        display: inline-block;
+        max-width: 200px;
+      }
+      .cta-btn.primary:hover {
+        background: #d32f2f;
+        transform: translateY(-2px);
+      }
+      .cta-btn.secondary {
+        background: transparent;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition-normal);
+        display: inline-block;
+        max-width: 200px;
+      }
+      .cta-btn.secondary:hover {
+        background: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+      @media (max-width: 992px) {
+        .stories-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .story-modal .story-hero {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .stories-grid {
+          grid-template-columns: 1fr;
+        }
+        .card-actions {
+          flex-direction: column;
+        }
+        .card-actions .btn {
+          width: 100%;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .cta-btn {
+          width: 100%;
+          max-width: 300px;
+        }
+        .modal {
+          max-width: 95%;
+          margin: 10px;
+        }
+        .modal-header {
+          padding: 15px 20px;
+        }
+        .story-modal .modal-content {
+          padding: 20px;
+        }
+        .story-modal .impact-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .story-stats {
+          grid-template-columns: 1fr;
+        }
+        .story-modal .story-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .modal-header h2 {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -110,16 +466,24 @@
                 <a href="index.html" class="nav__link" data-nav-link>Home</a>
               </li>
               <li class="nav__item">
-                <a href="about.html" class="nav__link" data-nav-link>About Us</a>
+                <a href="about.html" class="nav__link" data-nav-link
+                  >About Us</a
+                >
               </li>
               <li class="nav__item">
-                <a href="programs.html" class="nav__link" data-nav-link>Programs</a>
+                <a href="programs.html" class="nav__link" data-nav-link
+                  >Programs</a
+                >
               </li>
               <li class="nav__item">
-                <a href="gallery.html" class="nav__link" data-nav-link>Gallery</a>
+                <a href="gallery.html" class="nav__link" data-nav-link
+                  >Gallery</a
+                >
               </li>
               <li class="nav__item">
-                <a href="contact.html" class="nav__link" data-nav-link>Contact Us</a>
+                <a href="contact.html" class="nav__link" data-nav-link
+                  >Contact Us</a
+                >
               </li>
               <li class="nav__item dropdown">
                 <a href="#" class="nav__link" data-nav-link>
@@ -127,15 +491,24 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li class="nav__item">
-                    <a href="stories.html" class="nav__link active" data-nav-link>Success Stories</a>
+                    <a
+                      href="stories.html"
+                      class="nav__link active"
+                      data-nav-link
+                      >Success Stories</a
+                    >
                   </li>
                   <li class="nav__item">
-                    <a href="events.html" class="nav__link" data-nav-link>Events & Updates</a>
+                    <a href="events.html" class="nav__link" data-nav-link
+                      >Events & Updates</a
+                    >
                   </li>
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="donation.html" class="btn btn--primary btn--small">Donate</a>
+                <a href="donation.html" class="btn btn--primary btn--small"
+                  >Donate</a
+                >
               </li>
             </ul>
           </nav>
@@ -148,13 +521,16 @@
       <div class="page-hero__overlay"></div>
       <div class="container">
         <div class="page-hero__content">
-          <span class="page-hero__badge"><i class="fas fa-star"></i> Voices of Transformation</span>
+          <span class="page-hero__badge"
+            ><i class="fas fa-star"></i> Voices of Transformation</span
+          >
           <h1 class="page-hero__title">Success <span>Stories</span></h1>
           <p class="page-hero__subtitle">
             Transforming lives begins with a single step. Our Success Stories
             celebrate hundreds of vulnerable youth who have reclaimed their
             futures through vocational training and mentorship. These are more
-            than just stories—they are testaments to resilience and new beginnings.
+            than just stories—they are testaments to resilience and new
+            beginnings.
           </p>
         </div>
       </div>
@@ -448,7 +824,7 @@
             controls
             playsinline
             preload="metadata"
-            style="border-radius: 10px; max-height: 70vh;"
+            style="border-radius: 10px; max-height: 70vh"
           >
             <source src="videos/youth vid.MP4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -466,9 +842,7 @@
           more youths in Korogocho, Kariobangi, Huruma, and Madoya.
         </p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn cta-btn primary"
-            >Partner With Us</a
-          >
+          <a href="contact.html" class="btn cta-btn primary">Partner With Us</a>
           <a href="donation.html" class="btn cta-btn secondary"
             >Make a Donation</a
           >
@@ -520,7 +894,10 @@
           <div class="footer__contact">
             <h3 class="footer__title">Contact Info</h3>
             <div class="footer__contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi North</p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
+                North
+              </p>
               <p><i class="fas fa-phone"></i> +254-798-804-000</p>
               <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
             </div>
@@ -529,12 +906,28 @@
 
         <div class="footer__bottom">
           <p class="footer__copyright">
-            &copy; <span id="currentYear"></span> Out of School Youth Project. All rights reserved.
+            &copy; <span id="currentYear"></span> Out of School Youth Project.
+            All rights reserved.
           </p>
           <div class="footer__social">
-            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a
+              href="https://www.facebook.com/share/15QAFkts3z/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/out_of_school_youth_project"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/out-of-school-youth-project"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -583,7 +976,8 @@
     <!-- JavaScript -->
     <script src="js/script.js"></script>
     <script>
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
       const backToTop = document.querySelector(".back-to-top");
       if (backToTop) {
