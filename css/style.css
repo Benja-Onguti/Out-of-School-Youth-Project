@@ -145,7 +145,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 1px;
+  padding: 6px 20px;
 }
 
 .logo {
@@ -393,13 +393,17 @@ p {
 /* Show hamburger ONLY on mobile/tablet */
 @media (max-width: 992px) {
   .nav-toggle {
-    display: block !important; /* Force show on mobile */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
-    padding: var(--space-xs);
-    z-index: 1001; /* Ensure it's above everything */
+    padding: 10px;
+    z-index: 1001;
     position: relative;
+    min-height: 44px;
+    min-width: 44px;
   }
 
   .hamburger {
@@ -3315,5 +3319,15 @@ iframe.map-container {
   .back-to-top {
     bottom: var(--space-sm);
     right: var(--space-sm);
+  }
+
+  .header__inner {
+    padding: 6px 12px;
+  }
+
+  .nav-toggle {
+    padding: 8px;
+    min-height: 40px;
+    min-width: 40px;
   }
 }
