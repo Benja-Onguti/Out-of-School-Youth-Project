@@ -5,92 +5,497 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | Out of School Youth Project</title>
     <link rel="icon" type="image/png" href="images/logo hch.jpeg" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/pages.css" />
+    <style>
+      :root {
+        --contact-bg: #F9F6F1;
+        --contact-card: #FFFFFF;
+        --contact-accent: #C8633D;
+        --contact-accent-dark: #A84F2E;
+        --contact-dark: #2E2420;
+        --contact-text: #4A3F3A;
+        --contact-muted: #9A8E87;
+        --contact-border: #EAE2D9;
+        --contact-warm: #F0E8DE;
+        --contact-focus: #C8633D;
+        --contact-radius: 16px;
+        --contact-shadow: 0 2px 12px rgba(46, 36, 32, 0.06);
+        --contact-hover-shadow: 0 12px 40px rgba(200, 99, 61, 0.1);
+      }
+
+      body {
+        font-family: "Sora", sans-serif;
+        background: var(--contact-bg);
+        color: var(--contact-text);
+      }
+
+      /* ===== CONTACT SECTION ===== */
+      .contact {
+        padding: 0 0 60px;
+      }
+      .contact__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      /* ===== INFO SIDE ===== */
+      .contact-info {
+        position: relative;
+      }
+      .contact-info__label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--contact-accent);
+        margin-bottom: 10px;
+      }
+      .contact-info__heading {
+        font-family: "Fraunces", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--contact-dark);
+        margin: 0 0 12px;
+        line-height: 1.2;
+      }
+      .contact-info__heading em {
+        font-style: italic;
+        color: var(--contact-accent);
+      }
+      .contact-info__intro {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--contact-muted);
+        margin-bottom: 36px;
+        max-width: 380px;
+      }
+      .contact-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+      .contact-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        background: var(--contact-card);
+        padding: 20px 24px;
+        border-radius: var(--contact-radius);
+        box-shadow: var(--contact-shadow);
+        border: 1px solid var(--contact-border);
+        transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .contact-card:hover {
+        transform: translateX(6px);
+        box-shadow: var(--contact-hover-shadow);
+        border-color: var(--contact-accent);
+      }
+      .contact-card__icon {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--contact-warm);
+        border-radius: 12px;
+        color: var(--contact-accent);
+        font-size: 1.1rem;
+        transition: all 0.35s ease;
+      }
+      .contact-card:hover .contact-card__icon {
+        background: var(--contact-accent);
+        color: white;
+      }
+      .contact-card__content h3 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--contact-dark);
+        margin: 0 0 4px;
+        letter-spacing: 0.3px;
+      }
+      .contact-card__content p,
+      .contact-card__content a {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        color: var(--contact-muted);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .contact-card__content a:hover {
+        color: var(--contact-accent);
+      }
+
+      /* Social */
+      .contact-social h3 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--contact-dark);
+        margin: 0 0 14px;
+        letter-spacing: 0.3px;
+      }
+      .social-row {
+        display: flex;
+        gap: 10px;
+      }
+      .social-btn {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--contact-card);
+        border: 1px solid var(--contact-border);
+        border-radius: 12px;
+        color: var(--contact-muted);
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.35s ease;
+      }
+      .social-btn:hover {
+        background: var(--contact-accent);
+        color: white;
+        border-color: var(--contact-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(200, 99, 61, 0.2);
+      }
+
+      /* ===== FORM SIDE ===== */
+      .form-card {
+        background: var(--contact-card);
+        border-radius: var(--contact-radius);
+        padding: 40px 36px;
+        box-shadow: var(--contact-shadow);
+        border: 1px solid var(--contact-border);
+      }
+      .form-card__title {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--contact-dark);
+        margin: 0 0 6px;
+      }
+      .form-card__subtitle {
+        font-size: 0.85rem;
+        color: var(--contact-muted);
+        margin: 0 0 28px;
+      }
+      .form__group {
+        margin-bottom: 20px;
+      }
+      .form__label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--contact-dark);
+        margin-bottom: 8px;
+      }
+      .form__label i {
+        color: var(--contact-accent);
+        font-size: 0.7rem;
+      }
+      .form__input {
+        width: 100%;
+        padding: 14px 16px;
+        background: var(--contact-bg);
+        border: 1.5px solid var(--contact-border);
+        border-radius: 10px;
+        font-family: "Sora", sans-serif;
+        font-size: 0.9rem;
+        color: var(--contact-dark);
+        transition: all 0.3s ease;
+        outline: none;
+        box-sizing: border-box;
+      }
+      .form__input:focus {
+        border-color: var(--contact-accent);
+        box-shadow: 0 0 0 3px rgba(200, 99, 61, 0.1);
+        background: white;
+      }
+      .form__input::placeholder {
+        color: var(--contact-muted);
+        opacity: 0.6;
+      }
+      select.form__input {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239A8E87' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        padding-right: 40px;
+        cursor: pointer;
+      }
+      textarea.form__input {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .form__submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 16px 32px;
+        background: var(--contact-accent);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: "Sora", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.35s ease;
+        letter-spacing: 0.3px;
+      }
+      .form__submit i {
+        font-size: 1rem;
+        transition: transform 0.35s ease;
+      }
+      .form__submit:hover {
+        background: var(--contact-accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(200, 99, 61, 0.3);
+      }
+      .form__submit:hover i {
+        transform: translateX(4px);
+      }
+      .form__notice {
+        font-size: 0.75rem;
+        color: var(--contact-muted);
+        text-align: center;
+        margin: 16px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .form__notice i {
+        font-size: 0.65rem;
+      }
+      .form__message {
+        display: none;
+        padding: 14px 18px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .form__message.success {
+        display: block;
+        background: #E8F5E9;
+        color: #2E7D32;
+        border: 1px solid #C8E6C9;
+      }
+      .form__message.error {
+        display: block;
+        background: #FBE9E7;
+        color: #C62828;
+        border: 1px solid #FFCCBC;
+      }
+
+      /* ===== MAP SECTION ===== */
+      .map-section {
+        padding: 60px 0 80px;
+      }
+      .map-section__inner {
+        background: var(--contact-card);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--contact-shadow);
+        border: 1px solid var(--contact-border);
+      }
+      .map-section__header {
+        padding: 28px 32px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .map-section__header h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--contact-dark);
+        margin: 0;
+      }
+      .map-section__header h2 em {
+        font-style: italic;
+        color: var(--contact-accent);
+      }
+      .map-directions-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 22px;
+        background: var(--contact-accent);
+        color: white;
+        border-radius: 10px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        font-family: "Sora", sans-serif;
+        text-decoration: none;
+        transition: all 0.35s ease;
+      }
+      .map-directions-link:hover {
+        background: var(--contact-accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(200, 99, 61, 0.25);
+      }
+      .map-wrapper {
+        padding: 20px 20px 20px;
+      }
+      .map-wrapper iframe {
+        width: 100%;
+        height: 380px;
+        border: none;
+        border-radius: 12px;
+        display: block;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1024px) {
+        .contact__grid {
+          gap: 36px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .contact__grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .contact-info__intro {
+          max-width: 100%;
+        }
+        .form-card {
+          padding: 32px 28px;
+        }
+        .map-wrapper iframe {
+          height: 320px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact {
+          padding: 0 0 40px;
+        }
+        .contact-info__heading {
+          font-size: 1.7rem;
+        }
+        .contact-card {
+          padding: 16px 18px;
+        }
+        .form-card {
+          padding: 28px 20px;
+        }
+        .form-card__title {
+          font-size: 1.1rem;
+        }
+        .map-section {
+          padding: 40px 0 60px;
+        }
+        .map-section__header {
+          padding: 20px 20px 0;
+        }
+        .map-section__header h2 {
+          font-size: 1.1rem;
+        }
+        .map-wrapper {
+          padding: 14px 14px 14px;
+        }
+        .map-wrapper iframe {
+          height: 260px;
+        }
+        .map-directions-link {
+          padding: 8px 16px;
+          font-size: 0.78rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-info__heading {
+          font-size: 1.4rem;
+        }
+        .contact-card__icon {
+          width: 38px;
+          height: 38px;
+          font-size: 0.95rem;
+        }
+        .contact-card__content h3 {
+          font-size: 0.8rem;
+        }
+        .contact-card__content p,
+        .contact-card__content a {
+          font-size: 0.82rem;
+        }
+        .form__submit {
+          padding: 14px 24px;
+          font-size: 0.85rem;
+        }
+        .map-wrapper iframe {
+          height: 220px;
+        }
+        .map-section__header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .social-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .map-wrapper iframe {
+          height: 180px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header__inner">
           <a href="index.html" class="logo">
-            <img
-              src="images/logo hch.jpeg"
-              alt="Out Of School Youth Project Logo"
-              class="logo__image"
-            />
+            <img src="images/logo hch.jpeg" alt="Out Of School Youth Project Logo" class="logo__image" />
             <span class="logo__text">OSYP</span>
           </a>
-
           <button class="nav-toggle" aria-label="Toggle navigation">
             <span class="hamburger"></span>
           </button>
-
           <nav class="nav">
             <ul class="nav__list">
-              <li class="nav__item">
-                <a href="index.html" class="nav__link" data-nav-link>Home</a>
-              </li>
-              <li class="nav__item">
-                <a href="about.html" class="nav__link" data-nav-link
-                  >About Us</a
-                >
-              </li>
-              <li class="nav__item">
-                <a href="programs.html" class="nav__link" data-nav-link
-                  >Programs</a
-                >
-              </li>
-
-              <li class="nav__item">
-                <a href="gallery.html" class="nav__link" data-nav-link
-                  >Gallery</a
-                >
-              </li>
-
-              <li class="nav__item">
-                <a href="contact.html" class="nav__link active" data-nav-link
-                  >Contact Us</a
-                >
-              </li>
+              <li class="nav__item"><a href="index.html" class="nav__link" data-nav-link>Home</a></li>
+              <li class="nav__item"><a href="about.html" class="nav__link" data-nav-link>About Us</a></li>
+              <li class="nav__item"><a href="programs.html" class="nav__link" data-nav-link>Programs</a></li>
+              <li class="nav__item"><a href="gallery.html" class="nav__link" data-nav-link>Gallery</a></li>
+              <li class="nav__item"><a href="contact.html" class="nav__link active" data-nav-link>Contact Us</a></li>
               <li class="nav__item dropdown">
                 <a href="#" class="nav__link" data-nav-link>
                   Explore <i class="fas fa-chevron-down"></i>
                 </a>
-
                 <ul class="dropdown-menu">
-                  <li class="nav__item">
-                    <a href="stories.html" class="nav__link" data-nav-link
-                      >Success Stories</a
-                    >
-                  </li>
-                  <li class="nav__item">
-                    <a href="events.html" class="nav__link" data-nav-link
-                      >Events & Updates</a
-                    >
-                  </li>
+                  <li class="nav__item"><a href="stories.html" class="nav__link" data-nav-link>Success Stories</a></li>
+                  <li class="nav__item"><a href="events.html" class="nav__link" data-nav-link>Events & Updates</a></li>
                 </ul>
               </li>
-
-              <li class="nav__item">
-                <a href="donation.html" class="btn btn--primary btn--small"
-                  >Donate</a
-                >
-              </li>
+              <li class="nav__item"><a href="donation.html" class="btn btn--primary btn--small">Donate</a></li>
             </ul>
           </nav>
         </div>
@@ -101,13 +506,10 @@
       <div class="page-hero__overlay"></div>
       <div class="container">
         <div class="page-hero__content">
-          <span class="page-hero__badge"
-            ><i class="fas fa-envelope"></i> Get In Touch</span
-          >
+          <span class="page-hero__badge"><i class="fas fa-envelope"></i> Get In Touch</span>
           <h1 class="page-hero__title">Contact <span>Us</span></h1>
           <p class="page-hero__subtitle">
-            Ready to make a difference? Reach out to learn more, volunteer, or
-            support our mission.
+            Ready to make a difference? Reach out to learn more, volunteer, or support our mission.
           </p>
         </div>
       </div>
@@ -115,158 +517,78 @@
 
     <section class="section contact" id="contactSection">
       <div class="container">
-        <div class="section__header">
-          <span class="section__subtitle">Let Us Connect</span>
-          <h2 class="section__title">
-            Ready to make a difference? Get in touch today
-          </h2>
-        </div>
-
-        <div class="contact__wrapper">
-          <div class="contact__info">
-            <div class="section__header">
-              <span class="section__subtitle">Get In Touch</span>
-            </div>
-
-            <p class="contact__intro">
-              Reach out to learn more, volunteer, or support our mission to
-              empower Nairobi's youth.
+        <div class="contact__grid">
+          <!-- Info Side -->
+          <div class="contact-info">
+            <p class="contact-info__label">Connect With Us</p>
+            <h2 class="contact-info__heading">We'd love to <em>hear</em> from you</h2>
+            <p class="contact-info__intro">
+              Whether you want to volunteer, partner, donate, or simply learn more about our work — reach out. Every conversation is a step toward change.
             </p>
 
-            <div class="contact__details">
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-item__content">
+            <div class="contact-cards">
+              <div class="contact-card">
+                <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-card__content">
                   <h3>Our Location</h3>
-                  <p>
-                    Cheshire Home, Kariobangi North<br />
-                    Opposite Kariobangi Catholic Church
-                  </p>
+                  <p>Cheshire Home, Kariobangi North<br />Opposite Kariobangi Catholic Church</p>
                 </div>
               </div>
 
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-item__content">
+              <div class="contact-card">
+                <div class="contact-card__icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-card__content">
                   <h3>Email Us</h3>
-                  <p>
-                    <a href="mailto:judithjojo9@gmail.com"
-                      >judithjojo9@gmail.com</a
-                    ><br />
-                    <a href="mailto:cateketch@gmail.com">cateketch@gmail.com</a>
-                  </p>
+                  <p><a href="mailto:judithjojo9@gmail.com">judithjojo9@gmail.com</a><br /><a href="mailto:cateketch@gmail.com">cateketch@gmail.com</a></p>
                 </div>
               </div>
 
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-item__content">
+              <div class="contact-card">
+                <div class="contact-card__icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-card__content">
                   <h3>Call Us</h3>
-                  <p>
-                    <a href="tel:+254798804000">+254-798-804-000</a><br />
-                    <a href="tel:+254712089629">+254-712-089-629</a>
-                  </p>
+                  <p><a href="tel:+254798804000">+254-798-804-000</a><br /><a href="tel:+254712089629">+254-712-089-629</a></p>
                 </div>
               </div>
             </div>
 
-            <div class="contact__social">
+            <div class="contact-social">
               <h3>Follow Our Journey</h3>
-              <div class="social-links">
-                <a
-                  href="https://www.facebook.com/share/15QAFkts3z/"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/out_of_school_youth_project"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/out-of-school-youth-project"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
+              <div class="social-row">
+                <a href="https://www.facebook.com/share/15QAFkts3z/" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/out_of_school_youth_project" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/out-of-school-youth-project" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="contact__form">
-            <form
-              id="contactForm"
-              class="form"
-              action="https://api.web3forms.com/submit"
-              method="POST"
-            >
-              <input
-                type="hidden"
-                name="access_key"
-                value="e92f7783-f9e4-43c5-a959-f67e1735e3bf"
-              />
+          <!-- Form Side -->
+          <div class="form-card">
+            <h3 class="form-card__title">Send Us a Message</h3>
+            <p class="form-card__subtitle">We'll get back to you within 24 hours.</p>
 
-              <h3 class="form__title">Send Us a Message</h3>
+            <div id="formMessage" class="form__message"></div>
+
+            <form id="contactForm" class="form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="e92f7783-f9e4-43c5-a959-f67e1735e3bf" />
 
               <div class="form__group">
-                <label for="name" class="form__label">
-                  <i class="fas fa-user"></i> Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="form__input"
-                  placeholder="Enter your full name"
-                  required
-                />
+                <label for="name" class="form__label"><i class="fas fa-user"></i> Full Name</label>
+                <input type="text" id="name" name="name" class="form__input" placeholder="Enter your full name" required />
               </div>
 
               <div class="form__group">
-                <label for="email" class="form__label">
-                  <i class="fas fa-envelope"></i> Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form__input"
-                  placeholder="Enter your email address"
-                  required
-                />
+                <label for="email" class="form__label"><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" name="email" class="form__input" placeholder="Enter your email address" required />
               </div>
 
               <div class="form__group">
-                <label for="phone" class="form__label">
-                  <i class="fas fa-phone"></i> Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="form__input"
-                  placeholder="Enter your phone number"
-                />
+                <label for="phone" class="form__label"><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form__input" placeholder="Enter your phone number" />
               </div>
 
               <div class="form__group">
-                <label for="subject" class="form__label">
-                  <i class="fas fa-tag"></i> Subject
-                </label>
+                <label for="subject" class="form__label"><i class="fas fa-tag"></i> Subject</label>
                 <select id="subject" name="subject" class="form__input">
                   <option value="" disabled selected>Select a subject</option>
                   <option value="general">General Inquiry</option>
@@ -275,62 +597,34 @@
                   <option value="volunteer">Volunteer Opportunity</option>
                   <option value="partnership">Partnership Inquiry</option>
                 </select>
-                <i class="fas fa-chevron-down form__select-arrow"></i>
               </div>
 
               <div class="form__group">
-                <label for="message" class="form__label">
-                  <i class="fas fa-comment"></i> Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form__input form__textarea"
-                  rows="5"
-                  placeholder="Type your message here..."
-                  required
-                ></textarea>
+                <label for="message" class="form__label"><i class="fas fa-comment"></i> Your Message</label>
+                <textarea id="message" name="message" class="form__input" rows="5" placeholder="Type your message here..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn--primary btn--block">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
+              <button type="submit" class="form__submit"><i class="fas fa-paper-plane"></i> Send Message</button>
 
-              <p class="form__notice">
-                <i class="fas fa-lock"></i> Your information is secure and will
-                not be shared.
-              </p>
+              <p class="form__notice"><i class="fas fa-lock"></i> Your information is secure and will not be shared.</p>
             </form>
           </div>
         </div>
-        <div class="contact__map">
-          <div class="container">
-            <div class="section__header">
-              <h2 class="section__title">Our Location on the Map</h2>
-            </div>
+      </div>
+    </section>
 
-            <div class="map-wrapper">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1209.5184210159446!2d36.87611050862791!3d-1.2570192180781077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f150069ec031b%3A0xe93c3e80c732454b!2sMother%20Kevin%20Youth%20Project!5e1!3m2!1sen!2ske!4v1770026780220!5m2!1sen!2ske"
-                class="map-container"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Mother Kevin Youth Project Location"
-              >
-              </iframe>
-
-              <div class="map-directions">
-                <a
-                  href="https://www.google.com/maps/dir//Mother+Kevin+Youth+Project"
-                  target="_blank"
-                  rel="noopener"
-                  class="map-directions-btn"
-                >
-                  <i class="fas fa-directions"></i> Get Directions
-                </a>
-              </div>
-            </div>
+    <!-- Map -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-section__inner">
+          <div class="map-section__header">
+            <h2>Find us <em>on the map</em></h2>
+            <a href="https://www.google.com/maps/dir//Mother+Kevin+Youth+Project" target="_blank" rel="noopener" class="map-directions-link">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+          <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1209.5184210159446!2d36.87611050862791!3d-1.2570192180781077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f150069ec031b%3A0xe93c3e80c732454b!2sMother%20Kevin%20Youth%20Project!5e1!3m2!1sen!2ske!4v1770026780220!5m2!1sen!2ske" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mother Kevin Youth Project Location"></iframe>
           </div>
         </div>
       </div>
@@ -347,12 +641,8 @@
                 <p>Empowering Nairobi's Youth</p>
               </div>
             </a>
-            <p class="footer__description">
-              Transforming lives through education, skills training, and
-              holistic support for marginalized youth.
-            </p>
+            <p class="footer__description">Transforming lives through education, skills training, and holistic support for marginalized youth.</p>
           </div>
-
           <div class="footer__links">
             <h3 class="footer__title">Quick Links</h3>
             <ul class="footer__list">
@@ -365,63 +655,30 @@
               <li><a href="stories.html">Success Stories</a></li>
             </ul>
           </div>
-
           <div class="footer__programs">
             <h3 class="footer__title">Our Programs</h3>
             <ul class="footer__list">
-              <li>
-                <a href="programs.html">Life Skills Training</a>
-              </li>
+              <li><a href="programs.html">Life Skills Training</a></li>
               <li><a href="programs.html">First Aid Training</a></li>
-              <li>
-                <a href="programs.html">Youth Evangelization</a>
-              </li>
-              <li>
-                <a href="programs.html">Vocational Training</a>
-              </li>
+              <li><a href="programs.html">Youth Evangelization</a></li>
+              <li><a href="programs.html">Vocational Training</a></li>
             </ul>
           </div>
-
           <div class="footer__contact">
             <h3 class="footer__title">Contact Info</h3>
             <div class="footer__contact-info">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi
-                North
-              </p>
+              <p><i class="fas fa-map-marker-alt"></i> Cheshire Home, Kariobangi North</p>
               <p><i class="fas fa-phone"></i> +254-798-804-000</p>
               <p><i class="fas fa-envelope"></i> judithjojo9@gmail.com</p>
             </div>
           </div>
         </div>
-
         <div class="footer__bottom">
-          <p class="footer__copyright">
-            &copy; <span id="currentYear"></span> Out of School Youth Project.
-            All rights reserved.
-          </p>
+          <p class="footer__copyright">&copy; <span id="currentYear"></span> Out of School Youth Project. All rights reserved.</p>
           <div class="footer__social">
-            <a
-              href="https://www.facebook.com/share/15QAFkts3z/"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/out_of_school_youth_project"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/out-of-school-youth-project"
-              target="_blank"
-              rel="noopener"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+            <a href="https://www.facebook.com/share/15QAFkts3z/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/out_of_school_youth_project" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/out-of-school-youth-project" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -433,19 +690,47 @@
 
     <script src="js/script.js"></script>
     <script>
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
 
       const backToTop = document.querySelector(".back-to-top");
       window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-          backToTop.classList.add("visible");
-        } else {
-          backToTop.classList.remove("visible");
-        }
+        if (window.scrollY > 300) backToTop.classList.add("visible");
+        else backToTop.classList.remove("visible");
       });
       backToTop.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Form submission with feedback
+      const form = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const submitBtn = form.querySelector(".form__submit");
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+          });
+          const data = await res.json();
+          if (data.success) {
+            formMessage.className = "form__message success";
+            formMessage.textContent = "Thank you! Your message has been sent. We'll get back to you soon.";
+            form.reset();
+          } else {
+            throw new Error("Failed to send");
+          }
+        } catch {
+          formMessage.className = "form__message error";
+          formMessage.textContent = "Something went wrong. Please try again or email us directly.";
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       });
     </script>
   </body>
